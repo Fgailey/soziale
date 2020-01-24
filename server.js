@@ -2,6 +2,11 @@ const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
+const mongoose = require('mongoose');
+
+// ***Using local connection until further notice regarding method of deployment (heroku/azure.. not sure which we're going to use.)***
+var MONGO_URI = 'mongodb://localhost/users_db';
+
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
