@@ -15,6 +15,16 @@ const UserSchema = new Schema({
         required: "Password required"
         // Add validations later, discuss with group.
     },
+    firstName: {
+        type: String,
+        trim: true,
+        required: "First name required"
+    },
+    lastName: {
+        type: String,
+        trim: true,
+        required: "Last name required"
+    },
     email: {
         type: String,
         unique: true,
