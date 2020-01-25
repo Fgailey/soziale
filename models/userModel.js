@@ -1,9 +1,9 @@
-import mongoose from 'mongoose';
+var mongoose = require('mongoose');
 
 // Schema contstuctor reference
-var Schema = mongoose.Schema;
+const Schema = mongoose.Schema;
 
-var UserSchema = new Schema({
+const UserSchema = new Schema({
     username: {
         type: String,
         trim: true,
