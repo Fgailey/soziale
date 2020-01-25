@@ -2,10 +2,13 @@ const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
+
+var db = require("./models");
 
 // ***Using local connection until further notice regarding method of deployment (heroku/azure.. not sure which we're going to use.)***
 const MONGO_URI = 'mongodb://localhost/users_db';
+
 
 
 // Define middleware here
@@ -22,6 +25,11 @@ mongoose.connect(MONGO_URI, {
   useUnifiedTopology: true
 }).then(() => console.log("It's in ;)"))
 .catch(err => console.log(err));
+
+// Insert sample user
+db.userModel.create({ username: "t_bag69", password: "12345", email: "rideSlowHomie@lyfeOrDeth.com"})
+.then(User => console.log(User))
+.catch(err => console.log(err.message));
 
 // Define API routes here
 
