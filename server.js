@@ -27,7 +27,7 @@ mongoose.connect(MONGO_URI, {
 .catch(err => console.log(err));
 
 // Insert sample user
-db.userModel.create({ username: "t_bag69", password: "12345", email: "rideSlowHomie@lyfeOrDeth.com"})
+db.userModel.create({ username: "t_bag69", password: "12345", firstName: "John", lastName:"Doe", email: "rideSlowHomie@lyfeOrDeth.com"})
 .then(User => console.log(User))
 .catch(err => console.log(err.message));
 
