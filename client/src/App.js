@@ -6,7 +6,6 @@ import Chat from "./pages/Chat"
 import Profile from "./pages/Profile"
 import NoMatch from "./pages/NoMatch"
 import Nav from "./components/navbar/Nav"
-import './App.css';
 
 const App = () =>  {
   return (
