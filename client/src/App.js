@@ -1,28 +1,21 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Login from "./pages/Login"
-import Dashboard from "./pages/Dashboard"
-import Chat from "./pages/Chat"
-import Profile from "./pages/Profile"
-import NoMatch from "./pages/NoMatch"
+import Landing from "./pages/Landing"
 import Nav from "./components/navbar/Nav"
+import Routes from './routing/Routes'
 import './App.css';
 
-const App = () =>  {
-  return (
+const App = () => (
     <Router>
-      <div>
+      <Fragment>
         <Nav />
         <Switch>
-          <Route exact path="/" component={Login} />
-          <Route exact path="/dashboard" component={Dashboard}/>
-          <Route exact path="/chat" component={Chat}/>
-          <Route exact path="/profile" component={Profile}/>
-          <Route component={NoMatch} />
+          <Route exact path="/" component={Landing} />
+          <Route component={Routes} />
         </Switch>
-      </div>
+      </Fragment>
     </Router>
-  );
-}
-
+); 
 export default App;
+
+
