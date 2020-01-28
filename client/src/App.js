@@ -1,28 +1,39 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Login from "./pages/Login"
-import Dashboard from "./pages/Dashboard"
-import Chat from "./pages/Chat"
-import Profile from "./pages/Profile"
-import NoMatch from "./pages/NoMatch"
-import Nav from "./components/navbar/Nav"
+import React, { Fragment, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Landing from './pages/Landing';
+import Nav from './components/navbar/Nav';
+import Footer from './components/footer/Footer';
+import Routes from './routing/Routes';
 import './App.css';
 
-const App = () =>  {
-  return (
-    <Router>
-      <div>
-        <Nav />
-        <Switch>
-          <Route exact path="/" component={Login} />
-          <Route exact path="/dashboard" component={Dashboard}/>
-          <Route exact path="/chat" component={Chat}/>
-          <Route exact path="/profile" component={Profile}/>
-          <Route component={NoMatch} />
-        </Switch>
-      </div>
-    </Router>
-  );
+// Redux
+import { Provider } from 'react-redux';
+import store from './store';
+import { loadUser } from './actions/Auth';
+import setAuthToken from './utils/setAuthToken';
+
+if (localStorage.token) {
+  setAuthToken(localStorage.token);
 }
 
+const App = () => {
+  useEffect(() => {
+    store.dispatch(loadUser());
+  }, []);
+
+  return (
+    <Provider store={store}>
+      <Router>
+        <Fragment>
+          <Nav />
+          <Switch>
+            <Route exact path='/' component={Landing} />
+            <Route component={Routes} />
+          </Switch>
+          <Footer />
+        </Fragment>
+      </Router>
+    </Provider>
+  );
+};
 export default App;
