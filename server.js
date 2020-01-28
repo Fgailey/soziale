@@ -7,6 +7,7 @@ connectDB();
 
 const PORT = process.env.PORT || 5000;
 const app = express();
+const socket = require('socket.io')
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -24,6 +25,27 @@ if (process.env.NODE_ENV === "production") {
 app.use('/users', require('./routes/users'));
 app.use('/auth', require('./routes/auth'));
 
-app.listen(PORT, () => {
+let server = app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
 });
+
+const io = socket(server);
+
+io.on('connection', (socket) => {
+  console.log('made socket connection', socket.id)
+
+  socket.on('chat', function (data) {
+    io.sockets.emit('chat', data);
+    console.log('chat data: ' + data.message)
+  });
+
+  socket.on('typing', function (data) {
+    socket.broadcast.emit('typing', data)
+    // console.log('working')
+  })
+
+  socket.on('user image', function (msg) {
+    //Received an image: broadcast to all
+    socket.broadcast.emit('user image', socket.nickname, msg);
+  });
+})
