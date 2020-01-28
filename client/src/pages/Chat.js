@@ -4,6 +4,9 @@ const Chat = () => {
   return (
     <div>
         <span>Chat Page </span>
+        <div>
+          <Layout title="Chat App" />
+        </div>
     </div>
   );
 }
