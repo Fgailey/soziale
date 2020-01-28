@@ -3,6 +3,7 @@ import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { login } from '../actions/Auth';
+import Alert from './Alert';
 
 const Login = ({ login, isAuthenticated }) => {
   const [formData, setFormData] = useState({
@@ -34,6 +35,7 @@ const Login = ({ login, isAuthenticated }) => {
             action='#!'
             onSubmit={e => onSubmit(e)}
           >
+            <Alert />
             <p className='h4 mb-4'>Sign in</p>
             {/* Email */}
             <input
@@ -44,7 +46,7 @@ const Login = ({ login, isAuthenticated }) => {
               name='email'
               value={email}
               onChange={e => onChange(e)}
-              required
+              // required
             />
             {/* Password */}
             <input
@@ -55,30 +57,8 @@ const Login = ({ login, isAuthenticated }) => {
               name='password'
               value={password}
               onChange={e => onChange(e)}
-              minLength='6'
+              // minLength='6'
             />
-            <div className='d-flex justify-content-around'>
-              <div>
-                {/* Remember me */}
-                <div className='custom-control custom-checkbox'>
-                  <input
-                    type='checkbox'
-                    className='custom-control-input'
-                    id='defaultLoginFormRemember'
-                  />
-                  <label
-                    className='custom-control-label'
-                    htmlFor='defaultLoginFormRemember'
-                  >
-                    Remember me
-                  </label>
-                </div>
-              </div>
-              <div>
-                {/* Forgot password */}
-                <a href='/'>Forgot password?</a>
-              </div>
-            </div>
             {/* Sign in button */}
             <button className='btn btn-info btn-block my-4' type='submit'>
               Sign in
@@ -86,7 +66,7 @@ const Login = ({ login, isAuthenticated }) => {
             {/* Register */}
             <p>
               Not a member?
-              <Link to='/register'>Register</Link>
+              <Link to='/register'> Register</Link>
             </p>
           </form>
           {/* Default form login */}
@@ -105,7 +85,4 @@ const mapStateToProps = state => ({
   isAuthenticated: state.auth.isAuthenticated
 });
 
-export default connect(
-  mapStateToProps,
-  { login }
-)(Login);
+export default connect(mapStateToProps, { login })(Login);
