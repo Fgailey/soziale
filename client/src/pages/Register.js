@@ -102,20 +102,6 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
             >
               For your health
             </small>
-            {/* Newsletter */}
-            <div className='custom-control custom-checkbox'>
-              <input
-                type='checkbox'
-                className='custom-control-input'
-                id='defaultRegisterFormNewsletter'
-              />
-              <label
-                className='custom-control-label'
-                htmlFor='defaultRegisterFormNewsletter'
-              >
-                Subscribe to our newsletter
-              </label>
-            </div>
             {/* Sign up button */}
             <button className='btn btn-info my-4 btn-block' type='submit'>
               Register
