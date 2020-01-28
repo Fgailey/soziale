@@ -6,7 +6,7 @@ const Chat = () => {
     <div>
         <span>Chat Page </span>
         <div>
-          <Layout title="Chat App Baby" />
+          <Layout title="Chat App" />
         </div>
     </div>
   );
