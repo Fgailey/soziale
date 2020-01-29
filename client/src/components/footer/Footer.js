@@ -15,7 +15,7 @@ const Footer = () => {
             </p>
           </MDBCol>
           <MDBCol md='6'>
-            <h5 className='title'>Links</h5>
+            <h5 className='title'>Linkss</h5>
             <ul>
               <li className='list-unstyled'>
                 <a href='#!'>Link 1</a>
