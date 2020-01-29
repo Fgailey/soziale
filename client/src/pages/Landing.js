@@ -5,9 +5,9 @@ export const Landing = () => {
     <div>
       <div className='landing'>
         <div className='container pt-5 pb-5 text-center'>
-          <h1>Hello</h1> <br />
-          <h1>Welcome to Reach</h1> <br />
-          <h1>I love you</h1> <br />
+          <h1 className="font-weight-bold">Hello</h1> <br />
+          <h1 className="font-weight-bold">Welcome to Reach</h1> <br />
+          <h1 className="font-weight-bold">I love you</h1> <br />
           <iframe
             title="Intro Vid"
             width={560}
