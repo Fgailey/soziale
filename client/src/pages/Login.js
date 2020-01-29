@@ -27,49 +27,51 @@ const Login = ({ login, isAuthenticated }) => {
 
   return (
     <Fragment>
-      <div className='container mb-5 mt-5'>
-        <div className='card'>
-          {/* Default form login */}
-          <form
-            className='text-center border border-light p-5'
-            action='#!'
-            onSubmit={e => onSubmit(e)}
-          >
-            <Alert />
-            <p className='h4 mb-4'>Sign in</p>
-            {/* Email */}
-            <input
-              type='email'
-              id='defaultLoginFormEmail'
-              className='form-control mb-4'
-              placeholder='E-mail'
-              name='email'
-              value={email}
-              onChange={e => onChange(e)}
-              // required
-            />
-            {/* Password */}
-            <input
-              type='password'
-              id='defaultLoginFormPassword'
-              className='form-control mb-4'
-              placeholder='Password'
-              name='password'
-              value={password}
-              onChange={e => onChange(e)}
-              // minLength='6'
-            />
-            {/* Sign in button */}
-            <button className='btn btn-info btn-block my-4' type='submit'>
-              Sign in
-            </button>
-            {/* Register */}
-            <p>
-              Not a member?
-              <Link to='/register'> Register</Link>
-            </p>
-          </form>
-          {/* Default form login */}
+      <div className='lightWool py-5'>
+        <div className='container'>
+          <div className='card'>
+            {/* Default form login */}
+            <form
+              className='text-center border border-light p-5'
+              action='#!'
+              onSubmit={e => onSubmit(e)}
+            >
+              <Alert />
+              <p className='h4 mb-4'>Sign in</p>
+              {/* Email */}
+              <input
+                type='email'
+                id='defaultLoginFormEmail'
+                className='form-control mb-4'
+                placeholder='E-mail'
+                name='email'
+                value={email}
+                onChange={e => onChange(e)}
+                // required
+              />
+              {/* Password */}
+              <input
+                type='password'
+                id='defaultLoginFormPassword'
+                className='form-control mb-4'
+                placeholder='Password'
+                name='password'
+                value={password}
+                onChange={e => onChange(e)}
+                // minLength='6'
+              />
+              {/* Sign in button */}
+              <button className='btn btn-info btn-block my-4' type='submit'>
+                Sign in
+              </button>
+              {/* Register */}
+              <p>
+                Not a member?
+                <Link to='/register'> Register</Link>
+              </p>
+            </form>
+            {/* Default form login */}
+          </div>
         </div>
       </div>
     </Fragment>

@@ -34,80 +34,82 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
 
   return (
     <Fragment>
-      <div className='container mb-5 mt-5'>
-        <div className='card'>
-          {/* Default form register */}
-          <form
-            className='text-center border border-light p-5'
-            action='#!'
-            onSubmit={e => onSubmit(e)}
-          >
-            <Alert />
-            <p className='h4 mb-4'>New User</p>
-            {/* Name */}
-            <input
-              type='text'
-              id='defaultRegisterFormFirstName'
-              className='form-control mb-4'
-              placeholder='Name'
-              name='name'
-              value={name}
-              onChange={e => onChange(e)}
-              // required
-            />
-            {/* E-mail */}
-            <input
-              type='email'
-              id='defaultRegisterFormEmail'
-              className='form-control mb-4'
-              placeholder='E-mail'
-              name='email'
-              value={email}
-              onChange={e => onChange(e)}
-              // required
-            />
-            {/* Password */}
-            <input
-              type='password'
-              id='defaultRegisterFormPassword'
-              className='form-control'
-              placeholder='Password'
-              name='password'
-              value={password}
-              onChange={e => onChange(e)}
-              // minLength='6'
-              aria-describedby='defaultRegisterFormPasswordHelpBlock'
-            />
-            <small
-              id='defaultRegisterFormPasswordHelpBlock'
-              className='form-text text-muted mb-4'
+      <div className='lightWool py-5'>
+        <div className='container'>
+          <div className='card'>
+            {/* Default form register */}
+            <form
+              className='text-center border border-light p-5'
+              action='#!'
+              onSubmit={e => onSubmit(e)}
             >
-              At least 6 characters
-            </small>
-            {/* Password2 */}
-            <input
-              type='password'
-              id='defaultRegisterFormPassword'
-              className='form-control'
-              placeholder='Confirm Password'
-              name='password2'
-              value={password2}
-              onChange={e => onChange(e)}
-              // minLength='6'
-              aria-describedby='defaultRegisterFormPhoneHelpBlock'
-            />
-            <small
-              id='defaultRegisterFormPhoneHelpBlock'
-              className='form-text text-muted mb-4'
-            >
-              For your health
-            </small>
-            {/* Sign up button */}
-            <button className='btn btn-info my-4 btn-block' type='submit'>
-              Register
-            </button>
-          </form>
-          {/* Default form register */}
+              <Alert />
+              <p className='h4 mb-4'>New User</p>
+              {/* Name */}
+              <input
+                type='text'
+                id='defaultRegisterFormFirstName'
+                className='form-control mb-4'
+                placeholder='Name'
+                name='name'
+                value={name}
+                onChange={e => onChange(e)}
+                // required
+              />
+              {/* E-mail */}
+              <input
+                type='email'
+                id='defaultRegisterFormEmail'
+                className='form-control mb-4'
+                placeholder='E-mail'
+                name='email'
+                value={email}
+                onChange={e => onChange(e)}
+                // required
+              />
+              {/* Password */}
+              <input
+                type='password'
+                id='defaultRegisterFormPassword'
+                className='form-control'
+                placeholder='Password'
+                name='password'
+                value={password}
+                onChange={e => onChange(e)}
+                // minLength='6'
+                aria-describedby='defaultRegisterFormPasswordHelpBlock'
+              />
+              <small
+                id='defaultRegisterFormPasswordHelpBlock'
+                className='form-text text-muted mb-4'
+              >
+                At least 6 characters
+              </small>
+              {/* Password2 */}
+              <input
+                type='password'
+                id='defaultRegisterFormPassword'
+                className='form-control'
+                placeholder='Confirm Password'
+                name='password2'
+                value={password2}
+                onChange={e => onChange(e)}
+                // minLength='6'
+                aria-describedby='defaultRegisterFormPhoneHelpBlock'
+              />
+              <small
+                id='defaultRegisterFormPhoneHelpBlock'
+                className='form-text text-muted mb-4'
+              >
+                For your health
+              </small>
+              {/* Sign up button */}
+              <button className='btn btn-info my-4 btn-block' type='submit'>
+                Register
+              </button>
+            </form>
+            {/* Default form register */}
+          </div>
         </div>
       </div>
     </Fragment>
