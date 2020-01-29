@@ -1,24 +1,37 @@
 import React, { Component } from "react";
 import io from "socket.io-client"
 import moment from "moment"
+// import Message from "../components/message/Message"
+// import getChats from "../reducers/chat_reducer"
 // import Layout from '../components/layout/Layout'
 
 class Chat extends Component {
   state= {
     chatMessage: "",
+    output:""
 }
 
 componentDidMount() {
     let server = "http://localhost:5000";
 
-    this.socket = io(server);
+    // this.props.dispatch(getChats());
 
-    this.socket.on("Output Chat Message", messageFromBackEnd => {
-        console.log(messageFromBackEnd)
+    this.socket = io(server);
+    
+    this.socket.on("chat", data => {
+        let { output } = this.state
+        console.log(data)
+        // output = <Message incomingMessage={data.chatMessage} />
+        output = `${output} \n ${data.chatMessage}`
+        this.setState({output:output})
     })
 }
 
-hanleSearchChange =(e) => {
+// componentDidUpdate() {
+//   this.messagesEnd.scrollIntoView({ behavior: 'smooth' });
+// }
+
+handleSearchChange =(e) => {
     this.setState({
         chatMessage: e.target.value
     })
@@ -34,7 +47,7 @@ submitChatMessage = (e) => {
     let nowTime = moment();
     let type = "Image"
 
-    this.socket.emit("Input Chat Message", {
+    this.socket.emit("chat", {
         chatMessage,
         // userId,
         // userName,
@@ -50,8 +63,19 @@ render(){
     <div>
         <span>Chat Page </span>
         <div>
-          {/* <Layout title="Chat App" /> */}
-          
+          <div id="output">
+          {this.state.output}
+          </div>
+          <form onSubmit={this.submitChatMessage}>
+              <input 
+                id="message"
+                placeholder="Type here to message"
+                type="text"
+                value={this.state.chatMessage}
+                onChange={this.handleSearchChange}
+              />
+              <button type="submit" onClick={this.submitChatMessage} htmltype="submit">Submit</button>
+          </form>
         </div>
     </div>
   );

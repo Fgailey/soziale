@@ -9,6 +9,7 @@ export const Landing = () => {
           <h1>Welcome to Reach</h1> <br />
           <h1>I love you</h1> <br />
           <iframe
+            title="Intro Vid"
             width={560}
             height={315}
             src='https://youtube.com/embed/ZIFCWpn4qQ4'
