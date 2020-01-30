@@ -1,3 +1,5 @@
+// Exporting an object containing all of our models
+
 module.exports = {
-    userModel: require('./userModel')
-};
+    User: require("./user")
+  };
