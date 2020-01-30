@@ -19,9 +19,9 @@ html, body {
 }
 
 .rendererFullScreen {
-	left: 0px;
-	height: 400px;
-	width:400px;
+	/* left: 0px; */
+	height: 600px;
+	width:600px;
 }
 
 .hidden {
