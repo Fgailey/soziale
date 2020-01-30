@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 const config = require('config');
 
-// const db = config.get('mongoURI');
-const db = 'mongodb://localhost/reach_test';
+const db = config.get('mongoURI');
+// const db = 'mongodb://localhost/reach_test';
 
 const connectDB = async () => {
   try {
