@@ -58,11 +58,30 @@ submitChatMessage = (e) => {
     });
     this.setState({ chatMessage: "" }) 
 }
+
+
+
+
 render(){
   
   return (
     <div>
         <span>Chat Page </span>
+        
+
+        <VidyoConnector 
+                    host        = { host }
+                    token       = { token }
+                    resourceId  = { resourceId }
+                    displayName = { displayName }
+                    viewId             = { viewId }
+                    viewStyle          = { viewStyle }
+                    remoteParticipants = { remoteParticipants }
+                    logFileFilter      = { logFileFilter }
+                    logFileName        = { logFileName }
+                    userData           = { userData }
+                />
+
         <div>
           <div className="infinite-container" style={{ height: '500px', overflowY: 'scroll' }}>
               {this.props.chats && (
