@@ -16,7 +16,7 @@ const Nav = ({ auth: { isAuthenticated, loading }, logout }) => {
       <Link className='nav-item nav-link' to='/dashboard'>
         Dashboard
       </Link>
-      <a className='nav-item nav-link' onClick={logout} href='#!'>
+      <a className='nav-item nav-link' onClick={logout} href='/'>
         Log out
       </a>
     </Fragment>
