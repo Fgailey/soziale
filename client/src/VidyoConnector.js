@@ -323,7 +323,6 @@ class VidyoConnector extends Component {
             onToggle                 = { this.onEntranceToggle.bind(this) }
             onDataChanged            = { this.onEntranceDataChanged.bind(this) }
         />
-
         <Toolbar 
             clientVersion            = { this.state.clientVersion }
             connectionStatus         = { this.state.connectionStatus }
