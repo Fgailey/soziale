@@ -3,8 +3,11 @@ import './VidyoConnector.css';
 import EntranceForm from './components/vidyo/EntranceForm';
 import Toolbar from './components/vidyo/Toolbar';
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> working
 class VidyoConnector extends Component {
   constructor(props) {
     super(props);
@@ -35,7 +38,10 @@ class VidyoConnector extends Component {
 
     this.vidyoConnector = null;
     this.readyEventListener();
+<<<<<<< HEAD
     
+=======
+>>>>>>> working
   }
 
   createVidyoConnector(VC) {
@@ -326,8 +332,11 @@ class VidyoConnector extends Component {
             onToggle                 = { this.onEntranceToggle.bind(this) }
             onDataChanged            = { this.onEntranceDataChanged.bind(this) }
         />
+<<<<<<< HEAD
      
        
+=======
+>>>>>>> working
         <Toolbar 
             clientVersion            = { this.state.clientVersion }
             connectionStatus         = { this.state.connectionStatus }
