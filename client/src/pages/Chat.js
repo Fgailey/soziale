@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import io from "socket.io-client"
 import moment from "moment"
-// import Message from "../components/message/Message"
+import Message from "../components/message/Message"
 // import getChats from "../reducers/chat_reducer"
 // import Layout from '../components/layout/Layout'
 
 class Chat extends Component {
   state= {
     chatMessage: "",
-    output:""
+    output:[]
 }
 
 componentDidMount() {
@@ -21,9 +21,12 @@ componentDidMount() {
     this.socket.on("chat", data => {
         let { output } = this.state
         console.log(data)
+        console.log(output)
         // output = <Message incomingMessage={data.chatMessage} />
-        output = `${output} \n ${data.chatMessage}`
-        this.setState({output:output})
+        output.push(data)
+
+        let newOutput = output.map(x => <Message key={output.indexOf(x)} incomingMessage={x.chatMessage}/>)
+        this.setState({output:newOutput})
     })
 }
 
