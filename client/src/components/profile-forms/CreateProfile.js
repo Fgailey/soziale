@@ -1,8 +1,10 @@
 import React, { Fragment, useState } from 'react';
+import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { createProfile } from '../../actions/Profile';
 
-const CreateProfile = props => {
+const CreateProfile = ({ createProfile, history }) => {
   const [formData, setFormData] = useState({
     age: '',
     current_city: '',
@@ -26,6 +28,11 @@ const CreateProfile = props => {
   const onChange = e =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
+  const onSubmit = e => {
+    e.preventDefault();
+    createProfile(formData, history);
+  };
+
   return (
     <Fragment>
       <div className='text-center'>
@@ -34,7 +41,7 @@ const CreateProfile = props => {
           <i className='fas fa-user' /> Tell us how it be like...
         </p>
         <small>* = required field</small>
-        <form className='form'>
+        <form className='form' onSubmit={e => onSubmit(e)}>
           <small className='form-text'>Select Age*</small>
           <input
             type='number'
@@ -106,6 +113,8 @@ const CreateProfile = props => {
   );
 };
 
-CreateProfile.propTypes = {};
+CreateProfile.propTypes = {
+  createProfile: PropTypes.func.isRequired
+};
 
-export default CreateProfile;
+export default connect(null, { createProfile })(withRouter(CreateProfile));
