@@ -23,5 +23,5 @@ export const ADD_POST = 'ADD_POST';
 export const ADD_COMMENT = 'ADD_COMMENT';
 export const REMOVE_COMMENT = 'REMOVE_COMMENT';
 
-// export const GET_CHATS = 'get_chat';
-// export const AFTER_POST_MESSAGE = 'after_post_message';
+export const GET_CHATS = 'get_chat';
+export const AFTER_POST_MESSAGE = 'after_post_message';
