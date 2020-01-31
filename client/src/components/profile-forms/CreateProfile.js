@@ -44,6 +44,7 @@ const CreateProfile = ({ createProfile, history }) => {
         <form className='form' onSubmit={e => onSubmit(e)}>
           <small className='form-text'>Select Age*</small>
           <input
+            name='age'
             type='number'
             min={1}
             max={100}
@@ -65,7 +66,7 @@ const CreateProfile = ({ createProfile, history }) => {
             <input
               type='text'
               placeholder='Current City'
-              name='company'
+              name='current_city'
               value={current_city}
               onChange={e => onChange(e)}
             />
@@ -77,7 +78,7 @@ const CreateProfile = ({ createProfile, history }) => {
             <input
               type='text'
               placeholder='Hometown'
-              name='website'
+              name='from_city'
               value={from_city}
               onChange={e => onChange(e)}
             />
