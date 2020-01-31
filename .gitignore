@@ -1,5 +1,4 @@
 node_modules
 .DS_Store
 config/production.json
-
-default.json
+config/default.json
