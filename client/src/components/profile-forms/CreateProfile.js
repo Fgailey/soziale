@@ -81,7 +81,6 @@ const CreateProfile = props => {
             <textarea
               placeholder='A short bio of yourself'
               name='about_me'
-              defaultValue={''}
               value={about_me}
               onChange={e => onChange(e)}
             />
@@ -92,7 +91,6 @@ const CreateProfile = props => {
             <textarea
               placeholder='A short bio of yourself'
               name='interests'
-              defaultValue={''}
               value={interests}
               onChange={e => onChange(e)}
             />
