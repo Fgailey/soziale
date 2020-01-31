@@ -9,6 +9,10 @@ const ProfileSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
+  gender: {
+    type: String,
+    required: true
+  },
   current_city: {
     type: String,
     required: true
@@ -16,11 +20,11 @@ const ProfileSchema = new mongoose.Schema({
   from_city: {
     type: String
   },
-  birthday: {
-    type: Date,
-    required: true
-  },
-  interest: {
+  // birthday: {
+  //   type: Date
+  //   required: true
+  // },
+  interests: {
     type: [String]
   },
   date: {
