@@ -8,15 +8,6 @@ export const Landing = () => {
           <h1 className="font-weight-bold">Hello</h1> <br />
           <h1 className="font-weight-bold">Welcome to Reach</h1> <br />
           <h1 className="font-weight-bold">I love you</h1> <br />
-          <iframe
-            title="Intro Vid"
-            width={560}
-            height={315}
-            src='https://youtube.com/embed/ZIFCWpn4qQ4'
-            frameBorder={0}
-            allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
-            allowFullScreen
-          />
         </div>
       </div>
     </div>
