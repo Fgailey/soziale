@@ -8,23 +8,38 @@ const Nav = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
     <Fragment>
       <Link className='nav-item nav-link' to='/chat'>
-        <button type='button' class='btn btn-outline-black btn-sm waves-effect'>
-          <i class='fas fa-comments'></i> Chat
+        <button
+          type='button'
+          className='btn btn-outline-black btn-sm waves-effect'
+        >
+          <i className='fas fa-comments' />
+          Chat
         </button>
       </Link>
       <Link className='nav-item nav-link' to='/profile'>
-        <button type='button' class='btn btn-outline-black btn-sm waves-effect'>
-          <i class='fas fa-users'></i> Profile
+        <button
+          type='button'
+          className='btn btn-outline-black btn-sm waves-effect'
+        >
+          <i className='fas fa-users' />
+          Profile
         </button>
       </Link>
       <Link className='nav-item nav-link' to='/dashboard'>
-        <button type='button' class='btn btn-outline-black btn-sm waves-effect'>
-          <i class='fas fa-door-open'></i> Dashboard
+        <button
+          type='button'
+          className='btn btn-outline-black btn-sm waves-effect'
+        >
+          <i className='fas fa-door-open' />> Dashboard
         </button>
       </Link>
       <a className='nav-item nav-link' onClick={logout} href='/'>
-        <button type='button' class='btn btn-outline-black btn-sm waves-effect'>
-          <i class='fas fa-sign-out-alt'></i> Log out
+        <button
+          type='button'
+          className='btn btn-outline-black btn-sm waves-effect'
+        >
+          <i className='fas fa-sign-out-alt' />
+          Log out
         </button>
       </a>
     </Fragment>
@@ -33,18 +48,30 @@ const Nav = ({ auth: { isAuthenticated, loading }, logout }) => {
   const guestLinks = (
     <Fragment>
       <Link className='nav-item nav-link' to='/profile'>
-        <button type='button' class='btn btn-outline-black btn-sm waves-effect'>
-          <i class='fas fa-users'></i> Profile
+        <button
+          type='button'
+          className='btn btn-outline-black btn-sm waves-effect'
+        >
+          <i className='fas fa-users' />
+          Profile
         </button>
       </Link>
       <Link className='nav-item nav-link' to='/login'>
-        <button type='button' class='btn btn-outline-black btn-sm waves-effect'>
-          <i class='fas fa-sign-in-alt'></i> Login
+        <button
+          type='button'
+          className='btn btn-outline-black btn-sm waves-effect'
+        >
+          <i className='fas fa-sign-in-alt' />
+          Login
         </button>
       </Link>
       <Link className='nav-item nav-link' to='/register'>
-        <button type='button' class='btn btn-outline-black btn-sm waves-effect'>
-          <i class='fas fa-user-plus'></i> Register
+        <button
+          type='button'
+          className='btn btn-outline-black btn-sm waves-effect'
+        >
+          <i className='fas fa-user-plus' />
+          Register
         </button>
       </Link>
     </Fragment>
@@ -54,7 +81,7 @@ const Nav = ({ auth: { isAuthenticated, loading }, logout }) => {
     <Fragment>
       <nav className='navbar navbar-expand-lg navbar-light aqua-gradient'>
         <Link className='navbar-brand font-weight-bold reachLogo' to='/'>
-          <i class='fas fa-share'></i>
+          <i className='fas fa-share' />
           Reach
         </Link>
         <button
@@ -73,9 +100,10 @@ const Nav = ({ auth: { isAuthenticated, loading }, logout }) => {
             <Link className='nav-item nav-link active' to='/'>
               <button
                 type='button'
-                class='btn btn-outline-black btn-sm waves-effect'
+                className='btn btn-outline-black btn-sm waves-effect'
               >
-                <i class='fas fa-home'></i> Home
+                <i className='fas fa-home' />
+                Home
               </button>{' '}
               <span className='sr-only'>current</span>
             </Link>
