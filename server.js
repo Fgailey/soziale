@@ -66,15 +66,7 @@ io.on('connection', socket => {
     })
    })
 
-  //             return io.emit("Output Chat Message", doc);
-  //         })
-  //       })
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // })
-  //  })
-});
+})
 
 server.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
