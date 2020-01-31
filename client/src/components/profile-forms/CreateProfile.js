@@ -3,6 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createProfile } from '../../actions/Profile';
+import Alert from '../../pages/Alert';
 
 const CreateProfile = ({ createProfile, history }) => {
   const [formData, setFormData] = useState({
@@ -40,6 +41,7 @@ const CreateProfile = ({ createProfile, history }) => {
         <p className='lead'>
           <i className='fas fa-user' /> Tell us how it be like...
         </p>
+        <Alert />
         <small>* = required field</small>
         <form className='form' onSubmit={e => onSubmit(e)}>
           <small className='form-text'>Select Age*</small>
