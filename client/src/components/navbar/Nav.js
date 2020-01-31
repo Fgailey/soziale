@@ -8,16 +8,24 @@ const Nav = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
     <Fragment>
       <Link className='nav-item nav-link' to='/chat'>
-        Chat
+        <button type='button' class='btn btn-outline-black btn-sm waves-effect'>
+          <i class='fas fa-comments'></i> Chat
+        </button>
       </Link>
       <Link className='nav-item nav-link' to='/profile'>
-        Profile
+        <button type='button' class='btn btn-outline-black btn-sm waves-effect'>
+          <i class='fas fa-users'></i> Profile
+        </button>
       </Link>
       <Link className='nav-item nav-link' to='/dashboard'>
-        Dashboard
+        <button type='button' class='btn btn-outline-black btn-sm waves-effect'>
+          <i class='fas fa-door-open'></i> Dashboard
+        </button>
       </Link>
       <a className='nav-item nav-link' onClick={logout} href='/'>
-        Log out
+        <button type='button' class='btn btn-outline-black btn-sm waves-effect'>
+          <i class='fas fa-sign-out-alt'></i> Log out
+        </button>
       </a>
     </Fragment>
   );
@@ -25,21 +33,28 @@ const Nav = ({ auth: { isAuthenticated, loading }, logout }) => {
   const guestLinks = (
     <Fragment>
       <Link className='nav-item nav-link' to='/profile'>
-        Profile
+        <button type='button' class='btn btn-outline-black btn-sm waves-effect'>
+          <i class='fas fa-users'></i> Profile
+        </button>
       </Link>
       <Link className='nav-item nav-link' to='/login'>
-        Login
+        <button type='button' class='btn btn-outline-black btn-sm waves-effect'>
+          <i class='fas fa-sign-in-alt'></i> Login
+        </button>
       </Link>
       <Link className='nav-item nav-link' to='/register'>
-        Register
+        <button type='button' class='btn btn-outline-black btn-sm waves-effect'>
+          <i class='fas fa-user-plus'></i> Register
+        </button>
       </Link>
     </Fragment>
   );
 
   return (
     <Fragment>
-      <nav className='navbar navbar-expand-lg navbar-dark sticky-top font-weight-bold blue-gradient'>
-        <Link className='navbar-brand' to='/'>
+      <nav className='navbar navbar-expand-lg navbar-light aqua-gradient'>
+        <Link className='navbar-brand font-weight-bold reachLogo' to='/'>
+          <i class='fas fa-share'></i>
           Reach
         </Link>
         <button
@@ -56,7 +71,13 @@ const Nav = ({ auth: { isAuthenticated, loading }, logout }) => {
         <div className='collapse navbar-collapse' id='navbarNavAltMarkup'>
           <div className='navbar-nav'>
             <Link className='nav-item nav-link active' to='/'>
-              Home <span className='sr-only'>current</span>
+              <button
+                type='button'
+                class='btn btn-outline-black btn-sm waves-effect'
+              >
+                <i class='fas fa-home'></i> Home
+              </button>{' '}
+              <span className='sr-only'>current</span>
             </Link>
             {!loading && (
               <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>
