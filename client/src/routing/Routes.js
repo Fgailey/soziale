@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import Login from '../pages/Login';
 import Register from '../pages/Register';
 import Dashboard from '../pages/dashboard/Dashboard';
+import CreateProfile from '../components/profile-forms/CreateProfile';
 import Chat from '../pages/Chat';
 import Profile from '../pages/Profile';
 import NoMatch from '../pages/NoMatch';
@@ -15,6 +16,7 @@ const Routes = () => (
       <Route exact path='/login' component={Login} />
       <Route exact path='/chat' component={Chat} />
       <PrivateRoute exact path='/dashboard' component={Dashboard} />
+      <PrivateRoute exact path='/create-profile' component={CreateProfile} />
       <Route exact path='/profile' component={Profile} />
       <Route component={NoMatch} />
     </Switch>
