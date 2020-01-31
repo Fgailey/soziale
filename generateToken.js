@@ -11,6 +11,9 @@ fs = require('fs');
 const commandLineArgs = require('command-line-args');
 var tokenGenerated = false;
 var vCardFileSpecified = false;
+const config = require('config');
+var key = config.get('key')
+var appID = config.get('appID')
 
 const optionDefinitions = [{
     name: 'key',
@@ -37,7 +40,13 @@ const optionDefinitions = [{
     type: String
 }];
 
-const options = commandLineArgs(optionDefinitions);
+// const options = commandLineArgs(optionDefinitions);
+const options={
+key: key,
+appID: appID,
+userName: "room1",
+expiresInSecs: 10000
+}
 
 function printHelp() {
     console.log("\nThis script will generate a provision login token from a developer key" +
@@ -49,7 +58,7 @@ function printHelp() {
         "\n\t--expiresInSecs Number of seconds the token will be valid can be used instead of expiresAt" +
         "\n\t--expiresAt     Time at which the token will expire ex: (2055-10-27T10:54:22Z) can be used instead of expiresInSecs" +
         "\n");
-    process.exit();
+    // process.exit();
 }
 
 if ((typeof options.help !== 'undefined') || (typeof options.key == 'undefined') || (typeof options.appID == 'undefined') || (typeof options.userName == 'undefined')) {
@@ -74,17 +83,19 @@ function checkForVCardFileAndGenerateToken(key, appID, userName, expiresInSecond
     }
 }
 
-function generateToken(key, appID, userName, expiresInSeconds, vCard) {
+function generateToken( userName, expiresInSeconds, vCard) {
     var EPOCH_SECONDS = 62167219200;
     var expires = Math.floor(Date.now() / 1000) + expiresInSeconds + EPOCH_SECONDS;
     var shaObj = new jsSHA("SHA-384", "TEXT");
-    shaObj.setHMACKey(key, "TEXT");
-    jid = userName + '@' + appID;
+    shaObj.setHMACKey(options.key, "TEXT");
+    jid = userName + '@' + options.appID;
     var body = 'provision' + '\x00' + jid + '\x00' + expires + '\x00' + vCard;
     shaObj.update(body);
     var mac = shaObj.getHMAC("HEX");
     var serialized = body + '\0' + mac;
     console.log("\nGenerated Token: \n" + btoa(serialized));
+
+    return btoa(serialized);
 }
 
 //Date is in the format: "October 13, 2014 11:13:00"
@@ -121,3 +132,5 @@ if (typeof options.expiresInSecs !== 'undefined') {
 } else {
     console.log("Error: Neither expiresInSecs or expiresAt parameters passed in");
 }
+
+module.exports = generateToken;
