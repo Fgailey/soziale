@@ -19,6 +19,7 @@
     "nodemon": "^1.18.7"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "bcryptjs": "^2.4.3",
     "bufferutil": "^4.0.1",
     "btoa": "^1.2.1",

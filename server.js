@@ -1,6 +1,11 @@
-const express = require('express');
-const path = require('path');
+const express = require("express");
+const path = require("path");
+var axios = require("axios");
 const connectDB = require('./config/db');
+// var vidyoToken = require('./generateToken')
+// var vidyoToken = require('./generateToken')
+
+// console.log('thissssss',vidyoToken)
 
 // Connect Database
 connectDB();
@@ -36,6 +41,11 @@ app.use('/auth', require('./routes/auth'));
 app.use('/profile', require('./routes/profile'));
 app.use('/posts', require('./routes/posts'));
 app.use('/chat', require('./routes/chat'));
+app.use('/vidyoToken', require('./routes/vidyoToken'));
+
+
+
+
 
 //Define Models here
 const { Chat } = require("./models/Chat");
