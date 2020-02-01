@@ -4,6 +4,15 @@ import moment from "moment"
 import Layout from '../components/layout/Layout'
 import {getChats, afterPostMessage} from "../actions/Chat_action"
 import {connect} from "react-redux"
+import VidyoConnector  from './vidyo'
+
+
+
+
+// import Message from "../components/message/Message"
+// import getChats from "../reducers/chat_reducer"
+// import Layout from '../components/layout/Layout'
+
 class Chat extends Component {
   state= {
     chatMessage: ""
@@ -24,6 +33,7 @@ class Chat extends Component {
 
         this.props.dispatch(afterPostMessage(messageFromBackEnd));
     })
+  
 }
 
 handleSearchChange =(e) => {
@@ -69,18 +79,7 @@ render(){
         <span>Chat Page </span>
         
 
-        <VidyoConnector 
-                    host        = { host }
-                    token       = { token }
-                    resourceId  = { resourceId }
-                    displayName = { displayName }
-                    viewId             = { viewId }
-                    viewStyle          = { viewStyle }
-                    remoteParticipants = { remoteParticipants }
-                    logFileFilter      = { logFileFilter }
-                    logFileName        = { logFileName }
-                    userData           = { userData }
-                />
+        <VidyoConnector/>
 
         <div>
           <div className="infinite-container" style={{ height: '500px', overflowY: 'scroll' }}>

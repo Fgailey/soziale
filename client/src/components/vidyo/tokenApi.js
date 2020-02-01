@@ -1,5 +1,4 @@
 
-// import axios from 'axios'; 
 // // var axios = require ("axios")
 
 
@@ -31,30 +30,45 @@
 //           console.log(error.config);
 //         }
 //       );
+
+
+
+
+
+
  
 import React from 'react';
 
 import axios from 'axios';
 
-export default class PersonList extends React.Component {
-  state = {
-    tokenss: []
-  }
+// var axios = require ("axios")
 
-  componentDidMount() {
+export default class PersonList extends React.Component {
+  constructor() {
+     let state = {
+    tokenss: "yooooooooo"
+  }
+  console.log (state)
+  }
+  
+
+  componentDidMount = () => {
     axios.get(`http://localhost:5000/vidyoToken/getToken`)
-      .then(res => {
-        const tokenss = res.data.token;
-        this.setState({ tokenss });
+      .then((res) => {
+        console.log(res.data.token) ;
+        // this.setState({ tokenss:tokenss });
+        
       })
   }
-
+ 
   render() {
     return (
+       
       <ul>
         { this.state.tokenss.map(person => <li>{person.name}</li>)}
+      
       </ul>
+
     )
   }
 }
-
