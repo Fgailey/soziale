@@ -39,7 +39,8 @@ const Nav = ({ auth: { isAuthenticated, loading }, logout }) => {
           type='button'
           className='btn btn-outline-black btn-sm waves-effect'
         >
-          <i className='fas fa-door-open mr-1' />> Dashboard
+          <i className='fas fa-door-open mr-1' />
+          Dashboard
         </button>
       </Link>
       <a className='nav-item nav-link' onClick={logout} href='/'>
