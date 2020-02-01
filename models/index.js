@@ -2,5 +2,6 @@
 
 module.exports = {
   User: require('./user'),
-  Profile: require('./Profile')
+  Profile: require('./Profile'),
+  Chat: require('./Chat')
 };
