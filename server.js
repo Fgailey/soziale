@@ -38,39 +38,17 @@ if (process.env.NODE_ENV === 'production') {
 // Define API routes here
 app.use('/users', require('./routes/users'));
 app.use('/auth', require('./routes/auth'));
-<<<<<<< HEAD
 app.use('/profile', require('./routes/profile'));
 app.use('/posts', require('./routes/posts'));
 
 // const { Chat } = require("./models/Chat");
-=======
 
 //Define Models here
 const { Chat } = require("./models/Chat");
->>>>>>> added mongoose connection
 
 io.on('connection', socket => {
   console.log('made socket connection', socket.id);
 
-<<<<<<< HEAD
-  socket.on('chat', data => {
-    io.sockets.emit('chat', data);
-    console.log('chat data: ' + data.chatMessage);
-    console.log('chat time: ' + data.nowTime);
-  });
-  // socket.on("Input Chat Message", msg => {
-
-  // connectDB.then(db => {
-  //   try {
-  //       let chat = new Chat({ message: msg.chatMessage, sender:msg.userID, type: msg.type })
-
-  //       chat.save((err, doc) => {
-  //         if(err) return res.json({ success: false, err })
-
-  //         Chat.find({ "_id": doc._id })
-  //         .populate("sender")
-  //         .exec((err, doc)=> {
-=======
   socket.on("Input Chat Message", msg => {
     
     connect.then(db => {
@@ -92,7 +70,6 @@ io.on('connection', socket => {
       }
     })
    })
->>>>>>> added mongoose connection
 
   //             return io.emit("Output Chat Message", doc);
   //         })
