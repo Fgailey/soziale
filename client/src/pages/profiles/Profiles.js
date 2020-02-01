@@ -4,8 +4,15 @@ import { connect } from 'react-redux';
 import Loader from '../loadingGif/Loader';
 import { getProfiles } from '../../actions/Profile';
 
-const Profiles = props => {
-  return <div></div>;
+const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
+  useEffect(() => {
+    getProfiles();
+  }, [getProfiles]);
+  return (
+    <Fragment>
+      <Loader />
+    </Fragment>
+  );
 };
 
 Profiles.propTypes = {
