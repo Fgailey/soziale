@@ -1,15 +1,17 @@
-import React, { Component } from "react";
+import React from "react";
 
 
-export class Layout extends Component {
+function Layout (props) {
 
-    render() {
         return(
             <div>
-                
+                <div>
+                    {/* <span>{console.log(props)}</span> */}
+                    <span>{props.sender.name}: </span>
+                    <span>{props.message}</span>
+                </div>
             </div>
         )
-    }
 }
 
 export default Layout;
