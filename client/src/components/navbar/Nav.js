@@ -16,13 +16,13 @@ const Nav = ({ auth: { isAuthenticated, loading }, logout }) => {
           Chat
         </button>
       </Link>
-      <Link className='nav-item nav-link' to='/profile'>
+      <Link className='nav-item nav-link' to='/profiles'>
         <button
           type='button'
           className='btn btn-outline-black btn-sm waves-effect'
         >
           <i className='fas fa-users mr-1' />
-          Profile
+          Profiles
         </button>
       </Link>
       <Link className='nav-item nav-link' to='/posts'>
@@ -57,13 +57,13 @@ const Nav = ({ auth: { isAuthenticated, loading }, logout }) => {
 
   const guestLinks = (
     <Fragment>
-      <Link className='nav-item nav-link' to='/profile'>
+      <Link className='nav-item nav-link' to='/profiles'>
         <button
           type='button'
           className='btn btn-outline-black btn-sm waves-effect'
         >
           <i className='fas fa-users mr-1' />
-          Profile
+          Profiles
         </button>
       </Link>
       <Link className='nav-item nav-link' to='/login'>
