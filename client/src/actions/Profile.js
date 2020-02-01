@@ -44,6 +44,25 @@ export const getProfiles = () => async dispatch => {
   }
 };
 
+//  Get profile by id
+export const getProfilesById = userId => async dispatch => {
+  // clear previous user's profile from DOM before dispatching GET_PROFILE on current user
+  dispatch({ type: CLEAR_PROFILE });
+  try {
+    const res = await axios.get(`/profile/user/${userId}`);
+
+    dispatch({
+      type: GET_PROFILE,
+      payload: res.data
+    });
+  } catch (err) {
+    dispatch({
+      type: PROFILE_ERROR,
+      payload: { msg: err.response.statusText, status: err.response.status }
+    });
+  }
+};
+
 // Create/Update profile
 export const createProfile = (
   formData,
