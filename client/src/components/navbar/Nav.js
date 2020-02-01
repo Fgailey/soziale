@@ -7,12 +7,12 @@ import { logout } from '../../actions/Auth';
 const Nav = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
     <Fragment>
-      <Link className='nav-item nav-link' to='/chat'>
+      <Link className='nav-item nav-link mr-1' to='/chat'>
         <button
           type='button'
           className='btn btn-outline-black btn-sm waves-effect'
         >
-          <i className='fas fa-comments' />
+          <i className='fas fa-comments mr-1' />
           Chat
         </button>
       </Link>
@@ -21,8 +21,17 @@ const Nav = ({ auth: { isAuthenticated, loading }, logout }) => {
           type='button'
           className='btn btn-outline-black btn-sm waves-effect'
         >
-          <i className='fas fa-users' />
+          <i className='fas fa-users mr-1' />
           Profile
+        </button>
+      </Link>
+      <Link className='nav-item nav-link' to='/posts'>
+        <button
+          type='button'
+          className='btn btn-outline-black btn-sm waves-effect'
+        >
+          <i className='fas fa-clipboard mr-1' />
+          Post
         </button>
       </Link>
       <Link className='nav-item nav-link' to='/dashboard'>
@@ -30,7 +39,7 @@ const Nav = ({ auth: { isAuthenticated, loading }, logout }) => {
           type='button'
           className='btn btn-outline-black btn-sm waves-effect'
         >
-          <i className='fas fa-door-open' />> Dashboard
+          <i className='fas fa-door-open mr-1' />> Dashboard
         </button>
       </Link>
       <a className='nav-item nav-link' onClick={logout} href='/'>
@@ -38,7 +47,7 @@ const Nav = ({ auth: { isAuthenticated, loading }, logout }) => {
           type='button'
           className='btn btn-outline-black btn-sm waves-effect'
         >
-          <i className='fas fa-sign-out-alt' />
+          <i className='fas fa-sign-out-alt mr-1' />
           Log out
         </button>
       </a>
@@ -52,7 +61,7 @@ const Nav = ({ auth: { isAuthenticated, loading }, logout }) => {
           type='button'
           className='btn btn-outline-black btn-sm waves-effect'
         >
-          <i className='fas fa-users' />
+          <i className='fas fa-users mr-1' />
           Profile
         </button>
       </Link>
@@ -61,7 +70,7 @@ const Nav = ({ auth: { isAuthenticated, loading }, logout }) => {
           type='button'
           className='btn btn-outline-black btn-sm waves-effect'
         >
-          <i className='fas fa-sign-in-alt' />
+          <i className='fas fa-sign-in-alt mr-1' />
           Login
         </button>
       </Link>
@@ -70,7 +79,7 @@ const Nav = ({ auth: { isAuthenticated, loading }, logout }) => {
           type='button'
           className='btn btn-outline-black btn-sm waves-effect'
         >
-          <i className='fas fa-user-plus' />
+          <i className='fas fa-user-plus mr-1' />
           Register
         </button>
       </Link>
@@ -102,7 +111,7 @@ const Nav = ({ auth: { isAuthenticated, loading }, logout }) => {
                 type='button'
                 className='btn btn-outline-black btn-sm waves-effect'
               >
-                <i className='fas fa-home' />
+                <i className='fas fa-home mr-1' />
                 Home
               </button>{' '}
               <span className='sr-only'>current</span>
