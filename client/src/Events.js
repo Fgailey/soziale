@@ -1,7 +1,0 @@
-// module.exports = {
-//     USER_CONNECTED: "USER_CONNECTED",
-//     MESSAGE_RECEIVED: "MESSAGE_RECEIVED",
-//     MESSAGE_SENT: "MESSAGE_SENT",
-//     LOGOUT: "LOGOUT",
-//     VERIFY_USER: "VERIFY_USER"
-// }
