@@ -25,6 +25,7 @@ if (process.env.NODE_ENV === 'production') {
 app.use('/users', require('./routes/users'));
 app.use('/auth', require('./routes/auth'));
 app.use('/profile', require('./routes/profile'));
+app.use('/posts', require('./routes/posts'));
 
 // const { Chat } = require("./models/Chat");
 
