@@ -2,6 +2,7 @@ import React, { Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Loader from '../loadingGif/Loader';
+import ProfileItem from './ProfileItem';
 import { getProfiles } from '../../actions/Profile';
 
 const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
@@ -10,10 +11,23 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
   }, [getProfiles]);
   return (
     <Fragment>
-      {loading ? <Loader /> : <Fragment />}
-
-      <h1>Profiles</h1>
-      <p>Make some friends, ya dummy!</p>
+      {loading ? (
+        <Loader />
+      ) : (
+        <Fragment>
+          <h1>User Profiles</h1>
+          <p>See what others are up to</p>
+          <div className='profiles-div'>
+            {profiles.length > 0 ? (
+              profiles.map(profile => (
+                <ProfileItem key={profile._id} profile={profile} />
+              ))
+            ) : (
+              <h4>No profiles found...</h4>
+            )}
+          </div>
+        </Fragment>
+      )}
     </Fragment>
   );
 };
