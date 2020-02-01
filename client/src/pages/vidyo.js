@@ -47,27 +47,18 @@ function getUrlParameterByName(name, _default = '') {
 
 
 class vidyo extends Component {
-  state= {
-    token:[""]
+   state= {
+    token:[]
 }
 
-vidyoToken() {
-  // axios.get(`http://localhost:5000/vidyoToken/getToken`)
-  //     .then(res => {
-  //      const token = (res.data.token) ;
-  //       this.setState({ token:token });
+componentDidMount() {
+  axios.get(`http://localhost:5000/vidyoToken/getToken`)
+      .then((res) => {
+       const token = (res.data.token) ;
+      //  console.log (res.data.token)
+        this.setState({ token:token});
       
-  //     })
-
-
-
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  next();
-});
-
-
-  
+      })
 }
 
 
@@ -77,13 +68,13 @@ app.use((req, res, next) => {
 render(){
 
   return (
-    <div onClick ={this.vidyoToken}>
-        
+   
+        <div>
         
 
         <VidyoConnector 
                     host        = { host }
-                    token       = { this.state.token }
+                    token       = {this.state.token}
                     resourceId  = { resourceId }
                     displayName = { displayName }
                     viewId             = { viewId }
