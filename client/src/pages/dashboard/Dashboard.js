@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getCurrentProfile } from '../../actions/Profile';
 import Loader from '../loadingGif/Loader';
+import Alert from '../Alert';
 
 const Dashboard = ({
   getCurrentProfile,
@@ -23,6 +24,7 @@ const Dashboard = ({
           <div className='card pl-5 pr-5 py-5'>
             {/* Logged in user greeting */}
             <h1>Welcome, {user && user.name}</h1>
+            <Alert />
 
             <div className='row mx-1'>
               <div className='col-lg-6 mb-4'>
