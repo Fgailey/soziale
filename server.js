@@ -3,10 +3,7 @@ const path = require("path");
 var axios = require("axios");
 const connectDB = require('./config/db');
 var cors = require('cors')
-// var vidyoToken = require('./generateToken')
-// var vidyoToken = require('./generateToken')
 
-// console.log('thissssss',vidyoToken)
 
 // Connect Database
 connectDB();
