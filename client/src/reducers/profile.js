@@ -42,13 +42,6 @@ export default function(state = initialState, action) {
       return {
         ...state,
         profile: null,
-        repos: [],
-        loading: false
-      };
-    case GET_REPOS:
-      return {
-        ...state,
-        repos: payload,
         loading: false
       };
     default:
