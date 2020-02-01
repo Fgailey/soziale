@@ -1,17 +1,10 @@
 import React, { Component } from "react";
-
-// import state from  '../components/vidyo/tokenApi'
-// import tokenss from '../components/vidyo/tokenApi';
 import '../index.css';
 import VidyoConnector from '../VidyoConnector';
 import registerServiceWorker from '../registerServiceWorker';
-
 import axios from 'axios';
 
 
-
-// console.log("dfdfdjhhdhdhdhdhdh",state)
-    
 
 const host              = getUrlParameterByName("host", "prod.vidyo.io");
 // const tokens             = this.state.token;
@@ -45,7 +38,6 @@ function getUrlParameterByName(name, _default = '') {
 }
 
 
-
 class vidyo extends Component {
    state= {
     token:""
@@ -54,20 +46,15 @@ class vidyo extends Component {
 componentDidMount() {
   axios.get(`http://localhost:5000/vidyoToken/getToken`)
       .then((res) => {
-      //  const token = res.data.token ;
-      //  console.log (res.data.token)
         this.setState({ token:res.data.token});
-      console.log("fire first")
       })
-}
-
-
+    }
 
   render () {
-    const {token } = this.state
+    const {token} = this.state
     return token.length > 0 ?     
 
-    <div>     
+       
    <VidyoConnector 
                 host        = { host }
                 token       = {this.state.token}
@@ -81,7 +68,7 @@ componentDidMount() {
                 userData           = { userData }
             />
 
-</div> : (
+ : (
       <span>Loading vidyo...</span>
     )
 
