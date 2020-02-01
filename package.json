@@ -21,10 +21,11 @@
   "dependencies": {
     "axios": "^0.19.2",
     "bcryptjs": "^2.4.3",
-    "bufferutil": "^4.0.1",
     "btoa": "^1.2.1",
+    "bufferutil": "^4.0.1",
     "command-line-args": "^5.1.1",
     "config": "^3.2.5",
+    "cors": "^2.8.5",
     "express": "^4.16.3",
     "express-validator": "^6.3.1",
     "if-env": "^1.0.4",

@@ -6,7 +6,7 @@ import '../index.css';
 import VidyoConnector from '../VidyoConnector';
 import registerServiceWorker from '../registerServiceWorker';
 
-// import axios from 'axios';
+import axios from 'axios';
 
 
 
@@ -14,7 +14,7 @@ import registerServiceWorker from '../registerServiceWorker';
     
 
 const host              = getUrlParameterByName("host", "prod.vidyo.io");
-const token             = "sokenss";
+// const token             = this.state.tokenss;
 const resourceId        = getUrlParameterByName("resourceId", "demoRoom");
 const displayName       = getUrlParameterByName("displayName", "Guest");
 const useNativeWebRTC   = getUrlParameterByName("useNativeWebRTC", true);
@@ -48,10 +48,24 @@ function getUrlParameterByName(name, _default = '') {
 
 class vidyo extends Component {
   state= {
-    tokenss:[]
+    token:[""]
 }
 
-componentDidMount() {
+vidyoToken() {
+  // axios.get(`http://localhost:5000/vidyoToken/getToken`)
+  //     .then(res => {
+  //      const token = (res.data.token) ;
+  //       this.setState({ token:token });
+      
+  //     })
+
+
+
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
+
 
   
 }
@@ -63,13 +77,13 @@ componentDidMount() {
 render(){
 
   return (
-    <div>
+    <div onClick ={this.vidyoToken}>
         
         
 
         <VidyoConnector 
                     host        = { host }
-                    token       = { token }
+                    token       = { this.state.token }
                     resourceId  = { resourceId }
                     displayName = { displayName }
                     viewId             = { viewId }
@@ -80,7 +94,7 @@ render(){
                     userData           = { userData }
                 />
 
-   
+{console.log('yooooooo', this.state.token)}
     </div>
   );
 }
