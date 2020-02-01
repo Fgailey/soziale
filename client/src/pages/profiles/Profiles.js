@@ -10,7 +10,10 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
   }, [getProfiles]);
   return (
     <Fragment>
-      <Loader />
+      {loading ? <Loader /> : <Fragment />}
+
+      <h1>Profiles</h1>
+      <p>Make some friends, ya dummy!</p>
     </Fragment>
   );
 };
