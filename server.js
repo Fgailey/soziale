@@ -37,7 +37,9 @@ app.use('/profile', require('./routes/profile'));
 app.use('/posts', require('./routes/posts'));
 app.use('/chat', require('./routes/chat'));
 
-// const { Chat } = require("./models/Chat");
+
+//Define Models here
+const { Chat } = require("./models/Chat");
 
 //Define Models here
 const { Chat } = require("./models/Chat");
