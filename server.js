@@ -34,6 +34,7 @@ if (process.env.NODE_ENV === 'production') {
 app.use('/users', require('./routes/users'));
 app.use('/auth', require('./routes/auth'));
 app.use('/profile', require('./routes/profile'));
+app.use('/chat', require('./routes/chat'));
 
 
 //Define Models here
@@ -73,7 +74,7 @@ io.on('connection', socket => {
   // })
   //  })
 });
-
+ 
 server.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
 });

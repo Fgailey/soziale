@@ -1,2 +1,2 @@
 
-export const CHAT_SERVER = '/api/chat';
+export const CHAT_SERVER = '/chat';
