@@ -37,13 +37,14 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // Define API routes here
+app.use(cors())
 app.use('/users', require('./routes/users'));
 app.use('/auth', require('./routes/auth'));
 app.use('/profile', require('./routes/profile'));
 app.use('/posts', require('./routes/posts'));
 app.use('/chat', require('./routes/chat'));
 app.use('/vidyoToken', require('./routes/vidyoToken'));
-app.use(cors())
+
 
 
 
