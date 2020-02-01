@@ -14,7 +14,7 @@ import axios from 'axios';
     
 
 const host              = getUrlParameterByName("host", "prod.vidyo.io");
-// const token             = this.state.tokenss;
+// const tokens             = this.state.token;
 const resourceId        = getUrlParameterByName("resourceId", "demoRoom");
 const displayName       = getUrlParameterByName("displayName", "Guest");
 const useNativeWebRTC   = getUrlParameterByName("useNativeWebRTC", true);
@@ -48,46 +48,43 @@ function getUrlParameterByName(name, _default = '') {
 
 class vidyo extends Component {
    state= {
-    token:[]
-}
+    token:""
+   }
 
 componentDidMount() {
   axios.get(`http://localhost:5000/vidyoToken/getToken`)
       .then((res) => {
-       const token = (res.data.token) ;
+      //  const token = res.data.token ;
       //  console.log (res.data.token)
-        this.setState({ token:token});
-      
+        this.setState({ token:res.data.token});
+      console.log("fire first")
       })
 }
 
 
 
+  render () {
+    const {token } = this.state
+    return token.length > 0 ?     
 
+    <div>     
+   <VidyoConnector 
+                host        = { host }
+                token       = {this.state.token}
+                resourceId  = { resourceId }
+                displayName = { displayName }
+                viewId             = { viewId }
+                viewStyle          = { viewStyle }
+                remoteParticipants = { remoteParticipants }
+                logFileFilter      = { logFileFilter }
+                logFileName        = { logFileName }
+                userData           = { userData }
+            />
 
-render(){
+</div> : (
+      <span>Loading vidyo...</span>
+    )
 
-  return (
-   
-        <div>
-        
-
-        <VidyoConnector 
-                    host        = { host }
-                    token       = {this.state.token}
-                    resourceId  = { resourceId }
-                    displayName = { displayName }
-                    viewId             = { viewId }
-                    viewStyle          = { viewStyle }
-                    remoteParticipants = { remoteParticipants }
-                    logFileFilter      = { logFileFilter }
-                    logFileName        = { logFileName }
-                    userData           = { userData }
-                />
-
-{console.log('yooooooo', this.state.token)}
-    </div>
-  );
 }
 }
 
