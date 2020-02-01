@@ -3,5 +3,6 @@
 module.exports = {
   User: require('./user'),
   Post: require('./post'),
-  Profile: require('./Profile')
+  Profile: require('./Profile'),
+  Chat: require('./Chat')
 };
