@@ -35,6 +35,7 @@ app.use('/users', require('./routes/users'));
 app.use('/auth', require('./routes/auth'));
 app.use('/profile', require('./routes/profile'));
 app.use('/posts', require('./routes/posts'));
+app.use('/chat', require('./routes/chat'));
 
 // const { Chat } = require("./models/Chat");
 
