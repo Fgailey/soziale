@@ -40,6 +40,12 @@ handleSearchChange =(e) => {
     })
 }
 
+// renderCards = () =>
+//         this.props.chats.chats
+//         && this.props.chats.chats.map((chat) => (
+//             <ChatCard key={chat._id}  {...chat} />
+//         ));
+
 submitChatMessage = (e) => {
     e.preventDefault();
 
@@ -63,14 +69,22 @@ submitChatMessage = (e) => {
     this.setState({ chatMessage: "" }) 
 }
 render(){
-
+ 
   return (
     <div>
         <span>Chat Page </span>
         <div>
-          <div id="output">
-          {this.state.output}
-          </div>
+          {/* <div className="infinite-container" style={{ height: '500px', overflowY: 'scroll' }}>
+              {this.props.chats && (
+                  this.renderCards()
+              )}
+              <div
+                  ref={el => {
+                      this.messagesEnd = el;
+                  }}
+                  style={{ float: "left", clear: "both" }}
+              />
+          </div> */}
           <form onSubmit={this.submitChatMessage}>
               <input 
                 id="message"
