@@ -27,7 +27,11 @@
     "if-env": "^1.0.4",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.8.9",
+<<<<<<< HEAD
     "request": "^2.88.0",
+=======
+    "opencv4nodejs": "^5.5.0",
+>>>>>>> attempting to edit output message state
     "socket.io": "^2.3.0",
     "socket.io-client": "^2.3.0",
     "utf-8-validate": "^5.0.2"
