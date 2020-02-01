@@ -2,12 +2,14 @@
     background: url('https://images.pexels.com/photos/196655/pexels-photo-196655.jpeg') no-repeat center center/cover;
     position: relative;
 }
-
 .lightWool {
     position: relative;
     background: url('https://www.toptal.com/designers/subtlepatterns/patterns/light_wool.png');
 }
-
 .reachLogo {
     font-size: 1.75rem;
+}
+.avatar {
+    height: 5rem;
+    width: 4rem;
 }
