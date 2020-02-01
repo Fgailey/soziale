@@ -3,8 +3,7 @@ import {
   PROFILE_ERROR,
   CLEAR_PROFILE,
   UPDATE_PROFILE,
-  GET_PROFILES,
-  GET_REPOS
+  GET_PROFILES
 } from '../actions/Types';
 
 const initialState = {
