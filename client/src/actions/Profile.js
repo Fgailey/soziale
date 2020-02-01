@@ -1,7 +1,12 @@
 import axios from 'axios';
 import { setAlert } from './Alert';
 
-import { GET_PROFILE, PROFILE_ERROR } from './Types';
+import {
+  GET_PROFILE,
+  PROFILE_ERROR,
+  GET_PROFILES,
+  CLEAR_PROFILE
+} from './Types';
 
 // Get logged in users profile
 export const getCurrentProfile = () => async dispatch => {
@@ -20,11 +25,29 @@ export const getCurrentProfile = () => async dispatch => {
   }
 };
 
-// Create/Update profile
+//Get all profiles
+export const getProfiles = () => async dispatch => {
+  // clear previous user's profile from DOM before dispatching GET_PROFILE on current user
+  dispatch({ type: CLEAR_PROFILE });
+  try {
+    const res = await axios.get('/profile');
 
-// history object has push() method to redirect to client side route
+    dispatch({
+      type: GET_PROFILES,
+      payload: res.data
+    });
+  } catch (err) {
+    dispatch({
+      type: PROFILE_ERROR,
+      payload: { msg: err.response.statusText, status: err.response.status }
+    });
+  }
+};
+
+// Create/Update profile
 export const createProfile = (
   formData,
+  // history object has push() method to redirect to client side route
   history,
   edit = false
 ) => async dispatch => {
