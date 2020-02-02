@@ -4,13 +4,17 @@ import moment from "moment"
 import Layout from '../components/layout/Layout'
 import {getChats, afterPostMessage} from "../actions/Chat_action"
 import {connect} from "react-redux"
+// import VidyoConnector  from './vidyo'
+
+
+
 class Chat extends Component {
   state= {
     chatMessage: ""
 }
 
   componentDidMount() {
-    let server = "http://localhost:5000/";
+    let server = "https://project3-reach.herokuapp.com/" || "http://localhost:5000/";
 
     //this call old chat messages from the mongo server
     this.props.dispatch(getChats());
@@ -24,6 +28,7 @@ class Chat extends Component {
 
         this.props.dispatch(afterPostMessage(messageFromBackEnd));
     })
+  
 }
 
 handleSearchChange =(e) => {
@@ -58,11 +63,19 @@ submitChatMessage = (e) => {
     });
     this.setState({ chatMessage: "" }) 
 }
+
+
+
+
 render(){
   
   return (
     <div>
         <span>Chat Page </span>
+        
+
+        {/* <VidyoConnector/> */}
+
         <div>
           <div className="infinite-container" style={{ height: '500px', overflowY: 'scroll' }}>
               {this.props.chats && (
