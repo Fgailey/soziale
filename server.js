@@ -6,6 +6,8 @@ var cors = require('cors');
 
 const app = express();
 
+const app = express();
+
 // Connect Database
 connectDB();
 
@@ -16,7 +18,6 @@ const io = require('socket.io')(server);
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json({ extended: false }));
-// Serve up static assets (usually on heroku)
 
 // Define API routes here
 app.use(cors());
