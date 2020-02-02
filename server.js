@@ -8,6 +8,8 @@ const app = express();
 
 const app = express();
 
+const app = express();
+
 // Connect Database
 connectDB();
 
