@@ -24,6 +24,13 @@ const Profile = ({
           <Link to='/profiles' className='btn'>
             Go back
           </Link>
+          {auth.isAuthenticated &&
+            auth.loading === false &&
+            auth.user._id === profile.user._id && (
+              <Link to='/edit-profile' className='btn'>
+                Edit Profile
+              </Link>
+            )}
           <div>
             <h2>{profile.user.name}</h2>
           </div>
