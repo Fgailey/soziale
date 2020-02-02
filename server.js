@@ -2,16 +2,25 @@ const express = require('express');
 const path = require('path');
 const connectDB = require('./config/db');
 
+const app = express();
+
 // Connect Database
 connectDB();
 
 const PORT = process.env.PORT || 5000;
-const app = express();
+
 const server = require('http').createServer(app);
 const io = require('socket.io')(server);
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json({ extended: false }));
+
+// Define API routes here
+app.use('/users', require('./routes/users'));
+app.use('/auth', require('./routes/auth'));
+app.use('/profile', require('./routes/profile'));
+app.use('/posts', require('./routes/posts'));
+
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
@@ -20,12 +29,6 @@ if (process.env.NODE_ENV === 'production') {
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
 }
-
-// Define API routes here
-app.use('/users', require('./routes/users'));
-app.use('/auth', require('./routes/auth'));
-app.use('/profile', require('./routes/profile'));
-app.use('/posts', require('./routes/posts'));
 
 // const { Chat } = require("./models/Chat");
 
