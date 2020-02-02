@@ -5,7 +5,7 @@ import Register from '../pages/Register';
 import Dashboard from '../pages/dashboard/Dashboard';
 import CreateProfile from '../components/profile-forms/CreateProfile';
 import Chat from '../pages/Chat';
-// import Profile from '../pages/Profile';
+import Profile from '../pages/profile/Profile';
 import Profiles from '../pages/profiles/Profiles';
 import NoMatch from '../pages/NoMatch';
 import Posts from '../components/posts/Posts';
@@ -24,7 +24,7 @@ const Routes = () => (
       <PrivateRoute exact path='/posts' component={Posts} />
       <PrivateRoute exact path='/posts/:id' component={Post} />
       <PrivateRoute exact path='/chat' component={Chat} />
-      {/* <Route exact path='/profile' component={Profile} /> */}
+      <Route exact path='/profile/:id' component={Profile} />
       <Route component={NoMatch} />
     </Switch>
   </Fragment>
