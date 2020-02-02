@@ -4,7 +4,7 @@ import moment from "moment"
 import Layout from '../components/layout/Layout'
 import {getChats, afterPostMessage} from "../actions/Chat_action"
 import {connect} from "react-redux"
-import VidyoConnector  from './vidyo'
+// import VidyoConnector  from './vidyo'
 
 
 
@@ -79,7 +79,7 @@ render(){
         <span>Chat Page </span>
         
 
-        <VidyoConnector/>
+        {/* <VidyoConnector/> */}
 
         <div>
           <div className="infinite-container" style={{ height: '500px', overflowY: 'scroll' }}>
