@@ -20,34 +20,20 @@ app.use('/users', require('./routes/users'));
 app.use('/auth', require('./routes/auth'));
 app.use('/profile', require('./routes/profile'));
 app.use('/posts', require('./routes/posts'));
+app.use('/chat', require('./routes/chat'));
 
 // Serve up static assets (usually on heroku)
 
-
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('client/build'));
-
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-  });
-}
 //Define Models here
 const { Chat } = require("./models/Chat");
 
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('client/build'));
-
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-  });
-}
 
 io.on('connection', socket => {
   console.log('made socket connection', socket.id);
 
   socket.on("Input Chat Message", msg => {
     
-    connectDB.then(db => {
+    //because there is an open serve the db does not need to be called again
       try {
           let chat = new Chat({ message: msg.chatMessage, sender:msg.userID, type: msg.type })
 
@@ -64,10 +50,18 @@ io.on('connection', socket => {
       } catch (error) {
         console.error(error);
       }
-    })
    })
 
 })
+
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
+}
 
 server.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
