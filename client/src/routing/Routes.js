@@ -4,6 +4,7 @@ import Login from '../pages/Login';
 import Register from '../pages/Register';
 import Dashboard from '../pages/dashboard/Dashboard';
 import CreateProfile from '../components/profile-forms/CreateProfile';
+import EditProfile from '../components/profile-forms/EditProfile';
 import Chat from '../pages/Chat';
 import Profile from '../pages/profile/Profile';
 import Profiles from '../pages/profiles/Profiles';
@@ -21,6 +22,7 @@ const Routes = () => (
       <Route exact path='/profiles' component={Profiles} />
       <PrivateRoute exact path='/dashboard' component={Dashboard} />
       <PrivateRoute exact path='/create-profile' component={CreateProfile} />
+      <PrivateRoute exact path='/edit-profile' component={EditProfile} />
       <PrivateRoute exact path='/posts' component={Posts} />
       <PrivateRoute exact path='/posts/:id' component={Post} />
       <PrivateRoute exact path='/chat' component={Chat} />
