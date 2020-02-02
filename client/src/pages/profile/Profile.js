@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Loader from '../loadingGif/Loader';
 import { getProfilesById } from '../../actions/Profile';
+import { Link } from 'react-router-dom';
 
 const Profile = ({
   getProfilesById,
@@ -20,7 +21,12 @@ const Profile = ({
         <Loader />
       ) : (
         <Fragment>
-          <h2>{profile.user.name}</h2>
+          <Link to='/profiles' className='btn'>
+            Go back
+          </Link>
+          <div>
+            <h2>{profile.user.name}</h2>
+          </div>
         </Fragment>
       )}
     </Fragment>
