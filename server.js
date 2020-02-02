@@ -17,19 +17,19 @@ const connect = mongoose.connect(config.mongoURI, { useNewUrlParser: true, useUn
   .then(() => console.log('MongoDB Connected...'))
   .catch(err => console.log(err));
 
+// Define API routes here
+app.use('/users', require('./routes/api/users'));
+app.use('/auth', require('./routes/api/auth'));
+app.use('/profile', require('./routes/api/profile'));
+app.use('/posts', require('./routes/api/posts'));
+app.use('/chat', require('./routes/api/chat'));
+
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json({ extended: false }));
 // Serve up static assets (usually on heroku)
 
-
-// Define API routes here
-app.use('/users', require('./routes/users'));
-app.use('/auth', require('./routes/auth'));
-app.use('/profile', require('./routes/profile'));
-app.use('/posts', require('./routes/posts'));
-app.use('/chat', require('./routes/chat'));
 
 //Define Models here
 const { Chat } = require("./models/Chat");
