@@ -58,7 +58,7 @@ const EditProfile = ({
   return (
     <Fragment>
       <div className='text-center'>
-        <h1 className='large text-primary'>Create Your Profile</h1>
+        <h1 className='large text-primary'>Edit Your Profile</h1>
         <p className='lead'>
           <i className='fas fa-user' /> Tell us how it be like...
         </p>
