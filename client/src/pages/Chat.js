@@ -8,11 +8,6 @@ import {connect} from "react-redux"
 
 
 
-
-// import Message from "../components/message/Message"
-// import getChats from "../reducers/chat_reducer"
-// import Layout from '../components/layout/Layout'
-
 class Chat extends Component {
   state= {
     chatMessage: ""
