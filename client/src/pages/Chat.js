@@ -31,6 +31,10 @@ class Chat extends Component {
   
 }
 
+componentDidUpdate() {
+  this.messagesEnd.scrollIntoView({ behavior: 'smooth' });
+}
+
 handleSearchChange =(e) => {
     this.setState({
         chatMessage: e.target.value
