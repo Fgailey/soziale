@@ -10,12 +10,6 @@ const app = express();
 const server = require('http').createServer(app)
 const io = require("socket.io")(server)
 
-const mongoose = require("mongoose");
-const config = require('./config/default.json')
-
-const connect = mongoose.connect(config.mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log('MongoDB Connected...'))
-  .catch(err => console.log(err));
 
 
 // Define middleware here
@@ -47,7 +41,7 @@ io.on('connection', socket => {
 
   socket.on("Input Chat Message", msg => {
     
-    connect.then(db => {
+    connectDB.then(db => {
       try {
           let chat = new Chat({ message: msg.chatMessage, sender:msg.userID, type: msg.type })
 
