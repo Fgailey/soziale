@@ -1,13 +1,13 @@
 import React, { Fragment, useState, useEffect } from 'react';
-import { Link, withRouter, Redirect } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createProfile, getCurrentProfile } from '../../actions/Profile';
 import Alert from '../../pages/Alert';
 
-const CreateProfile = ({
-  createProfile,
+const EditProfile = ({
   getCurrentProfile,
+  createProfile,
   profile: { profile, loading },
   history
 }) => {
@@ -20,6 +20,22 @@ const CreateProfile = ({
     gender: '',
     about_me: ''
   });
+
+  useEffect(() => {
+    getCurrentProfile();
+
+    setFormData({
+      age: !profile.age || loading ? '' : profile.age,
+      current_city:
+        !profile.current_city || loading ? '' : profile.current_city,
+      from_city: !profile.from_city || loading ? '' : profile.from_city,
+      // birthday: !profile.birthday || loading ? '' : profile.birthday,
+      interests:
+        !profile.interests || loading ? '' : profile.interests.join(','),
+      gender: !profile.gender || loading ? '' : profile.gender,
+      about_me: !profile.about_me || loading ? '' : profile.about_me
+    });
+  }, [loading, getCurrentProfile]);
 
   const {
     age,
@@ -36,15 +52,10 @@ const CreateProfile = ({
 
   const onSubmit = e => {
     e.preventDefault();
-    createProfile(formData, history);
+    createProfile(formData, history, true);
   };
-  useEffect(() => {
-    getCurrentProfile();
-  }, [getCurrentProfile]);
 
-  return loading && profile === null ? (
-    <Redirect to='/dashbaord' />
-  ) : (
+  return (
     <Fragment>
       <div className='text-center'>
         <h1 className='large text-primary'>Create Your Profile</h1>
@@ -126,7 +137,7 @@ const CreateProfile = ({
   );
 };
 
-CreateProfile.propTypes = {
+EditProfile.propTypes = {
   createProfile: PropTypes.func.isRequired,
   getCurrentProfile: PropTypes.func.isRequired,
   profile: PropTypes.object.isRequired
@@ -136,6 +147,6 @@ const mapStateToProps = state => ({
   profile: state.profile
 });
 
-export default connect(mapStateToProps, { createProfile, getCurrentProfile })(
-  withRouter(CreateProfile)
+export default connect(mapStateToProps, { getCurrentProfile, createProfile })(
+  withRouter(EditProfile)
 );
