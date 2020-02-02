@@ -10,7 +10,7 @@ class Chat extends Component {
 }
 
   componentDidMount() {
-    let server = "http://localhost:5000";
+    let server = "http://localhost:5000/";
 
     //this call old chat messages from the mongo server
     this.props.dispatch(getChats());
