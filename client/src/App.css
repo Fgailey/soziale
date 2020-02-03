@@ -15,6 +15,7 @@ body {
   height: 5rem;
   width: 5rem;
 }
+<<<<<<< HEAD
 .wrapper {
   display: flex !important;
   min-height: 100vh !important;
@@ -38,3 +39,9 @@ li {
   font-family: 'Bebas Neue', cursive;
   /* font-family: 'Baloo Bhai', cursive; */
 }
+=======
+
+/* .MDBModal {
+    height: 500px; 
+} */
+>>>>>>> vidyo modal

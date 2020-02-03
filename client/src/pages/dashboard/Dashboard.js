@@ -4,7 +4,12 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getCurrentProfile } from '../../actions/Profile';
 import Loader from '../loadingGif/Loader';
+<<<<<<< HEAD
 import Alert from '../Alert';
+=======
+import ModalPage from '../../components/modal/vidyoModal'
+import VidyoConnector  from '../vidyo'
+>>>>>>> vidyo modal
 
 const Dashboard = ({
   getCurrentProfile,
@@ -56,6 +61,26 @@ const Dashboard = ({
                     </Link>
                   </div>
                 </div>
+<<<<<<< HEAD
+=======
+                {/* Card */}
+                                                 <ModalPage/>
+                
+
+                {profile !== null ? (
+                  <Fragment>has profile</Fragment>
+                ) : (
+                  <Fragment>
+                    <div>
+                      <p>Your profile has not been created.. Yet!</p>
+                      <Link to='/create-profile' className='btn btn-green'>
+                        CREATE PROFILE
+                          
+                      </Link>
+                    </div>
+                  </Fragment>
+                )}
+>>>>>>> vidyo modal
               </div>
               {/* Card */}
 
