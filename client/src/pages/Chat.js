@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import React, { Component } from 'react';
-=======
 import React, { Component, Fragment } from 'react';
->>>>>>> styling
 import io from 'socket.io-client';
 import moment from 'moment';
 import Layout from '../components/layout/Layout';
@@ -31,13 +27,11 @@ class Chat extends Component {
       this.props.dispatch(afterPostMessage(messageFromBackEnd));
     });
   }
-<<<<<<< HEAD
 
 componentDidUpdate() {
   this.messagesEnd.scrollIntoView({ behavior: 'smooth' });
 }
-=======
->>>>>>> styling
+
 
   handleSearchChange = e => {
     this.setState({
