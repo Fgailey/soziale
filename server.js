@@ -26,8 +26,6 @@ app.use('/posts', require('./routes/posts'));
 app.use('/chat', require('./routes/chat'));
 app.use('/vidyoToken', require('./routes/vidyoToken'));
 
-// Serve up static assets (usually on heroku)
-
 //Define Models here
 const { Chat } = require('./models/Chat');
 
@@ -68,21 +66,4 @@ if (process.env.NODE_ENV === 'production') {
 server.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
 });
-// io.on('connection', (socket) => {
-//   console.log('made socket connection', socket.id)
 
-//   socket.on('chat', function (data) {
-//     io.sockets.emit('chat', data);
-//     console.log('chat data: ' + data.message)
-//   });
-
-//   socket.on('typing', function (data) {
-//     socket.broadcast.emit('typing', data)
-//     // console.log('working')
-//   })
-
-//   socket.on('user image', function (msg) {
-//     //Received an image: broadcast to all
-//     socket.broadcast.emit('user image', socket.nickname, msg);
-//   });
-// })

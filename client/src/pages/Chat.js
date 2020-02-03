@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import io from 'socket.io-client';
 import moment from 'moment';
 import Layout from '../components/layout/Layout';
@@ -27,6 +27,11 @@ class Chat extends Component {
       this.props.dispatch(afterPostMessage(messageFromBackEnd));
     });
   }
+
+componentDidUpdate() {
+  this.messagesEnd.scrollIntoView({ behavior: 'smooth' });
+}
+
 
   handleSearchChange = e => {
     this.setState({
@@ -61,43 +66,49 @@ class Chat extends Component {
 
   render() {
     return (
-      <div>
-        <span>Chat Page </span>
+      <Fragment>
+        <div className='lightWool py-5'>
+          <div className='container'>
+            <div className='card'>
+              <span className='text-center blue lighten-3'><h2>Chat Page</h2></span>
 
-        {/* <VidyoConnector/> */}
+              {/* <VidyoConnector/> */}
 
-        <div>
-          <div
-            className='infinite-container'
-            style={{ height: '500px', overflowY: 'scroll' }}
-          >
-            {this.props.chats && this.renderCards()}
-            <div
-              ref={el => {
-                this.messagesEnd = el;
-              }}
-              style={{ float: 'left', clear: 'both' }}
-            />
+              <div>
+                <div
+                  className='infinite-container'
+                  style={{ height: '500px', overflowY: 'scroll' }}
+                >
+                  {this.props.chats && this.renderCards()}
+                  <div
+                    ref={el => {
+                      this.messagesEnd = el;
+                    }}
+                    style={{ float: 'left', clear: 'both' }}
+                  />
+                </div>
+                <form>
+                  {/* <form onSubmit={this.submitChatMessage}> */}
+                  <input
+                    id='message'
+                    placeholder='Type here to message'
+                    type='text'
+                    value={this.state.chatMessage}
+                    onChange={this.handleSearchChange}
+                  />
+                  <button
+                    type='submit'
+                    onClick={this.submitChatMessage}
+                    htmltype='submit'
+                  >
+                    Submit
+                  </button>
+                </form>
+              </div>
+            </div>
           </div>
-          <form>
-            {/* <form onSubmit={this.submitChatMessage}> */}
-            <input
-              id='message'
-              placeholder='Type here to message'
-              type='text'
-              value={this.state.chatMessage}
-              onChange={this.handleSearchChange}
-            />
-            <button
-              type='submit'
-              onClick={this.submitChatMessage}
-              htmltype='submit'
-            >
-              Submit
-            </button>
-          </form>
         </div>
-      </div>
+      </Fragment>
     );
   }
 }
