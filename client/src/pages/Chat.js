@@ -28,7 +28,11 @@ class Chat extends Component {
     });
   }
 
-  handleSearchChange = e => {
+componentDidUpdate() {
+  this.messagesEnd.scrollIntoView({ behavior: 'smooth' });
+}
+
+handleSearchChange =(e) => {
     this.setState({
       chatMessage: e.target.value
     });
