@@ -17,7 +17,11 @@ const ProfileItem = ({
       <div className='card mx-5 my-5'>
         <div className='row'>
           <div className='profile-item col-4 ml-4'>
-            <img src={avatar} alt='' />
+            <img
+              className='img-thumbnail w-25 float-left'
+              src={avatar}
+              alt=''
+            />
             <div>
               <h2>{name}</h2>
               <p>Age: {age}</p>
