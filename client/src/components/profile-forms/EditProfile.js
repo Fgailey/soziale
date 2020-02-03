@@ -35,7 +35,7 @@ const EditProfile = ({
       gender: !profile.gender || loading ? '' : profile.gender,
       about_me: !profile.about_me || loading ? '' : profile.about_me
     });
-  }, [loading, getCurrentProfile]);
+  }, [loading, profile, getCurrentProfile]);
 
   const {
     age,
