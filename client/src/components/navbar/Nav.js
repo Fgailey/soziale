@@ -107,16 +107,6 @@ const Nav = ({ auth: { isAuthenticated, loading }, logout }) => {
         </button>
         <div className='collapse navbar-collapse' id='navbarNavAltMarkup'>
           <div className='navbar-nav'>
-            <Link className='nav-item nav-link active' to='/'>
-              <button
-                type='button'
-                className='btn btn-outline-black btn-sm waves-effect'
-              >
-                <i className='fas fa-home mr-1' />
-                Home
-              </button>{' '}
-              <span className='sr-only'>current</span>
-            </Link>
             {!loading && (
               <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>
             )}
