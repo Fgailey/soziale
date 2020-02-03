@@ -27,6 +27,9 @@ const ProfileSchema = new mongoose.Schema({
   interests: {
     type: [String]
   },
+  about_me: {
+    type: String
+  },
   date: {
     type: Date,
     default: Date.now
