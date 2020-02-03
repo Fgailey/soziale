@@ -26,6 +26,7 @@ const Routes = () => (
       <PrivateRoute exact path='/posts/:id' component={Post} />
       <PrivateRoute exact path='/chat' component={Chat} />
       <Route exact path='/profile/:id' component={Profile} />
+      <PrivateRoute exact path='/profile' component={Profile} />
       <Route component={NoMatch} />
     </Switch>
   </Fragment>
