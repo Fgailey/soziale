@@ -15,26 +15,28 @@ const ProfileItem = ({
   return (
     <div className='container'>
       <div className='card mx-5 my-5'>
-        <div className='profile-item col-4'>
-          <img src={avatar} alt='' />
-          <div>
-            <h2>{name}</h2>
-            <p>Age: {age}</p>
-            <p>Location: {current_city}</p>
+        <div className='row'>
+          <div className='profile-item col-4 ml-4'>
+            <img src={avatar} alt='' />
+            <div>
+              <h2>{name}</h2>
+              <p>Age: {age}</p>
+              <p>Location: {current_city}</p>
+            </div>
+          </div>
+
+          <div className='col-4'>
+            <ul>
+              {interests.slice(0, 4).map((interest, index) => (
+                <li key={index} className='text=primary'>
+                  {interest}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
-        <div className='col-4'>
-          <ul>
-            {interests.slice(0, 4).map((interest, index) => (
-              <li key={index} className='text=primary'>
-                {interest}
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <Link to={`/profile/${_id}`} className='btn btn-primary'>
+        <Link to={`/profile/${_id}`} className='btn btn-primary col-6'>
           View Profile
         </Link>
       </div>
