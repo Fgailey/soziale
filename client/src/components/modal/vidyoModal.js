@@ -9,11 +9,16 @@ export default class ModalPage extends Component {
             visible : false
         }
     }
+   
+    
+  
 
     openModal() {
         this.setState({
             visible : true
-        });
+          
+            
+        })
     }
 
     closeModal() {
@@ -28,11 +33,40 @@ export default class ModalPage extends Component {
                 <input type="button" value="Open" onClick={() => this.openModal()} />
                 <Modal visible={this.state.visible} width="90%" height="90%" effect="fadeInUp" onClickAway={() => this.closeModal()}>
                     <div>
-                        <VidyoConnector/>
+                    <VidyoConnector/>
                         <a href="javascript:void(0);" onClick={() => this.closeModal()}>Close</a>
                     </div>
                 </Modal>
             </div>
         );
     }
+
+
+    // render () {
+    //     const {visible} = this.state
+    //     return visible == true ?     
+    
+           
+    //     <div>
+              
+    //             <Modal visible={this.state.visible} width="90%" height="90%" effect="fadeInUp" onClickAway={() => this.closeModal()}>
+    //                 <div>
+                        
+    //                 <VidyoConnector />
+               
+    //                     <a href="javascript:void(0);" onClick={() => this.closeModal()}>Close</a>
+    //                  </div>
+    //           </Modal>
+    //         </div>
+    
+    //  : (
+        
+    //     <div>hey
+    //         <input type="button" value="Open" onClick={() => this.openModal()} />  
+    //     </div>
+        
+    //     )
+    
+    // }
+    
 }

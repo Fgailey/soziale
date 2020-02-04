@@ -5,11 +5,15 @@ import { connect } from 'react-redux';
 import { getCurrentProfile } from '../../actions/Profile';
 import Loader from '../loadingGif/Loader';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import Alert from '../Alert';
 =======
 import ModalPage from '../../components/modal/vidyoModal'
 import VidyoConnector  from '../vidyo'
 >>>>>>> vidyo modal
+=======
+
+>>>>>>> workin workin
 
 const Dashboard = ({
   getCurrentProfile,
@@ -31,6 +35,7 @@ const Dashboard = ({
           <h1>Welcome, {user && user.name}</h1>
           <Alert />
 
+<<<<<<< HEAD
           <div className='row mx-1'>
             <div className='col-lg-6 mb-4'>
               {/* Card */}
@@ -59,12 +64,46 @@ const Dashboard = ({
                     <Link to='#!' className='btn btn-pink'>
                       <i className='fas fa-clone left' /> View project
                     </Link>
+=======
+                
+
+            <div className='row mx-1'>
+              <div className='col-lg-6 mb-4'>
+                {/* Card */}
+                <div
+                  className='card card-image'
+                  style={{
+                    backgroundImage:
+                      'url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg)'
+                  }}
+                >
+                  {/* Content */}
+                  <div className='text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4'>
+                    <div>
+                      <h5 className='pink-text'>
+                        <i className='fas fa-chart-pie' /> Marketing
+                      </h5>
+                      <h3 className='card-title pt-2'>
+                        <strong>This is the card title</strong>
+                      </h3>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Repellat fugiat, laboriosam, voluptatem, optio
+                        vero odio nam sit officia accusamus minus error nisi
+                        architecto nulla ipsum dignissimos. Odit sed qui,
+                        dolorum!.
+                      </p>
+                      <Link to='#!' className='btn btn-pink'>
+                        <i className='fas fa-clone left' /> View project
+                      </Link>
+                    </div>
+>>>>>>> workin workin
                   </div>
                 </div>
 <<<<<<< HEAD
 =======
                 {/* Card */}
-                                                 <ModalPage/>
+                      
                 
 
                 {profile !== null ? (

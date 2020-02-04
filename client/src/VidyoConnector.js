@@ -333,10 +333,14 @@ class VidyoConnector extends Component {
             onDataChanged            = { this.onEntranceDataChanged.bind(this) }
         />
 <<<<<<< HEAD
+<<<<<<< HEAD
      
        
 =======
 >>>>>>> working
+=======
+       
+>>>>>>> workin workin
         <Toolbar 
             clientVersion            = { this.state.clientVersion }
             connectionStatus         = { this.state.connectionStatus }
