@@ -6,6 +6,7 @@ import { getCurrentProfile } from '../../actions/Profile';
 import Loader from '../loadingGif/Loader';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import Alert from '../Alert';
 =======
 import ModalPage from '../../components/modal/vidyoModal'
@@ -14,6 +15,9 @@ import VidyoConnector  from '../vidyo'
 =======
 
 >>>>>>> workin workin
+=======
+import ModalPage from '../../components/modal/vidyoModal'
+>>>>>>> struggles
 
 const Dashboard = ({
   getCurrentProfile,
@@ -35,6 +39,7 @@ const Dashboard = ({
           <h1>Welcome, {user && user.name}</h1>
           <Alert />
 
+<<<<<<< HEAD
 <<<<<<< HEAD
           <div className='row mx-1'>
             <div className='col-lg-6 mb-4'>
@@ -66,6 +71,9 @@ const Dashboard = ({
                     </Link>
 =======
                 
+=======
+                <ModalPage/>
+>>>>>>> struggles
 
             <div className='row mx-1'>
               <div className='col-lg-6 mb-4'>

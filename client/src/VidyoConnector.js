@@ -6,8 +6,11 @@ import Toolbar from './components/vidyo/Toolbar';
 <<<<<<< HEAD
 
 
+<<<<<<< HEAD
 =======
 >>>>>>> working
+=======
+>>>>>>> struggles
 class VidyoConnector extends Component {
   constructor(props) {
     super(props);
@@ -39,9 +42,13 @@ class VidyoConnector extends Component {
     this.vidyoConnector = null;
     this.readyEventListener();
 <<<<<<< HEAD
+<<<<<<< HEAD
     
 =======
 >>>>>>> working
+=======
+    
+>>>>>>> struggles
   }
 
   createVidyoConnector(VC) {
@@ -334,11 +341,15 @@ class VidyoConnector extends Component {
         />
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      
        
 =======
 >>>>>>> working
 =======
+=======
+     
+>>>>>>> struggles
        
 >>>>>>> workin workin
         <Toolbar 

@@ -34,6 +34,7 @@ function getUrlParameterByName(name, _default = '') {
   );
 }
 
+<<<<<<< HEAD
 class vidyo extends Component {
   state = {
     token: ''
@@ -84,3 +85,66 @@ class vidyo extends Component {
 }
 
 export default vidyo;
+=======
+
+class Vidyo extends Component {
+   state= {
+    token:""
+   }
+
+componentWillMount() {
+  axios.get(`http://localhost:5000/vidyoToken/getToken`)
+      .then((res) => {
+        this.setState({ token:res.data.token});
+      })
+    }
+
+  render () {
+    const {token} = this.state
+    return token.length > 0 ?     
+
+       
+   <VidyoConnector 
+                host        = { host }
+                token       = {this.state.token}
+                resourceId  = { resourceId }
+                displayName = { displayName }
+                viewId             = { viewId }
+                viewStyle          = { viewStyle }
+                remoteParticipants = { remoteParticipants }
+                logFileFilter      = { logFileFilter }
+                logFileName        = { logFileName }
+                userData           = { userData }
+            />
+
+ : (
+      <span>Loading vidyo...</span>
+    )
+
+}
+
+
+// render(){
+
+//   return(
+//     <VidyoConnector 
+//                     host        = { host }
+//                     token       = {this.state.token}
+//                     resourceId  = { resourceId }
+//                     displayName = { displayName }
+//                     viewId             = { viewId }
+//                     viewStyle          = { viewStyle }
+//                     remoteParticipants = { remoteParticipants }
+//                     logFileFilter      = { logFileFilter }
+//                     logFileName        = { logFileName }
+//                     userData           = { userData }
+//                 />
+//   )
+// }
+
+}
+
+
+
+export default Vidyo;
+>>>>>>> struggles
