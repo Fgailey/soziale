@@ -48,18 +48,20 @@ class vidyo extends Component {
   render() {
     return (
       <Fragment>
-        <VidyoConnector
-          host={host}
-          token={this.state.token}
-          resourceId={resourceId}
-          displayName={displayName}
-          viewId={viewId}
-          viewStyle={viewStyle}
-          remoteParticipants={remoteParticipants}
-          logFileFilter={logFileFilter}
-          logFileName={logFileName}
-          userData={userData}
-        />
+        <div className='container-fluid'>
+          <VidyoConnector
+            host={host}
+            token={this.state.token}
+            resourceId={resourceId}
+            displayName={displayName}
+            viewId={viewId}
+            viewStyle={viewStyle}
+            remoteParticipants={remoteParticipants}
+            logFileFilter={logFileFilter}
+            logFileName={logFileName}
+            userData={userData}
+          />
+        </div>
       </Fragment>
     );
   }
