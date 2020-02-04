@@ -3,6 +3,7 @@ const path = require('path');
 var axios = require('axios');
 const connectDB = require('./config/db');
 var cors = require('cors');
+const fileUpload = require('express-fileupload');
 
 const app = express();
 
@@ -19,12 +20,32 @@ app.use(express.json({ extended: false }));
 
 // Define API routes here
 app.use(cors());
+app.use(fileUpload());
 app.use('/users', require('./routes/users'));
 app.use('/auth', require('./routes/auth'));
 app.use('/profile', require('./routes/profile'));
 app.use('/posts', require('./routes/posts'));
 app.use('/chat', require('./routes/chat'));
 app.use('/vidyoToken', require('./routes/vidyoToken'));
+// app.use('/uploads', require('./routes/uploads'));
+
+// Upload Endpoint
+app.post('/upload', (req, res) => {
+  if (req.files === null) {
+    return res.status(400).json({ msg: 'No file uploaded' });
+  }
+
+  const file = req.files.file;
+
+  file.mv(`${__dirname}/client/public/uploads/${file.name}`, err => {
+    if (err) {
+      console.error(err);
+      return res.status(500).send(err);
+    }
+
+    res.json({ fileName: file.name, filePath: `/uploads/${file.name}` });
+  });
+});
 
 //Define Models here
 const { Chat } = require('./models/Chat');
