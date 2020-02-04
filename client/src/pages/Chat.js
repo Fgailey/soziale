@@ -28,10 +28,9 @@ class Chat extends Component {
     });
   }
 
-componentDidUpdate() {
-  this.messagesEnd.scrollIntoView({ behavior: 'smooth' });
-}
-
+  componentDidUpdate() {
+    this.messagesEnd.scrollIntoView({ behavior: 'smooth' });
+  }
 
   handleSearchChange = e => {
     this.setState({
@@ -67,44 +66,44 @@ componentDidUpdate() {
   render() {
     return (
       <Fragment>
-        <div className='lightWool py-5'>
-          <div className='container'>
-            <div className='card'>
-              <span className='text-center blue lighten-3'><h2>Chat Page</h2></span>
+        <div className='container my-5'>
+          <div className='card'>
+            <span className='text-center blue lighten-3'>
+              <h2>Chat Page</h2>
+            </span>
 
-              {/* <VidyoConnector/> */}
+            {/* <VidyoConnector/> */}
 
-              <div>
+            <div>
+              <div
+                className='infinite-container'
+                style={{ height: '500px', overflowY: 'scroll' }}
+              >
+                {this.props.chats && this.renderCards()}
                 <div
-                  className='infinite-container'
-                  style={{ height: '500px', overflowY: 'scroll' }}
-                >
-                  {this.props.chats && this.renderCards()}
-                  <div
-                    ref={el => {
-                      this.messagesEnd = el;
-                    }}
-                    style={{ float: 'left', clear: 'both' }}
-                  />
-                </div>
-                <form>
-                  {/* <form onSubmit={this.submitChatMessage}> */}
-                  <input
-                    id='message'
-                    placeholder='Type here to message'
-                    type='text'
-                    value={this.state.chatMessage}
-                    onChange={this.handleSearchChange}
-                  />
-                  <button
-                    type='submit'
-                    onClick={this.submitChatMessage}
-                    htmltype='submit'
-                  >
-                    Submit
-                  </button>
-                </form>
+                  ref={el => {
+                    this.messagesEnd = el;
+                  }}
+                  style={{ float: 'left', clear: 'both' }}
+                />
               </div>
+              <form>
+                {/* <form onSubmit={this.submitChatMessage}> */}
+                <input
+                  id='message'
+                  placeholder='Type here to message'
+                  type='text'
+                  value={this.state.chatMessage}
+                  onChange={this.handleSearchChange}
+                />
+                <button
+                  type='submit'
+                  onClick={this.submitChatMessage}
+                  htmltype='submit'
+                >
+                  Submit
+                </button>
+              </form>
             </div>
           </div>
         </div>

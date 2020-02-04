@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -8,9 +8,9 @@ export const Landing = ({ isAuthenticated }) => {
     return <Redirect to='/dashboard' />;
   }
   return (
-    <div>
+    <Fragment>
       <div className='landing'>
-        <div className='container pt-5 pb-5 text-center'>
+        <div className='container py-5 text-center'>
           <h1 className='font-weight-bold'>Hello</h1> <br />
           <h1 className='font-weight-bold'>Welcome to Reach</h1> <br />
           <h1 className='font-weight-bold'>I love you</h1> <br />
@@ -24,7 +24,7 @@ export const Landing = ({ isAuthenticated }) => {
           </Link>
         </div>
       </div>
-    </div>
+    </Fragment>
   );
 };
 

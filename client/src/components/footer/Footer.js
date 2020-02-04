@@ -17,16 +17,16 @@ const Footer = () => {
           <MDBCol md='6' className='pl-5 pr-5'>
             <h5 className='title'>Site Links</h5>
             <li className='list-unstyled'>
-              <Link to='#!'>
+              <a href='https://github.com/Fgailey/Reach'>
                 <MDBBtn outline color='primary' size='sm'>
                   Github
                 </MDBBtn>
-              </Link>
+              </a>
             </li>
             <li className='list-unstyled'>
-              <Link to='#!'>
+              <Link to='/picture'>
                 <MDBBtn outline color='primary' size='sm'>
-                  Other
+                  Picture Upload
                 </MDBBtn>
               </Link>
             </li>

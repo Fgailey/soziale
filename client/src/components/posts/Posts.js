@@ -15,19 +15,19 @@ const Posts = ({ getPosts, post: { posts, loading } }) => {
     <Spinner />
   ) : (
     <Fragment>
-      <div className='lightWool py-5'>
-        <div className='container'>
-          <div className='card p-5'>
-            <h1 className='text-center'><span className="badge badge-primary">Posts</span></h1>
-            <p className='lead'>
-              <i className='fas fa-user' /> Welcome to the community
-            </p>
-            <PostForm />
-            <div className='posts'>
-              {posts.map(post => (
-                <PostItem key={post._id} post={post} />
-              ))}
-            </div>
+      <div className='container my-5'>
+        <div className='card p-5'>
+          <h1 className='text-center'>
+            <span className='badge badge-primary'>Posts</span>
+          </h1>
+          <p className='lead'>
+            <i className='fas fa-user' /> Welcome to the community
+          </p>
+          <PostForm />
+          <div className='posts'>
+            {posts.map(post => (
+              <PostItem key={post._id} post={post} />
+            ))}
           </div>
         </div>
       </div>

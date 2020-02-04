@@ -4,6 +4,7 @@ import Landing from './pages/Landing';
 import Nav from './components/navbar/Nav';
 import Footer from './components/footer/Footer';
 import Routes from './routing/Routes';
+import Wrapper from './components/wrapper';
 import './App.css';
 
 // Redux
@@ -25,12 +26,14 @@ const App = () => {
     <Provider store={store}>
       <Router>
         <Fragment>
-          <Nav />
-          <Switch>
-            <Route exact path='/' component={Landing} />
-            <Route component={Routes} />
-          </Switch>
-          <Footer />
+          <Wrapper>
+            <Nav />
+            <Switch>
+              <Route exact path='/' component={Landing} />
+              <Route component={Routes} />
+            </Switch>
+            <Footer />
+          </Wrapper>
         </Fragment>
       </Router>
     </Provider>

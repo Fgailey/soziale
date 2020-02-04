@@ -16,6 +16,15 @@ const Nav = ({ auth: { isAuthenticated, loading }, logout }) => {
           Chat
         </button>
       </Link>
+      <Link className='nav-item nav-link mr-1' to='/video-chat'>
+        <button
+          type='button'
+          className='btn btn-outline-black btn-sm waves-effect'
+        >
+          <i className='fas fa-video mr-1' />
+          Video Chat
+        </button>
+      </Link>
       <Link className='nav-item nav-link' to='/profiles'>
         <button
           type='button'
@@ -57,15 +66,6 @@ const Nav = ({ auth: { isAuthenticated, loading }, logout }) => {
 
   const guestLinks = (
     <Fragment>
-      <Link className='nav-item nav-link' to='/profiles'>
-        <button
-          type='button'
-          className='btn btn-outline-black btn-sm waves-effect'
-        >
-          <i className='fas fa-users mr-1' />
-          Profiles
-        </button>
-      </Link>
       <Link className='nav-item nav-link' to='/login'>
         <button
           type='button'
@@ -105,7 +105,10 @@ const Nav = ({ auth: { isAuthenticated, loading }, logout }) => {
         >
           <span className='navbar-toggler-icon' />
         </button>
-        <div className='collapse navbar-collapse' id='navbarNavAltMarkup'>
+        <div
+          className='collapse navbar-collapse d-flex justify-content-end'
+          id='navbarNavAltMarkup'
+        >
           <div className='navbar-nav'>
             {!loading && (
               <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>
