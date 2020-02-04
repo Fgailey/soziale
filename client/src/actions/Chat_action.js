@@ -2,6 +2,7 @@ import axios from 'axios';
 
 import {
     GET_CHATS,
+    // GET_PRIVATE_CHATS,
     AFTER_POST_MESSAGE
 } from './Types';
 import { CHAT_SERVER } from '../components/Config.js';
@@ -15,6 +16,18 @@ export function getChats(){
         payload: request
     }
 }
+
+// export function getPrivateChats(user1, user2){
+//     const request = axios.get(`${CHAT_SERVER}/getChats/${user1}+${user2}`)
+//         .then(response => response.data);
+    
+//     return {
+//         type: GET_PRIVATE_CHATS,
+//         payload: request
+//     }
+// }
+
+
 
 export function afterPostMessage(data){
 
