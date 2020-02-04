@@ -342,6 +342,7 @@ class VidyoConnector extends Component {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      
        
 =======
@@ -350,6 +351,9 @@ class VidyoConnector extends Component {
 =======
      
 >>>>>>> struggles
+       
+>>>>>>> workin workin
+=======
        
 >>>>>>> workin workin
         <Toolbar 
