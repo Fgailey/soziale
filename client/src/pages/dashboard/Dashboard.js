@@ -18,7 +18,6 @@ const Dashboard = ({
   return loading && profile === null ? (
     <Loader />
   ) : (
-    
     <Fragment>
       <div className='container my-5'>
         <div className='card p-5'>
@@ -75,7 +74,6 @@ const Dashboard = ({
           </div>
         </div>
       </div>
-      
     </Fragment>
   );
 };

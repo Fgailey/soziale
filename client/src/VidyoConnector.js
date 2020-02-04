@@ -33,6 +33,7 @@ class VidyoConnector extends Component {
 
     this.vidyoConnector = null;
     this.readyEventListener();
+    
   }
 
   createVidyoConnector(VC) {
@@ -323,6 +324,7 @@ class VidyoConnector extends Component {
             onToggle                 = { this.onEntranceToggle.bind(this) }
             onDataChanged            = { this.onEntranceDataChanged.bind(this) }
         />
+     
        
         <Toolbar 
             clientVersion            = { this.state.clientVersion }
