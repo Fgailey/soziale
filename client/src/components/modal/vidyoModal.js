@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Modal from 'react-awesome-modal';
-import VidyoConnector  from '../../pages/vidyo'
+import Vidyo from '../../pages/vidyo'
 
 export default class ModalPage extends Component {
     constructor(props) {
@@ -31,9 +31,11 @@ export default class ModalPage extends Component {
         return (
             <div>
                 <input type="button" value="Open" onClick={() => this.openModal()} />
+                
                 <Modal visible={this.state.visible} width="90%" height="90%" effect="fadeInUp" onClickAway={() => this.closeModal()}>
                     <div>
-                    <VidyoConnector/>
+                    <Vidyo/>
+                  
                         <a href="javascript:void(0);" onClick={() => this.closeModal()}>Close</a>
                     </div>
                 </Modal>
@@ -52,7 +54,7 @@ export default class ModalPage extends Component {
     //             <Modal visible={this.state.visible} width="90%" height="90%" effect="fadeInUp" onClickAway={() => this.closeModal()}>
     //                 <div>
                         
-    //                 <VidyoConnector />
+    //                 <Vidyo />
                
     //                     <a href="javascript:void(0);" onClick={() => this.closeModal()}>Close</a>
     //                  </div>
