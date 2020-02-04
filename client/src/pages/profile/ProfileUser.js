@@ -49,6 +49,10 @@ const ProfileUser = ({
                 </ul>
               </div>
             </div>
+            <div className='row'>
+              <div className='col-6 blue friends'>friends</div>
+              <div className='col-6 red interests'>interests</div>
+            </div>
           </div>
           {/* Card */}
         </div>
