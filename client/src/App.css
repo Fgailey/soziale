@@ -4,14 +4,15 @@
     height: calc(100vh - 100px);
 }
 body {
-    background: url('https://www.toptal.com/designers/subtlepatterns/patterns/light_wool.png');
+    /* background: url('https://www.toptal.com/designers/subtlepatterns/patterns/dot-grid.png'); */
+    background: rgba(158, 158, 158, 0.1);
 }
 .reachLogo {
     font-size: 1.75rem;
 }
 .avatar {
     height: 5rem;
-    width: 4rem;
+    width: 5rem;
 }
 .wrapper {
     display: flex !important;
