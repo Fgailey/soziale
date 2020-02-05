@@ -4,6 +4,7 @@ import moment from 'moment';
 import Layout from '../components/layout/Layout';
 import { getChats, afterPostMessage } from '../actions/Chat_action';
 import { connect } from 'react-redux';
+import ChatFriends from '../components/chatFriends/ChatFriends';
 // import VidyoConnector  from './vidyo'
 
 class Chat extends Component {
@@ -106,6 +107,7 @@ class Chat extends Component {
               </form>
             </div>
           </div>
+        <ChatFriends/>
         </div>
       </Fragment>
     );
