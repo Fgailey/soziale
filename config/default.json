@@ -1,5 +1,5 @@
 {
-  "mongoURI": "mongodb+srv://scott101:tictac@cluster1-ajtlt.mongodb.net/test?retryWrites=true&w=majority",
+  "mongoURI": "mongodb+srv://bmd_89:yNsXK7BrdNRzPQnL@learningconnector-nahg1.mongodb.net/test?retryWrites=true&w=majority",
   "jwtSecret": "secret",
   "key": "8e8a35ffd7144e5a97b1cef4ffbdeb37",
   "appID": "19a021.vidyo.io"
