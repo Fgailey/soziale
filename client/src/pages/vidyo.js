@@ -43,28 +43,44 @@ class vidyo extends Component {
     axios.get(`http://localhost:5000/vidyoToken/getToken`).then(res => {
       this.setState({ token: res.data.token });
     });
-  }
+    
+    if( window.localStorage )
+    {
+      if( !localStorage.getItem('firstLoad') )
+      {
+        localStorage['firstLoad'] = true;
+        window.location.reload();
+      }  
+      else
+        localStorage.removeItem('firstLoad');
+  }   
+}
+  
 
-  render() {
-    return (
-      <Fragment>
-        <div className='container-fluid'>
-          <VidyoConnector
-            host={host}
-            token={this.state.token}
-            resourceId={resourceId}
-            displayName={displayName}
-            viewId={viewId}
-            viewStyle={viewStyle}
-            remoteParticipants={remoteParticipants}
-            logFileFilter={logFileFilter}
-            logFileName={logFileName}
-            userData={userData}
-          />
-        </div>
-      </Fragment>
-    );
-  }
+ render () {
+        const {token} = this.state
+        return token.length >0 ?     
+    
+        <Fragment>
+                <div className='container-fluid'>
+                <VidyoConnector
+                  host={host}
+                  token={this.state.token}
+                  resourceId={resourceId}
+                  displayName={displayName}
+                  viewId={viewId}
+                  viewStyle={viewStyle}
+                  remoteParticipants={remoteParticipants}
+                  logFileFilter={logFileFilter}
+                  logFileName={logFileName}
+                  userData={userData}
+                />
+              </div>
+            </Fragment>
+     : (
+        <div>Loading Vidyo...</div>
+        )
+    }
 }
 
 export default vidyo;
