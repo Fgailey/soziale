@@ -41,7 +41,7 @@ class vidyo extends Component {
   };
 
   componentDidMount() {
-    axios.get(`http://localhost:5000/vidyoToken/getToken`).then(res => {
+    axios.get(`https://project3-reach.herokuapp.com/vidyoToken/getToken`).then(res => {
       this.setState({ token: res.data.token });
     });
     
