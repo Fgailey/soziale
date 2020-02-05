@@ -20,10 +20,14 @@ const Post = ({ getPost, post: { post, loading }, match }) => {
     <Fragment>
       <div className='container my-5'>
         <div className='card p-5'>
-          <Link to='/posts' className='btn btn-orange'>
-            Back To Posts
+          <Link to='/posts'>
+            <button type='button' class='btn btn-orange'>
+              Back To Posts
+            </button>
           </Link>
+          <hr className='my-3' />
           <PostItem post={post} showActions={false} />
+          <hr className='my-3' />
           <CommentForm postId={post._id} />
           <div className='comments'>
             {post.comments.map(comment => (

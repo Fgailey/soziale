@@ -11,17 +11,21 @@ const CommentItem = ({
   auth,
   deleteComment
 }) => (
-  <div className='post bg-white p-1 my-1'>
-    <div>
+  <div className='card deep-purple lighten-4 p-3 my-3'>
+    <div className='d-flex justify-content-start'>
+      <img
+        className='avatar rounded-circle'
+        src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png'
+        alt=''
+      />
       <Link to={`/profile/${user}`}>
-        <img className='round-img' src={avatar} alt='' />
-        <h4>{name}</h4>
+        <h4 className='ml-2'>{name}</h4>
       </Link>
     </div>
     <div>
-      <p className='my-1'>{text}</p>
-      <p className='post-date'>
-        Posted on <Moment format='YYYY/MM/DD'>{date}</Moment>
+      <p className='mb-1 mt-2 p-2 border border-secondary'>{text}</p>
+      <p className='font-weight-bold'>
+        Posted on <Moment format='MM/DD/YYYY'>{date}</Moment>
       </p>
       {!auth.loading && user === auth.user._id && (
         <button
@@ -47,7 +51,4 @@ const mapStateToProps = state => ({
   auth: state.auth
 });
 
-export default connect(
-  mapStateToProps,
-  { deleteComment }
-)(CommentItem);
+export default connect(mapStateToProps, { deleteComment })(CommentItem);

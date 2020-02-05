@@ -8,9 +8,6 @@ const PostForm = ({ addPost }) => {
 
   return (
     <div className='post-form'>
-      <div className='bg-primary p'>
-        <h3>Say Something...</h3>
-      </div>
       <form
         className='form my-1'
         onSubmit={e => {
@@ -20,15 +17,19 @@ const PostForm = ({ addPost }) => {
         }}
       >
         <textarea
+          class='form-control z-depth-1'
           name='text'
-          cols='30'
           rows='5'
-          placeholder='Create a post'
+          placeholder='Write something here...'
           value={text}
           onChange={e => setText(e.target.value)}
           required
         />
-        <input type='submit' className='btn btn-deep-purple darken-4 btn-sm my-1' value='Submit' />
+        <input
+          type='submit'
+          className='btn btn-deep-purple darken-4 btn-sm my-1'
+          value='Submit'
+        />
       </form>
     </div>
   );
@@ -38,7 +39,4 @@ PostForm.propTypes = {
   addPost: PropTypes.func.isRequired
 };
 
-export default connect(
-  null,
-  { addPost }
-)(PostForm);
+export default connect(null, { addPost })(PostForm);
