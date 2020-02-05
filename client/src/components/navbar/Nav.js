@@ -106,7 +106,7 @@ const Nav = ({ auth: { isAuthenticated, loading }, logout }) => {
           <span className='navbar-toggler-icon' />
         </button>
         <div
-          className='collapse navbar-collapse d-flex justify-content-end'
+          className='collapse navbar-collapse justify-content-end'
           id='navbarNavAltMarkup'
         >
           <div className='navbar-nav'>
