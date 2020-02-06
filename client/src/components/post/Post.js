@@ -40,6 +40,7 @@ const Post = ({ getPost, post: { post, loading }, match }) => {
           </div>
         </div>
       </div>
+      
     </Fragment>
   );
 };

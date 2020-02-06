@@ -5,6 +5,7 @@ import Loader from '../loadingGif/Loader';
 import ProfileItem from './ProfileItem';
 import { getProfiles } from '../../actions/Profile';
 import './profiles.css';
+import Footer from '../../components/footer/Footer'
 
 const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
   useEffect(() => {
@@ -35,6 +36,7 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
           </div>
         </Fragment>
       )}
+      <Footer/>
     </Fragment>
   );
 };

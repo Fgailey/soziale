@@ -6,7 +6,7 @@ import { getChats, afterPostMessage, setRoomDefault } from '../actions/Chat_acti
 import { connect } from 'react-redux';
 import ChatFriends from '../components/chatFriends/ChatFriends';
 import Emoji from '../components/emoji/emojiPicker'
-import { MDBContainer, MDBBtn, MDBModal, MDBModalBody } from 'mdbreact';
+import { MDBContainer, MDBModal, MDBModalBody } from 'mdbreact';
 import SmilePic from '../components/emoji/smily.png'
 
 class Chat extends Component {

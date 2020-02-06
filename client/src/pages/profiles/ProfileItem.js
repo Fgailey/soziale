@@ -57,6 +57,7 @@ const ProfileItem = ({
           View Profile
         </Link>
       </div>
+      
     </div>
   );
 };

@@ -5,6 +5,7 @@ import Spinner from '../../pages/loadingGif/Loader';
 import PostItem from './PostItem';
 import PostForm from './PostForm';
 import { getPosts } from '../../actions/Post';
+import Footer from '../footer/Footer'
 
 const Posts = ({ getPosts, post: { posts, loading } }) => {
   useEffect(() => {
@@ -37,7 +38,9 @@ const Posts = ({ getPosts, post: { posts, loading } }) => {
           </div>
         </div>
       </div>
+      <Footer/>
     </Fragment>
+
   );
 };
 

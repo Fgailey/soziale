@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 // import './profileUser.css';
 
+
 const ProfileUser = ({
   profile: {
     age,
@@ -26,6 +27,7 @@ const ProfileUser = ({
         <div className='card col-12'>user's posts</div>
       </div>
     </div>
+    
   );
 };
 

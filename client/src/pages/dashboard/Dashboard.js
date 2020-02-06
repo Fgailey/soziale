@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { getCurrentProfile } from '../../actions/Profile';
 import Loader from '../loadingGif/Loader';
 import Alert from '../Alert';
+import Footer from '../../components/footer/Footer'
 
 const Dashboard = ({
   getCurrentProfile,
@@ -71,7 +72,9 @@ const Dashboard = ({
           </div>
         </div>
       </div>
+      <Footer/>
     </Fragment>
+    
   );
 };
 Dashboard.propTypes = {

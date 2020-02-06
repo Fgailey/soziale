@@ -5,6 +5,7 @@ import Loader from '../loadingGif/Loader';
 import { getProfilesById } from '../../actions/Profile';
 import { Link } from 'react-router-dom';
 import ProfileUser from './ProfileUser';
+import Footer from '../../components/footer/Footer'
 
 const Profile = ({
   getProfilesById,
@@ -37,6 +38,7 @@ const Profile = ({
           </div>
         </Fragment>
       )}
+      <Footer/>
     </Fragment>
   );
 };
