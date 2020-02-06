@@ -9,7 +9,7 @@ const ChatFriendsItem = ({
   return (
 
     <li className="active lighten-3 p-2" id={_id}>
-      <a href="#" className="d-flex justify-content-between">
+      <a href="/" className="d-flex justify-content-between">
         <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-8.jpg" alt="avatar" className="avatar rounded-circle d-flex align-self-center mr-2 z-depth-1" />
         <div className="text-small">
           <strong>{name}</strong>

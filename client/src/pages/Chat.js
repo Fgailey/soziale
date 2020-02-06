@@ -77,7 +77,7 @@ class Chat extends Component {
                 <div className="white z-depth-1 px-3 pt-3 pb-0">
                   <ul className="list-unstyled friend-list">
                   <li className="active grey lighten-3 p-2" id='community'>
-                    <a href="#" className="d-flex justify-content-between">
+                    <a href="/" className="d-flex justify-content-between">
                       <div className="text-small">
                         <strong>Community Chat</strong>
                         {/* <p className="last-message text-muted">Hello, Are you there?</p> */}

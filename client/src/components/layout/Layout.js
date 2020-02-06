@@ -6,7 +6,7 @@ function Layout (props) {
         return(
             <div>
 
-            { props.user._id != props.sender._id ?
+            { props.user._id !== props.sender._id ?
               <li className="d-flex mb-4 pb-3">
                     <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-6.jpg" alt="avatar" className="avatar rounded-circle mr-2 ml-lg-3 ml-0 z-depth-1" />
                     <div className="chat-body pull-left white p-3 ml-2 z-depth-1">
