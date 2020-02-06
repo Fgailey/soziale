@@ -64,12 +64,13 @@ io.on('connection', socket => {
 
   socket.on('Input Chat Message', msg => {
     //because there is an open serve the db does not need to be called again
+    console.log(msg)
     try {
       let chat = new Chat({
         message: msg.chatMessage,
         sender: msg.userID,
         type: msg.type,
-        room: msg.room
+        room: msg.roomName
       });
  
       chat.save((err, doc) => {
