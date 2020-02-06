@@ -1,4 +1,22 @@
 #profilesHeader {
-  background-color: darkgrey;
-  border-bottom: darkseagreen 5px solid;
+  background-color: #222831;
+  /* border-bottom: #a3f7bf 5px solid; */
+}
+
+#profilesContainer {
+  background-color: #222831;
+  border-left: #1f9cfa 3px solid;
+  border-right: palegreen 3px solid;
+}
+
+#borderBottom {
+  padding: 2px;
+}
+
+.prim {
+  color: orange;
+}
+
+.sec {
+  color: #29a19c;
 }
