@@ -158,7 +158,7 @@ class Chat extends Component {
                 >
                   Submit
                 </button>
-                <a onClick={this.toggle}><img className='smilyPic' src={SmilePic} alt="Smiley face" /></a>
+                <div onClick={this.toggle}><img className='smilyPic' src={SmilePic} alt="Smiley face" /></div>
               </form>
         </div>
 
