@@ -13,6 +13,12 @@ class Chat extends Component {
     room: 'community'
   };
 
+  updateChatMessage(emoji){
+    this.setState({
+      chatMessage: this.state.chatMessage + emoji
+    })
+  }
+
   componentDidMount() {
     let server =
       'https://project3-reach.herokuapp.com/' || 'http://localhost:5000/';
@@ -146,7 +152,7 @@ class Chat extends Component {
                 </button>
               </form>
         </div>
-        <Emoji/>
+        <Emoji appendEmoji={this.updateChatMessage.bind(this)}/>
         
       </Fragment>
     );
