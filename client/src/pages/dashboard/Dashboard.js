@@ -14,7 +14,6 @@ const Dashboard = ({
   useEffect(() => {
     getCurrentProfile();
   }, [getCurrentProfile]);
-
   return loading && profile === null ? (
     <Loader />
   ) : (
@@ -24,7 +23,6 @@ const Dashboard = ({
           {/* Logged in user greeting */}
           <h1>Welcome, {user && user.name}</h1>
           <Alert />
-
           <div className='row mx-1'>
             <div className='col-lg-6 mb-4'>
               {/* Card */}
@@ -57,7 +55,6 @@ const Dashboard = ({
                 </div>
               </div>
               {/* Card */}
-
               {profile !== null ? (
                 <Fragment>has profile</Fragment>
               ) : (
@@ -77,16 +74,13 @@ const Dashboard = ({
     </Fragment>
   );
 };
-
 Dashboard.propTypes = {
   getCurrentProfile: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
   profile: PropTypes.object.isRequired
 };
-
 const mapStateToProps = state => ({
   auth: state.auth,
   profile: state.profile
 });
-
 export default connect(mapStateToProps, { getCurrentProfile })(Dashboard);

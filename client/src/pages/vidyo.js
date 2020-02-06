@@ -34,8 +34,6 @@ function getUrlParameterByName(name, _default = '') {
   );
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 class vidyo extends Component {
   state = {
     token: ''
@@ -86,9 +84,6 @@ class vidyo extends Component {
 }
 
 export default vidyo;
-=======
-=======
->>>>>>> struggles
 
 class Vidyo extends Component {
    state= {
@@ -150,7 +145,3 @@ componentWillMount() {
 
 
 export default Vidyo;
-<<<<<<< HEAD
->>>>>>> struggles
-=======
->>>>>>> struggles
