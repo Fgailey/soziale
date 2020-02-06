@@ -50,16 +50,16 @@ class Chat extends Component {
     let userID = this.props.user._id;
     let userName = this.props.user.name;
     // let userImage = this.props.user.userData.image;
-    let room = this.state.room
+    let roomName = 'community';
     let nowTime = moment();
-    let type = 'Image';
+    let type = 'Text';
 
     this.socket.emit('Input Chat Message', {
       chatMessage,
       userID,
       userName,
       // userImage,
-      room,
+      roomName,
       nowTime,
       type
     });
