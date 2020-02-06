@@ -2,7 +2,6 @@ import React, { Fragment, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Landing from './pages/Landing';
 import Nav from './components/navbar/Nav';
-// import Footer from './components/footer/Footer';
 import Routes from './routing/Routes';
 import Wrapper from './components/wrapper';
 import './App.css';
@@ -32,7 +31,6 @@ const App = () => {
               <Route exact path='/' component={Landing} />
               <Route component={Routes} />
             </Switch>
-            {/* <Footer /> */}
           </Wrapper>
         </Fragment>
       </Router>
