@@ -12,8 +12,7 @@ const ChatFriends = ({ getProfiles, profile: { profiles } }) => {
   return (
     <div>
 
-          <p>Select a user to message them Directly</p>
-          <div className='profiles-div'>
+          
             {profiles.length > 0 ? (
               profiles.map(profile => (
                 <ChatFriendsItem key={profile._id} profile={profile} />
@@ -21,7 +20,6 @@ const ChatFriends = ({ getProfiles, profile: { profiles } }) => {
             ) : (
               <h4>No profiles found...</h4>
             )}
-          </div>
     </div>
   );
 }
