@@ -16,14 +16,15 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
         <Loader />
       ) : (
         <Fragment>
-          <div className='text-center pt-3' id='profilesHeader'>
-            <h1>
+          <div className='text-center pt-3 white-text' id='profilesHeader'>
+            <h1 className='prim'>
               <i className='fas fa-user-injured'></i> User Profiles
             </h1>
-            <h3>See what others are up to</h3>
+            <h4 className='sec'>See what others are up to</h4>
           </div>
+          <div className='aqua-gradient' id='borderBottom'></div>
 
-          <div className='profiles-div'>
+          <div className='container' id='profilesContainer'>
             {profiles.length > 0 ? (
               profiles.map(profile => (
                 <ProfileItem key={profile._id} profile={profile} />
