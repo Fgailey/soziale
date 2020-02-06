@@ -4,7 +4,7 @@ import moment from 'moment';
 import Layout from '../components/layout/Layout';
 import { getChats, afterPostMessage } from '../actions/Chat_action';
 import { connect } from 'react-redux';
-import ChatFriends from '../components/chatFriends/ChatFriends';
+// import ChatFriends from '../components/chatFriends/ChatFriends';
 // import VidyoConnector  from './vidyo'
 
 class Chat extends Component {
@@ -77,37 +77,48 @@ class Chat extends Component {
 
             <div>
               <div
-                className='infinite-container'
+                className='col-md col-xl pl-md-3 px-lg-auto px-0'
                 style={{ height: '500px', overflowY: 'scroll' }}
               >
-                {this.props.chats && this.renderCards()}
-                <div
-                  ref={el => {
-                    this.messagesEnd = el;
-                  }}
-                  style={{ float: 'left', clear: 'both' }}
-                />
+              {/* <div className="col-md-6 col-xl-8 pl-md-3 px-lg-auto px-0"> */}
+
+                <div className="chat-message">
+
+                  <ul className="list-unstyled chat">
+
+                  {this.props.chats && this.renderCards()}
+                  <div
+                    ref={el => {
+                      this.messagesEnd = el;
+                    }}
+                    style={{ float: 'left', clear: 'both' }}
+                  />
+                  </ul>
+              </div>
               </div>
               <form>
                 {/* <form onSubmit={this.submitChatMessage}> */}
                 <input
                   id='message'
                   placeholder='Type here to message'
+                  className='w-100'
                   type='text'
                   value={this.state.chatMessage}
                   onChange={this.handleSearchChange}
+                  style={{ height: '100px', wordBreak: 'break-word' }}
                 />
                 <button
                   type='submit'
                   onClick={this.submitChatMessage}
                   htmltype='submit'
+                  className='btn btn-info btn-rounded btn-sm waves-effect waves-light float-right'
                 >
                   Submit
                 </button>
               </form>
             </div>
           </div>
-        <ChatFriends/>
+        {/* <ChatFriends/> */}
         </div>
       </Fragment>
     );
