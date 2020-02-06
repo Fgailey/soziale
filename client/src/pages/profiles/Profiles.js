@@ -17,7 +17,9 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
       ) : (
         <Fragment>
           <div className='text-center pt-3' id='profilesHeader'>
-            <h1>User Profiles</h1>
+            <h1>
+              <i className='fas fa-user-injured'></i> User Profiles
+            </h1>
             <h3>See what others are up to</h3>
           </div>
 
