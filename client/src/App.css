@@ -24,7 +24,7 @@ body {
 }
 
 /* Google fonts test */
-@import url('https://fonts.googleapis.com/css?family=DM+Serif+Display|Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Baloo+Bhai|Bebas+Neue|Oswald|Press+Start+2P&display=swap');
 h1,
 h2,
 h3,
@@ -33,7 +33,10 @@ h5,
 p,
 li {
   /* font-family: 'DM Serif Display', serif; */
-  font-family: 'Ubuntu', sans-serif;
+  /* font-family: 'Press Start 2P', cursive; */
+  /* font-family: 'Oswald', sans-serif; */
+  font-family: 'Bebas Neue', cursive;
+  /* font-family: 'Baloo Bhai', cursive; */
 }
 
 /* image crop test */
