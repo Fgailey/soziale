@@ -13,11 +13,16 @@ const Emoji = (props) => {
     return (
         
         <div>
-         
+            
+            {/* { 
+              chosenEmoji
+                ? (<span>You chose: {chosenEmoji.emoji}</span>)
+                : <span>No emoji Chosen</span>
+ 
+            } */}
             <Picker onEmojiClick={onEmojiClick}/>
                 
         </div>
     );
 };
 export default Emoji
-
