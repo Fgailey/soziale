@@ -1,23 +1,56 @@
 .landing {
-    background: url('https://images.pexels.com/photos/196655/pexels-photo-196655.jpeg') no-repeat center center/cover;
-    position: relative;
-    height: calc(100vh - 100px);
+  background: url('https://images.pexels.com/photos/196655/pexels-photo-196655.jpeg')
+    no-repeat center center/cover;
+  position: relative;
+  height: calc(100vh - 100px);
 }
 body {
-    /* background: url('https://www.toptal.com/designers/subtlepatterns/patterns/dot-grid.png'); */
-    background: rgba(158, 158, 158, 0.1);
+  /* background: url('https://www.toptal.com/designers/subtlepatterns/patterns/dot-grid.png'); */
+  background: rgba(158, 158, 158, 0.1);
 }
 .reachLogo {
-    font-size: 1.75rem;
+  font-size: 1.75rem;
 }
 .avatar {
-    height: 5rem;
-    width: 5rem;
+  height: 5rem;
+  width: 5rem;
 }
 .wrapper {
-    display: flex !important;
-	min-height: 100vh !important;
-	flex-direction: column !important;
-    margin:auto !important;
-    padding: 0px;
+  display: flex !important;
+  min-height: 100vh !important;
+  flex-direction: column !important;
+  margin: auto !important;
+  padding: 0px;
 }
+
+/* Google fonts test */
+@import url('https://fonts.googleapis.com/css?family=DM+Serif+Display|Ubuntu&display=swap');
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+li {
+  /* font-family: 'DM Serif Display', serif; */
+  font-family: 'Ubuntu', sans-serif;
+}
+
+/* image crop test */
+
+.crop-image {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.cropped-image {
+  display: inline;
+  margin: 0 auto;
+  height: 100%;
+  width: auto;
+}
+
+/* end test */
