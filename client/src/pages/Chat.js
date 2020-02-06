@@ -6,12 +6,20 @@ import { getChats, afterPostMessage, setRoomDefault } from '../actions/Chat_acti
 import { connect } from 'react-redux';
 import ChatFriends from '../components/chatFriends/ChatFriends';
 import Emoji from '../components/emoji/emojiPicker'
+import { MDBContainer, MDBBtn, MDBModal, MDBModalBody } from 'mdbreact';
+import SmilePic from '../components/emoji/smily.png'
 
 class Chat extends Component {
   state = {
     chatMessage: '',
-    room: 'community'
+    room: 'community',
+    modal: false
   };
+  toggle = () => {
+    this.setState({
+      modal: !this.state.modal
+    });
+  }
 
   updateChatMessage(emoji){
     this.setState({
@@ -150,10 +158,22 @@ class Chat extends Component {
                 >
                   Submit
                 </button>
+                <a onClick={this.toggle}><img className='smilyPic' src={SmilePic} alt="Smiley face" /></a>
               </form>
         </div>
-        <Emoji appendEmoji={this.updateChatMessage.bind(this)}/>
+
+        <MDBContainer>
+        {/* BUTTON */}
         
+        {/* MODAL */}
+        <MDBModal size="sm" side position="bottom-right" isOpen={this.state.modal} toggle={this.toggle}    >
+          <MDBModalBody>
+          <Emoji appendEmoji={this.updateChatMessage.bind(this)}/>
+          </MDBModalBody>
+        </MDBModal>
+      </MDBContainer>
+
+
       </Fragment>
     );
   }

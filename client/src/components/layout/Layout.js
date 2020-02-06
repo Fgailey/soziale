@@ -1,11 +1,8 @@
 import React from "react";
 import { connect } from 'react-redux';
-
 function Layout (props) {
-
         return(
             <div>
-            {}
             { (props.room === props.type) ?
                 (props.user._id !== props.sender._id ?
               <li className="d-flex mb-4 pb-3">
@@ -40,15 +37,12 @@ function Layout (props) {
                 }
 
             </div>
-        
         )
 }
-
 const mapStateToProps = state => {
     return {
       user: state.auth.user,
       room: state.chats.room 
     };
   };
-
 export default connect(mapStateToProps) (Layout);
