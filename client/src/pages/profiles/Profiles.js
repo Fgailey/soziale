@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import Loader from '../loadingGif/Loader';
 import ProfileItem from './ProfileItem';
 import { getProfiles } from '../../actions/Profile';
+import './profiles.css';
 
 const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
   useEffect(() => {
@@ -15,8 +16,11 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
         <Loader />
       ) : (
         <Fragment>
-          <h1>User Profiles</h1>
-          <p>See what others are up to</p>
+          <div className='text-center pt-3' id='profilesHeader'>
+            <h1>User Profiles</h1>
+            <h3>See what others are up to</h3>
+          </div>
+
           <div className='profiles-div'>
             {profiles.length > 0 ? (
               profiles.map(profile => (
