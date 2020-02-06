@@ -1,18 +1,20 @@
 import React, { useState } from 'react';
 import Picker from 'emoji-picker-react';
  
-const App = () => {
+const Emoji = () => {
     const [chosenEmoji, setChosenEmoji] = useState(null);
  
     const onEmojiClick = (event, emojiObject) => {
         setChosenEmoji(emojiObject);
+        console.log('this one',emojiObject.emoji)
+        
     }
  
     return (
         
         <div>
-            {console.log(chosenEmoji)}
-            {
+            
+            { 
               chosenEmoji
                 ? (<span>You chose: {chosenEmoji.emoji}</span>)
                 : <span>No emoji Chosen</span>
@@ -23,5 +25,5 @@ const App = () => {
         </div>
     );
 };
-
+export default Emoji
 

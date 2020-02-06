@@ -1,10 +1,11 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component, Fragment} from 'react';
 import io from 'socket.io-client';
 import moment from 'moment';
 import Layout from '../components/layout/Layout';
 import { getChats, afterPostMessage, setRoomDefault } from '../actions/Chat_action';
 import { connect } from 'react-redux';
 import ChatFriends from '../components/chatFriends/ChatFriends';
+import Emoji from '../components/emoji/emojiPicker'
 
 class Chat extends Component {
   state = {
@@ -145,6 +146,8 @@ class Chat extends Component {
                 </button>
               </form>
         </div>
+        <Emoji/>
+        
       </Fragment>
     );
   }
