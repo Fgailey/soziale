@@ -4,8 +4,7 @@ import moment from 'moment';
 import Layout from '../components/layout/Layout';
 import { getChats, afterPostMessage } from '../actions/Chat_action';
 import { connect } from 'react-redux';
-// import ChatFriends from '../components/chatFriends/ChatFriends';
-// import VidyoConnector  from './vidyo'
+import ChatFriends from '../components/chatFriends/ChatFriends';
 
 class Chat extends Component {
   state = {
@@ -41,7 +40,7 @@ class Chat extends Component {
 
   renderCards = () =>
     this.props.chats.chats &&
-    this.props.chats.chats.map(chat => <Layout key={chat._id} {...chat} />);
+    this.props.chats.chats.map(chat => <Layout key={chat._id} {...chat}/>);
 
   submitChatMessage = e => {
     e.preventDefault();
@@ -72,12 +71,32 @@ class Chat extends Component {
             <span className='text-center blue lighten-3'>
               <h2>Chat Page</h2>
             </span>
+            <div className='row px-lg-2 px-2'>
+              <div className="col-md-6 col-xl-4 px-0">
+                <h6 className="font-weight-bold mb-3 text-center text-lg-left">Member</h6>
+                <div className="white z-depth-1 px-3 pt-3 pb-0">
+                  <ul className="list-unstyled friend-list">
+                  <li className="active grey lighten-3 p-2" id='community'>
+                    <a href="#" className="d-flex justify-content-between">
+                      <div className="text-small">
+                        <strong>Community Chat</strong>
+                        {/* <p className="last-message text-muted">Hello, Are you there?</p> */}
+                      </div>
+                      <div className="chat-footer">
+                        <p className="text-smaller text-muted mb-0">Just now</p>
+                        {/* <span className="badge badge-danger float-right">1</span> */}
+                      </div>
+                    </a>
+                  </li>
+                    <ChatFriends/>
+                    
+                  </ul>
+                </div>
+              </div>
 
-            {/* <VidyoConnector/> */}
-
-            <div>
+            
               <div
-                className='col-md col-xl pl-md-3 px-lg-auto px-0'
+                className='col-md-6 col-xl-8 pl-md-3 px-lg-auto px-0'
                 style={{ height: '500px', overflowY: 'scroll' }}
               >
               {/* <div className="col-md-6 col-xl-8 pl-md-3 px-lg-auto px-0"> */}
@@ -96,6 +115,8 @@ class Chat extends Component {
                   </ul>
               </div>
               </div>
+            </div>
+          </div> {/* End ROW */}
               <form>
                 {/* <form onSubmit={this.submitChatMessage}> */}
                 <input
@@ -116,9 +137,6 @@ class Chat extends Component {
                   Submit
                 </button>
               </form>
-            </div>
-          </div>
-        {/* <ChatFriends/> */}
         </div>
       </Fragment>
     );
