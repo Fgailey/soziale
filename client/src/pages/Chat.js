@@ -8,7 +8,8 @@ import ChatFriends from '../components/chatFriends/ChatFriends';
 
 class Chat extends Component {
   state = {
-    chatMessage: ''
+    chatMessage: '',
+    room: 'community'
   };
 
   componentDidMount() {
@@ -49,6 +50,7 @@ class Chat extends Component {
     let userID = this.props.user._id;
     let userName = this.props.user.name;
     // let userImage = this.props.user.userData.image;
+    let room = this.state.room
     let nowTime = moment();
     let type = 'Image';
 
@@ -57,6 +59,7 @@ class Chat extends Component {
       userID,
       userName,
       // userImage,
+      room,
       nowTime,
       type
     });

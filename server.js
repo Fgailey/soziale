@@ -59,9 +59,10 @@ io.on('connection', socket => {
       let chat = new Chat({
         message: msg.chatMessage,
         sender: msg.userID,
-        type: msg.type
+        type: msg.type,
+        room: msg.room
       });
-
+ 
       chat.save((err, doc) => {
         if (err) return res.json({ success: false, err });
 
