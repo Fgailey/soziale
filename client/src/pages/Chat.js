@@ -163,9 +163,6 @@ class Chat extends Component {
         </div>
 
         <MDBContainer>
-        {/* BUTTON */}
-        
-        {/* MODAL */}
         <MDBModal size="sm" side position="bottom-right" isOpen={this.state.modal} toggle={this.toggle}    >
           <MDBModalBody>
           <Emoji appendEmoji={this.updateChatMessage.bind(this)}/>
