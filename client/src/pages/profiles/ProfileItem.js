@@ -19,7 +19,7 @@ const ProfileItem = ({
           <div className='profile-item col-4 ml-4'>
             <img
               className='img-thumbnail w-25 float-left'
-              src={avatar}
+              src={`/uploads/${avatar}`}
               alt=''
             />
             <div>
