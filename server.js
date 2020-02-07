@@ -4,6 +4,7 @@ var axios = require('axios');
 const connectDB = require('./config/db');
 var cors = require('cors');
 const fileUpload = require('express-fileupload');
+const db = require('./models/index');
 
 const app = express();
 
@@ -30,19 +31,29 @@ app.use('/vidyoToken', require('./routes/vidyoToken'));
 // app.use('/uploads', require('./routes/uploads'));
 
 // Upload Endpoint
-app.post('/upload', (req, res) => {
+app.post('/upload', async (req, res) => {
   if (req.files === null) {
     return res.status(400).json({ msg: 'No file uploaded' });
   }
+  
+  console.log(req);
 
   const file = req.files.file;
+  const avatar = file.name;
+  // const name = req.user._id;
+
+  let photo = await db.User.findByIdAndUpdate(
+    { _id: name },
+    { avatar: avatar },
+    { new: true }
+  );
+  console.log(photo);
 
   file.mv(`${__dirname}/client/public/uploads/${file.name}`, err => {
     if (err) {
       console.error(err);
       return res.status(500).send(err);
     }
-
     res.json({ fileName: file.name, filePath: `/uploads/${file.name}` });
   });
 });
@@ -87,4 +98,3 @@ if (process.env.NODE_ENV === 'production') {
 server.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
 });
-
