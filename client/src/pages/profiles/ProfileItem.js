@@ -46,7 +46,7 @@ const ProfileItem = ({
             <div className='row'></div>
           </div>
 
-          <div className='col mt-5 mr-5'>
+          <div className='col mx-4 my-4'>
             <h2 className='prim'>
               About Me: <p className='sec '>{about_me}</p>
             </h2>
