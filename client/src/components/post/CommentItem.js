@@ -6,18 +6,20 @@ import Moment from 'react-moment';
 import { deleteComment } from '../../actions/Post';
 
 const CommentItem = ({
+  // post: {
+  //   user: { avatar }},
   postId,
-  comment: { _id, text, name, avatar, user, date },
+  comment: { _id, text, name, user, date },
   auth,
   deleteComment
 }) => (
   <div className='card deep-purple lighten-4 p-3 my-3'>
     <div className='d-flex justify-content-start'>
-      <img
+      {/* <img
         className='avatar rounded-circle'
-        src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png'
+        src={`/uploads/${avatar}`}
         alt=''
-      />
+      /> */}
       <Link to={`/profile/${user}`}>
         <h4 className='ml-2'>{name}</h4>
       </Link>
@@ -41,6 +43,7 @@ const CommentItem = ({
 );
 
 CommentItem.propTypes = {
+  // post: PropTypes.object.isRequired,
   postId: PropTypes.string.isRequired,
   comment: PropTypes.object.isRequired,
   auth: PropTypes.object.isRequired,
