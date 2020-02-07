@@ -35,12 +35,10 @@ app.post('/upload', async (req, res) => {
   if (req.files === null) {
     return res.status(400).json({ msg: 'No file uploaded' });
   }
-  
-  console.log(req);
 
   const file = req.files.file;
   const avatar = file.name;
-  // const name = req.user._id;
+  const name = req.body.userID;
 
   let photo = await db.User.findByIdAndUpdate(
     { _id: name },
