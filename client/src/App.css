@@ -38,22 +38,3 @@ li {
   font-family: 'Bebas Neue', cursive;
   /* font-family: 'Baloo Bhai', cursive; */
 }
-
-/* image crop test */
-
-.crop-image {
-  width: 100px;
-  height: 100px;
-  position: relative;
-  overflow: hidden;
-  border-radius: 50%;
-}
-
-.cropped-image {
-  display: inline;
-  margin: 0 auto;
-  height: 100%;
-  width: auto;
-}
-
-/* end test */
