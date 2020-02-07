@@ -1,14 +1,16 @@
 import React, { Fragment, useState } from 'react';
+import { connect } from 'react-redux';
 import Message from './message';
 import Progress from './progress';
 import axios from 'axios';
 
-const FileUpload = () => {
+const FileUpload = (props) => {
   const [file, setFile] = useState('');
   const [filename, setFilename] = useState('Choose File');
   const [uploadedFile, setUploadedFile] = useState({});
   const [message, setMessage] = useState('');
   const [uploadPercentage, setUploadPercentage] = useState(0);
+  let userID = props.user._id;
 
   const onChange = e => {
     setFile(e.target.files[0]);
@@ -21,7 +23,7 @@ const FileUpload = () => {
     formData.append('file', file);
 
     try {
-      const res = await axios.post('/upload', formData, {
+      const res = await axios.post('/upload', formData, userID, {
         headers: {
           'Content-Type': 'multipart/form-data'
         },
@@ -95,4 +97,10 @@ const FileUpload = () => {
   );
 };
 
-export default FileUpload;
+const mapStateToProps = state => {
+  return {
+    user: state.auth.user
+  };
+};
+
+export default connect(mapStateToProps)(FileUpload);
