@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+// import './profileUser.css';
 
 const ProfileUser = ({
   profile: {
@@ -11,51 +12,18 @@ const ProfileUser = ({
   }
 }) => {
   return (
-    <div className='card pl-5 pr-5 py-5 text-center'>
-      {/* Logged in user greeting */}
-
-      <div className='row mx-1'>
-        <div className='col-lg-12 mb-4'>
-          {/* Card */}
-          <div className='card mt-2 '>
-            {/* Content */}
-            <div className='text-white d-flex align-items-center rgba-black-strong py-5 px-4'>
-              <div>
-                <h2 className='pink-text'>{name}</h2>
-                <h3 className='card-title pt-2'>
-                  "The devil fears a hungry man"
-                </h3>
-                <hr />
-                <div className='col-12'>
-                  <img
-                    className='img-thumbnail w-25 float-left'
-                    src='https://images.pexels.com/photos/35065/homeless-man-color-poverty.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
-                    alt=''
-                  />
-                </div>
-                <ul>
-                  <li>
-                    <h4>Gender: {gender}</h4>
-                  </li>
-                  <li>
-                    <h4>Age: {age}</h4>
-                  </li>
-                  <li>
-                    <h4>Location: {current_city}</h4>
-                  </li>
-                  <li>
-                    <h4>About: {about_me}</h4>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className='row'>
-              <div className='col-6 blue friends'>friends</div>
-              <div className='col-6 red interests'>interests</div>
-            </div>
-          </div>
-          {/* Card */}
+    // maybe move this layout to dashboard route?
+    <div className='row'>
+      <div className='col-5 blue'>
+        <div className='row p-5 red'>
+          <div className='card col-12'>profile</div>
         </div>
+        <div className='row p-5 green'>
+          <div className='card col-12'>following/followers</div>
+        </div>
+      </div>
+      <div className='col-7 p-5 purple'>
+        <div className='card col-12'>user's posts</div>
       </div>
     </div>
   );
