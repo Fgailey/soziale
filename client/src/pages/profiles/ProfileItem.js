@@ -27,18 +27,18 @@ const ProfileItem = ({
             />
             <div className='mt-3 row'>
               <div className='col-6'>
-                <h3 className='prim'>
+                <h5 className='prim'>
                   Location: <p className='sec'>{current_city}</p>
-                </h3>
+                </h5>
               </div>
               <div className='col-6'>
-                <h3 className='prim'>Interested In: </h3>
+                <h5 className='prim'>Interested In: </h5>
                 {/* get rid of this ul and replace with first three joined interest */}
                 <ul>
                   {interests.slice(0, 3).map((interest, index) => (
-                    <p key={index} className='list-inline-item sec'>
+                    <li key={index} className='list-inline-item sec'>
                       {interest}
-                    </p>
+                    </li>
                   ))}
                 </ul>
               </div>
