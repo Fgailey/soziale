@@ -49,17 +49,13 @@ class Chat extends Component {
     let chatMessage = this.state.chatMessage;
     let userID = this.props.user._id;
     let userName = this.props.user.name;
-    // let userImage = this.props.user.userData.image;
-    let roomName = 'community';
     let nowTime = moment();
-    let type = 'Text';
+    let type = this.state.room;
 
     this.socket.emit('Input Chat Message', {
       chatMessage,
       userID,
       userName,
-      // userImage,
-      roomName,
       nowTime,
       type
     });
@@ -108,7 +104,7 @@ class Chat extends Component {
 
                   <ul className="list-unstyled chat">
 
-                  {this.props.chats && this.renderCards()}
+                  {this.props.chats && this.props.user && this.renderCards()}
                   <div
                     ref={el => {
                       this.messagesEnd = el;

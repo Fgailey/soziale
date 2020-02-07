@@ -12,9 +12,6 @@ const chatSchema = mongoose.Schema({
     type : {
         type: String
     },
-    room : {
-        type: String
-    },
 }, {timestamps: true});
 
 const Chat = mongoose.model('Chat', chatSchema);
