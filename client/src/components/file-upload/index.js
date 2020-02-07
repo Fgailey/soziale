@@ -21,9 +21,10 @@ const FileUpload = (props) => {
     e.preventDefault();
     const formData = new FormData();
     formData.append('file', file);
+    formData.append('userID', userID);
 
     try {
-      const res = await axios.post('/upload', formData, userID, {
+      const res = await axios.post('/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         },
