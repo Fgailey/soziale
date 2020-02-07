@@ -2,14 +2,14 @@
   background-color: #393e46;
 }
 
-.interests {
-  align-self: center;
-}
-
 .prim {
   color: orange;
 }
 
 .sec {
   color: #29a19c;
+}
+
+.img-thumbnail {
+  border: none !important;
 }
