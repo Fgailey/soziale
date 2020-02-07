@@ -30,7 +30,7 @@ class Chat extends Component {
   }
 
   componentDidUpdate() {
-    this.messagesEnd.scrollIntoView({ behavior: 'smooth' });
+    this.messagesEnd.scrollIntoView({ behavior: 'smooth' }); 
   }
 
   handleSearchChange = e => {
@@ -40,6 +40,7 @@ class Chat extends Component {
   };
 
   renderCards = () =>
+    this.props.user &&
     this.props.chats.chats &&
     this.props.chats.chats.map(chat => <Layout key={chat._id} {...chat}/>);
 
@@ -104,7 +105,7 @@ class Chat extends Component {
 
                   <ul className="list-unstyled chat">
 
-                  {this.props.chats && this.props.user && this.renderCards()}
+                  { this.props.chats && this.renderCards()}
                   <div
                     ref={el => {
                       this.messagesEnd = el;
