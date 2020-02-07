@@ -10,7 +10,8 @@ const ProfileItem = ({
     age,
     current_city,
     interests,
-    date
+    date,
+    about_me
   }
 }) => {
   return (
@@ -18,27 +19,37 @@ const ProfileItem = ({
       <div className='card mx-5 my-5' id='profileItemCard'>
         <div className='row'>
           <div className='profile-info col text-center mx-4 my-4'>
+            <h2 className='prim'>{name}</h2>
             <img
-              className='img-thumbnail aqua-gradient w-25 ml-5 rounded-circle'
+              className='img-thumbnail aqua-gradient w-25 rounded-circle'
               src={avatar}
               alt=''
             />
-            <div className='ml-4 mt-3'>
-              <h2 className='prim'>{name}</h2>
-              <p className='sec'>Age: {age}</p>
-              <p className='sec'>Location: {current_city}</p>
+            <div className='mt-3 row'>
+              <div className='col-6'>
+                <h5 className='prim'>
+                  Location: <p className='sec'>{current_city}</p>
+                </h5>
+              </div>
+              <div className='col-6'>
+                <h5 className='prim'>Interested In: </h5>
+                {/* get rid of this ul and replace with first three joined interest */}
+                <ul>
+                  {interests.slice(0, 3).map((interest, index) => (
+                    <li key={index} className='list-inline-item sec'>
+                      {interest}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
+            <div className='row'></div>
           </div>
 
-          <div className='interests col mt-5'>
-            <h5 className='prim'>{name}'s interests: </h5>
-            <ul>
-              {interests.slice(0, 4).map((interest, index) => (
-                <li key={index} className='text=primary sec'>
-                  {interest}
-                </li>
-              ))}
-            </ul>
+          <div className='col mt-5 mr-5'>
+            <h2 className='prim'>
+              About Me: <p className='sec'>{about_me}</p>
+            </h2>
           </div>
         </div>
 
