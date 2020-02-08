@@ -29,6 +29,7 @@ const PostForm = ({ addPost }) => {
           placeholder='Write something here...'
           value={text}
           onChange={e => setText(e.target.value)}
+          
           required
         />
         <input type='submit' className='btn btn-deep-purple darken-4 btn-sm my-1' value='Submit' />

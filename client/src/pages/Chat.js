@@ -148,7 +148,7 @@ class Chat extends Component {
                   type='text'
                   value={this.state.chatMessage}
                   onChange={this.handleSearchChange}
-                  style={{ height: '100px', wordBreak: 'break-word' }}
+                  style={{fontSize: 20, height: '100px', wordBreak: 'break-word' }}
                 />
                 <button
                   type='submit'

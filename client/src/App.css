@@ -46,4 +46,14 @@ li {
     transform: scale(1.1);
     cursor: pointer;
   }
-
+/* 
+  .modal {
+    position: absolute;
+    top: 270px;
+    right: 100px;
+    bottom: 0;
+    left: 0;
+    z-index: 10040;
+    overflow: auto;
+    overflow-y: auto;
+ } */
