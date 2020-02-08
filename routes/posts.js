@@ -70,10 +70,26 @@ router.get('/:id', auth, async (req, res) => {
       return res.status(404).json({ msg: 'Post not found' });
     }
     // console.log(user[0].user)
-    res.json(post)
+    res.json(post);
   } catch (err) {
     console.error(err.message);
 
+    res.status(500).send('Server Error');
+  }
+});
+
+// @route    GET /dashboard/
+// @desc     Get all posts by current user_id
+// @access   Private
+router.get('/user/:id', auth, async (req, res) => {
+  // console.log('Log Origin: routes/posts /user/:id = ' + req.user.id);
+  try {
+    const posts = await db.Post.find({ user: `${req.user.id}` }).sort({
+      date: -1
+    });
+    res.json(posts);
+  } catch (err) {
+    console.error(err.message);
     res.status(500).send('Server Error');
   }
 });
