@@ -2,9 +2,15 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addPost } from '../../actions/Post';
+import { MDBContainer, MDBModal, MDBModalBody } from 'mdbreact';
+import Emoji from '../emoji/emojiPicker'
+import SmilePic from '../emoji/smily.png'
+
 
 const PostForm = ({ addPost }) => {
   const [text, setText] = useState('');
+  const [toggle, setToggle] = useState(false);
+  
 
   return (
     <div className='post-form'>
@@ -31,6 +37,16 @@ const PostForm = ({ addPost }) => {
           value='Submit'
         />
       </form>
+
+      <div onClick={()=>setToggle(true)}><img className='smilyPic' src={SmilePic} alt="Smiley face" /></div>
+      <MDBContainer>
+      <MDBModal size="sm" side position="bottom-right" toggle={()=>setToggle(false)} isOpen={toggle}>
+        <MDBModalBody>
+          <Emoji appendEmoji={(emoji) => setText(text+emoji)}/>
+        </MDBModalBody>
+      </MDBModal>
+    </MDBContainer>
+
     </div>
   );
 };
