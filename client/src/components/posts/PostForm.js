@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState} from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addPost } from '../../actions/Post';
@@ -10,7 +10,7 @@ import SmilePic from '../emoji/smily.png'
 const PostForm = ({ addPost }) => {
   const [text, setText] = useState('');
   const [toggle, setToggle] = useState(false);
-  
+  console.log('text',`${text}`)
 
   return (
     <div className='post-form'>
