@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { getCurrentProfile } from '../../actions/Profile';
 import Loader from '../loadingGif/Loader';
 import Alert from '../Alert';
+import PostsDashboard from '../../components/posts/PostsDashboard';
 
 const Dashboard = ({
   getCurrentProfile,
@@ -25,53 +26,60 @@ const Dashboard = ({
           <h1>Welcome, {user && user.name}</h1>
           <Alert />
 
-          <div className='row mx-1'>
-            <div className='col-lg-6 mb-4'>
+          {profile !== null ? (
+            <Fragment>
               {/* Card */}
-              <div
-                className='card card-image'
-                style={{
-                  backgroundImage:
-                    'url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg)'
-                }}
-              >
-                {/* Content */}
-                <div className='text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4'>
-                  <div>
-                    <h5 className='pink-text'>
-                      <i className='fas fa-chart-pie' /> Marketing
-                    </h5>
-                    <h3 className='card-title pt-2'>
-                      <strong>This is the card title</strong>
-                    </h3>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Repellat fugiat, laboriosam, voluptatem, optio vero odio
-                      nam sit officia accusamus minus error nisi architecto
-                      nulla ipsum dignissimos. Odit sed qui, dolorum!.
-                    </p>
-                    <Link to='#!' className='btn btn-pink'>
-                      <i className='fas fa-clone left' /> View project
-                    </Link>
+              <div className='row'>
+                <div className='card col-5 blue'>
+                  <div className='row'>
+                    <div className='card'></div>
+                    <div className='row'>
+                      <div className='col-6 '>
+                        <img
+                          src={user.avatar}
+                          alt=''
+                          className='img-thumbnail ml-2 my-2 aqua-gradient rounded-circle'
+                        />
+                      </div>
+                      <div className='col-6 pt-5 pl-5 align-bottom'>
+                        <div className='row details'>
+                          <h2 className='prim'>Age: </h2>
+                          <h3 className='mt-1'>{profile.age}</h3>
+                        </div>
+                        <div className='row details'>
+                          <h2 className='prim'>Location: </h2>
+                          <h3 className='mt-1'>{profile.current_city}</h3>
+                        </div>
+                        <div className='row details'>
+                          <h2 className='prim'>Gender: </h2>
+                          <h3 className='mt-1'>{profile.gender}</h3>
+                        </div>
+                      </div>
+                    </div>
                   </div>
+                  <div className='row'>
+                    <div className='col-12'>about</div>
+                  </div>
+                  <div className='row p-2 green'>
+                    <div className='card col-12'>following/followers</div>
+                  </div>
+                </div>
+                <div className=' card col-7 p-2'>
+                  <PostsDashboard />
                 </div>
               </div>
               {/* Card */}
-
-              {profile !== null ? (
-                <Fragment>has profile</Fragment>
-              ) : (
-                <Fragment>
-                  <div>
-                    <p>Your profile has not been created.. Yet!</p>
-                    <Link to='/create-profile' className='btn btn-green'>
-                      CREATE PROFILE
-                    </Link>
-                  </div>
-                </Fragment>
-              )}
-            </div>
-          </div>
+            </Fragment>
+          ) : (
+            <Fragment>
+              <div>
+                <p>Your profile has not been created.. Yet!</p>
+                <Link to='/create-profile' className='btn btn-green'>
+                  CREATE PROFILE
+                </Link>
+              </div>
+            </Fragment>
+          )}
         </div>
       </div>
     </Fragment>
