@@ -23,5 +23,6 @@ export const ADD_COMMENT = 'ADD_COMMENT';
 export const REMOVE_COMMENT = 'REMOVE_COMMENT';
 
 export const GET_CHATS = 'GET_CHATS';
-// export const GET_PRIVATE_CHATS = 'GET_PRIVATE_CHATS';
+export const GET_NEW_ROOM = 'GET_NEW_ROOM';
+export const GET_DEFAULT_ROOM = 'GET_DEFAULT_ROOM';
 export const AFTER_POST_MESSAGE = 'AFTER_POST_MESSAGE';
