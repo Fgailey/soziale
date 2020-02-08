@@ -15,12 +15,12 @@ const PostForm = ({ addPost }) => {
   return (
     <div className='post-form'>
       <form
-        // className='form my-1'
-        // onSubmit={e => {
-        //   e.preventDefault();
-        //   addPost({ text });
-        //   setText('');
-        // }}
+        className='form my-1'
+        onSubmit={e => {
+          e.preventDefault();
+          addPost({ text });
+          setText('');
+        }}
       >
         <textarea
           class='form-control z-depth-1'
@@ -31,17 +31,14 @@ const PostForm = ({ addPost }) => {
           onChange={e => setText(e.target.value)}
           required
         />
-        <input type='submit' 
-        onClick={()=>addPost({text})} 
-        className='btn btn-deep-purple darken-4 btn-sm my-1' 
-        value='Submit' />
+        <input type='submit' className='btn btn-deep-purple darken-4 btn-sm my-1' value='Submit' />
       </form>
 
       <div onClick={()=>setToggle(true)}><img className='smilyPic' src={SmilePic} alt="Smiley face" /></div>
       <MDBContainer>
       <MDBModal size="sm" side position="bottom-right" toggle={()=>setToggle(false)} isOpen={toggle}>
         <MDBModalBody>
-          <Emoji appendEmoji={(emoji) => setText(text+emoji)}/>
+          <Emoji appendEmoji={(emoji) => setText(text+emoji+'hey')}/>
         </MDBModalBody>
       </MDBModal>
     </MDBContainer>
