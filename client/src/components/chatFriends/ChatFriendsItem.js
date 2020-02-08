@@ -1,15 +1,28 @@
 // Individual profile
 import React from 'react';
+import { connect } from 'react-redux';
 
-const ChatFriendsItem = ({
-  profile: {
-    user: { _id, name, avatar }
+import { setRoom } from '../../actions/Chat_action';
+
+const ChatFriendsItem = (props) => {
+
+  let { profile } = props
+
+  let { user } = profile
+
+  let  { _id, name } = user
+
+  const handleChangeRoom = (e) => {
+    e.preventDefault();
+    props.dispatch(setRoom(props.user._id, _id))
+      console.log('changeRoom')
   }
-}) => {
+  
+  
   return (
 
     <li className="active lighten-3 p-2" id={_id}>
-      <a href="/" className="d-flex justify-content-between">
+      <div className="d-flex justify-content-between" onClick={handleChangeRoom}>
         <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-8.jpg" alt="avatar" className="avatar rounded-circle d-flex align-self-center mr-2 z-depth-1" />
         <div className="text-small">
           <strong>{name}</strong>
@@ -19,7 +32,7 @@ const ChatFriendsItem = ({
           <p className="text-smaller text-muted mb-0">Just now</p>
           {/* <span className="badge badge-danger float-right">1</span> */}
         </div>
-      </a>
+      </div>
     </li>
     
   );
@@ -27,4 +40,8 @@ const ChatFriendsItem = ({
 
 ChatFriendsItem.propTypes = {};
 
-export default ChatFriendsItem;
+const mapStateToProps = state => ({
+  user: state.auth.user
+});
+
+export default connect(mapStateToProps)(ChatFriendsItem);
