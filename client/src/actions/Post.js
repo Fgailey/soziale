@@ -28,6 +28,23 @@ export const getPosts = () => async dispatch => {
   }
 };
 
+// Get posts by user_id
+export const getPostsByUser = id => async dispatch => {
+  try {
+    const res = await axios.get(`/posts/user/${id}`);
+
+    dispatch({
+      type: GET_POSTS,
+      payload: res.data
+    });
+  } catch (err) {
+    dispatch({
+      type: POST_ERROR,
+      payload: { msg: err.response.statusText, status: err.response.status }
+    });
+  }
+};
+
 // Add like
 export const addLike = id => async dispatch => {
   try {
@@ -132,11 +149,7 @@ export const addComment = (postId, formData) => async dispatch => {
   };
 
   try {
-    const res = await axios.post(
-      `/posts/comment/${postId}`,
-      formData,
-      config
-    );
+    const res = await axios.post(`/posts/comment/${postId}`, formData, config);
 
     dispatch({
       type: ADD_COMMENT,
