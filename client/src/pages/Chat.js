@@ -111,7 +111,7 @@ class Chat extends Component {
                       this.messagesEnd = el;
                     }}
                     style={{ float: 'left', clear: 'both' }}
-                  />
+                  />  
                   </ul>
               </div>
               </div>
