@@ -38,7 +38,7 @@ const PostForm = ({ addPost }) => {
       <MDBContainer>
       <MDBModal size="sm" side position="bottom-right" toggle={()=>setToggle(false)} isOpen={toggle}>
         <MDBModalBody>
-          <Emoji appendEmoji={(emoji) => setText(text+emoji+'hey')}/>
+          <Emoji appendEmoji={(emoji) => setText(text+emoji)}/>
         </MDBModalBody>
       </MDBModal>
     </MDBContainer>
