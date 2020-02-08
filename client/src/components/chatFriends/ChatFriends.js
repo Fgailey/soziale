@@ -15,7 +15,7 @@ const ChatFriends = ({ getProfiles, profile: { profiles } }) => {
           
             {profiles.length > 0 ? (
               profiles.map(profile => (
-                <ChatFriendsItem key={profile._id} profile={profile} />
+                <ChatFriendsItem key={profile._id} profile={profile}/>
               ))
             ) : (
               <h4>No profiles found...</h4>
@@ -30,7 +30,8 @@ ChatFriends.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  profile: state.profile
+  profile: state.profile,
+  user: state.auth.user
 });
 
 export default connect(mapStateToProps, { getProfiles })(ChatFriends);
