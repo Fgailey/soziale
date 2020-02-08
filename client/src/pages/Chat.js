@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import io from 'socket.io-client';
 import moment from 'moment';
 import Layout from '../components/layout/Layout';
-import { getChats, afterPostMessage } from '../actions/Chat_action';
+import { getChats, afterPostMessage, setRoomDefault } from '../actions/Chat_action';
 import { connect } from 'react-redux';
 import ChatFriends from '../components/chatFriends/ChatFriends';
 
@@ -15,6 +15,8 @@ class Chat extends Component {
   componentDidMount() {
     let server =
       'https://project3-reach.herokuapp.com/' || 'http://localhost:5000/';
+      // sets the chat to default page
+      this.props.dispatch(setRoomDefault())
 
     //this call old chat messages from the mongo server
     this.props.dispatch(getChats());
@@ -39,6 +41,11 @@ class Chat extends Component {
     });
   };
 
+  handleRoomChange = (e) => {
+    e.preventDefault();
+    this.props.dispatch(setRoomDefault())
+  }
+
   renderCards = () =>
     this.props.user &&
     this.props.chats.chats &&
@@ -51,7 +58,7 @@ class Chat extends Component {
     let userID = this.props.user._id;
     let userName = this.props.user.name;
     let nowTime = moment();
-    let type = this.state.room;
+    let type = this.props.chats.room;
 
     this.socket.emit('Input Chat Message', {
       chatMessage,
@@ -77,7 +84,7 @@ class Chat extends Component {
                 <div className="white z-depth-1 px-3 pt-3 pb-0">
                   <ul className="list-unstyled friend-list">
                   <li className="active grey lighten-3 p-2" id='community'>
-                    <a href="/" className="d-flex justify-content-between">
+                    <div className="d-flex justify-content-between" onClick={this.handleRoomChange}>
                       <div className="text-small">
                         <strong>Community Chat</strong>
                         {/* <p className="last-message text-muted">Hello, Are you there?</p> */}
@@ -86,7 +93,7 @@ class Chat extends Component {
                         <p className="text-smaller text-muted mb-0">Just now</p>
                         {/* <span className="badge badge-danger float-right">1</span> */}
                       </div>
-                    </a>
+                    </div>
                   </li>
                     <ChatFriends/>
                     
