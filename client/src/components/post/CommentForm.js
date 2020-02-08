@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addComment } from '../../actions/Post';
@@ -34,12 +34,6 @@ class CommentForm extends React.Component {
 
   render() {
     const { text, toggle } = this.state;
-
-
-
-// const CommentForm = ({ postId, addComment }) => {
-//   const [text, setText] = useState('');
-//   const [toggle, setToggle] = useState(false);
 
   return (
     <div className='post-form'>
