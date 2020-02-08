@@ -7,9 +7,39 @@ import Emoji from '../emoji/emojiPicker'
 import SmilePic from '../emoji/smily.png'
 
 
-const CommentForm = ({ postId, addComment }) => {
-  const [text, setText] = useState('');
-  const [toggle, setToggle] = useState(false);
+class CommentForm extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      text: "",
+      toggle: false
+    };
+
+    this.setText = this.setText.bind(this);
+    this.setToggle = this.setToggle.bind(this);
+  }
+
+  setToggle(toggle) {
+    this.setState({ toggle });
+  }
+
+  setText(text) {
+    this.setState({ text });
+  }
+
+  appendEmoji(emoji) {
+    this.setText(this.state.text + emoji);
+  }
+
+  render() {
+    const { text, toggle } = this.state;
+
+
+
+// const CommentForm = ({ postId, addComment }) => {
+//   const [text, setText] = useState('');
+//   const [toggle, setToggle] = useState(false);
 
   return (
     <div className='post-form'>
@@ -20,8 +50,8 @@ const CommentForm = ({ postId, addComment }) => {
         className='form my-1'
         onSubmit={e => {
           e.preventDefault();
-          addComment(postId, { text });
-          setText('');
+          this.props.addComment(this.props.postId, { text });
+          this.setText('');
         }}
       >
         <textarea
@@ -30,7 +60,7 @@ const CommentForm = ({ postId, addComment }) => {
           rows='5'
           placeholder='Write something here...'
           value={text}
-          onChange={e => setText(e.target.value)}
+          onChange={e => this.setText(e.target.value)}
           required
         />
         <input
@@ -40,11 +70,11 @@ const CommentForm = ({ postId, addComment }) => {
         />
       </form>
 
-      <div onClick={()=>setToggle(true)}><img className='smilyPic' src={SmilePic} alt="Smiley face" /></div>
+      <div onClick={()=> this.setToggle(true)}><img className='smilyPic' src={SmilePic} alt="Smiley face" /></div>
       <MDBContainer>
-      <MDBModal size="sm" side position="bottom-right" toggle={()=>setToggle(false)} isOpen={toggle}>
+      <MDBModal size="sm" side position="bottom-right" toggle={() => this.setToggle(false)} isOpen={toggle}>
         <MDBModalBody>
-          <Emoji appendEmoji={(emoji) => setText(text+emoji)}/>
+        <Emoji appendEmoji={this.appendEmoji.bind(this)} />
         </MDBModalBody>
       </MDBModal>
     </MDBContainer>
@@ -52,6 +82,7 @@ const CommentForm = ({ postId, addComment }) => {
     </div>
   );
 };
+}
 
 CommentForm.propTypes = {
   addComment: PropTypes.func.isRequired
