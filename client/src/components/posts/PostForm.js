@@ -10,7 +10,6 @@ import SmilePic from '../emoji/smily.png'
 const PostForm = ({ addPost }) => {
   const [text, setText] = useState('');
   const [toggle, setToggle] = useState(false);
-  console.log('text',`${text}`)
 
   return (
     <div className='post-form'>
