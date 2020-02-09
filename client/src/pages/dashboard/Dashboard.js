@@ -39,7 +39,7 @@ const Dashboard = ({
                   <div className='row'>
                     <div className='col-6 '>
                       <img
-                        src={user.avatar}
+                        src={`/uploads/${user.avatar}`}
                         alt=''
                         className='img-thumbnail ml-2 my-2 aqua-gradient rounded-circle'
                       />
