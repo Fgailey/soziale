@@ -30,8 +30,7 @@ ChatFriends.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  profile: state.profile,
-  user: state.auth.user
+  profile: state.profile
 });
 
 export default connect(mapStateToProps, { getProfiles })(ChatFriends);
