@@ -21,3 +21,6 @@ body {
     margin:auto !important;
     padding: 0px;
 }
+.roundedz {
+    border-radius: 10px;
+}
