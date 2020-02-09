@@ -15,18 +15,10 @@ const PostsDashboard = ({ getPostsByUser, post: { posts, loading } }) => {
     <Spinner />
   ) : (
     <Fragment>
-      <h1 className='d-flex justify-content-center mb-0'>
-        <span className='badge badge-primary'>Communinal Posts</span>
-      </h1>
-      <hr className='my-5' />
-      <h3 className='text-center elegant-color-text mb-2'>
-        Welcome, feel free to comment below.
-      </h3>
-      <h5 className='text-center deep-orange-text mb-0 mt-2'>
-        Please keep it civil and be kind to your fellow users. Rude and hateful
-        comments will be removed at our discretion.
-      </h5>
-      <hr className='my-5' />
+      <div className='d-flex justify-content-center mb-0 pt-2'>
+        <h2>Your Posts</h2>
+        <i className='fas fa-user-circle'></i>
+      </div>
       <PostForm />
       <div className='posts'>
         {posts.map(post => (
