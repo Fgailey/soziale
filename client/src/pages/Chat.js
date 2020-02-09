@@ -92,7 +92,7 @@ class Chat extends Component {
             <span className='text-center blue lighten-3'>
               <h2>Chat Page</h2>
             </span>
-            <div className='row px-lg-2 px-2'>
+            <div className='row px-lg-2 px-2 mx-0'>
               <div className="col-md-6 col-xl-4 px-0">
                 <h6 className="font-weight-bold mb-3 text-center text-lg-left">Member</h6>
                 <div className="white z-depth-1 px-3 pt-3 pb-0">
@@ -104,7 +104,7 @@ class Chat extends Component {
                         {/* <p className="last-message text-muted">Hello, Are you there?</p> */}
                       </div>
                       <div className="chat-footer">
-                        <p className="text-smaller text-muted mb-0">Just now</p>
+                        {/* <p className="text-smaller text-muted mb-0">Just now</p> */}
                         {/* <span className="badge badge-danger float-right">1</span> */}
                       </div>
                     </div>
