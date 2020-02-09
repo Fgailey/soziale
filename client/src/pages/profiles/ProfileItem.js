@@ -22,7 +22,7 @@ const ProfileItem = ({
             <h2 className='prim'>{name}</h2>
             <img
               className='img-thumbnail aqua-gradient w-25 rounded-circle'
-              src={avatar}
+              src={`/uploads/${avatar}`}
               alt=''
             />
             <div className='mt-3 row'>
@@ -57,7 +57,6 @@ const ProfileItem = ({
           View Profile
         </Link>
       </div>
-      
     </div>
   );
 };
