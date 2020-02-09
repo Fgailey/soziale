@@ -21,7 +21,7 @@ const ProfileUser = ({
           <div className='row'>
             <div className='col-6 '>
               <img
-                src={avatar}
+                src={`/uploads/${avatar}`}
                 alt=''
                 className='img-thumbnail ml-2 my-2 aqua-gradient rounded-circle'
               />
