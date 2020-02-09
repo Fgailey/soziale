@@ -38,15 +38,30 @@ li {
   font-family: 'Bebas Neue', cursive;
   /* font-family: 'Baloo Bhai', cursive; */
 }
-.smilyPic{
-    height: 50px;
-    width: 50px;
+.smilyPic {
+  height: 40px;
+  width: 40px;
 }
-.smilyPic:hover{
-    transform: scale(1.2);
-    cursor: pointer;
-  }
+.smilyPic:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+/* 
+  .modal {
+    position: absolute;
+    top: 270px;
+    right: 100px;
+    bottom: 0;
+    left: 0;
+    z-index: 10040;
+    overflow: auto;
+    overflow-y: auto;
+ } */
 
 .roundedz {
-    border-radius: 10px;
+  border-radius: 10px;
+}
+
+.dashboardCards {
+  background-color: #393e46;
 }
