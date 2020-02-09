@@ -39,7 +39,7 @@ const Dashboard = ({
                   <div className='row'>
                     <div className='col-6 '>
                       <img
-                        src={user.avatar}
+                        src={`/uploads/${user.avatar}`}
                         alt=''
                         className='img-thumbnail ml-2 my-2 aqua-gradient rounded-circle'
                       />
@@ -70,7 +70,7 @@ const Dashboard = ({
                   <div className='card col-12'>following/followers</div>
                 </div>
               </div>
-              <div className='col-7'>
+              <div className='col-7 pr-0'>
                 <div className='card col-12'>
                   <PostsDashboard />
                 </div>
