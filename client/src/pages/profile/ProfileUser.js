@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import PostsDashboard from '../../components/posts/PostsDashboard';
 // import './profileUser.css';
 
-
 const ProfileUser = ({
   profile: {
     age,
@@ -59,7 +58,6 @@ const ProfileUser = ({
         </div>
       </div>
     </div>
-    
   );
 };
 
