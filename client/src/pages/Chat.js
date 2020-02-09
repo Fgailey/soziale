@@ -12,7 +12,6 @@ import SmilePic from '../components/emoji/smily.png'
 class Chat extends Component {
   state = {
     chatMessage: '',
-    room: 'community',
     modal: false
   };
   toggle = () => {
