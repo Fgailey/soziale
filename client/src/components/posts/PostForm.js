@@ -17,7 +17,7 @@ const PostForm = ({ addPost }) => {
         }}
       >
         <textarea
-          class='form-control z-depth-1'
+          className='form-control z-depth-1'
           name='text'
           rows='5'
           placeholder='Write something here...'
