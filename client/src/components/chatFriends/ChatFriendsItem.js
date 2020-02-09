@@ -17,7 +17,7 @@ const ChatFriendsItem = (props) => {
       console.log('changeRoom')
   }
   
-    let lastChat = props.chats.filter(chat => chat.sender._id === _id)
+    let lastChat = props.chats.chats.filter(chat => chat.sender._id === _id && props.chats.room === chat.type)
     
     let mostRecentChat = lastChat.pop()
     if(mostRecentChat === undefined){
@@ -62,7 +62,7 @@ const ChatFriendsItem = (props) => {
 // ChatFriendsItem.propTypes = {};
 
 const mapStateToProps = state => ({
-  chats: state.chats.chats,
+  chats: state.chats,
   user: state.auth.user
 });
 
