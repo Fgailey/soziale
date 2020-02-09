@@ -7,6 +7,7 @@ import Loader from '../loadingGif/Loader';
 import Alert from '../Alert';
 import Footer from '../../components/footer/Footer';
 import PostsDashboard from '../../components/posts/PostsDashboard';
+import './dashboard.css';
 
 const Dashboard = ({
   getCurrentProfile,
@@ -20,18 +21,21 @@ const Dashboard = ({
     <Loader />
   ) : (
     <Fragment>
-      <div className='container'>
-        {/* Logged in user greeting */}
-        <h1>Welcome, {user && user.name}</h1>
-        <Alert />
+      <div className='text-center white-text' id='profilesHeader'>
+        <h1 className='prim'>Welcome, {user && user.name}</h1>
 
+        <h4 className='sec'>It's all about you here</h4>
+      </div>
+      <div className='aqua-gradient' id='borderBottom'></div>
+
+      <Alert />
+      <div className='container mt-5 p-5' id='profileContainer'>
         {profile !== null ? (
           <Fragment>
             {/* Card */}
             <div className='row'>
-              <div className='card col-5 blue'>
+              <div className='card col-5'>
                 <div className='row'>
-                  <div className='card'></div>
                   <div className='row'>
                     <div className='col-6 '>
                       <img
@@ -62,7 +66,7 @@ const Dashboard = ({
                     <h3 className='mt-1'>{profile.about_me}</h3>
                   </div>
                 </div>
-                <div className='row p-2 green'>
+                <div className='row'>
                   <div className='card col-12'>following/followers</div>
                 </div>
               </div>
