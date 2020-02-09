@@ -1,7 +1,6 @@
-// Individual profile
-import React from 'react';
+import React, { Fragment} from 'react';
 import { connect } from 'react-redux';
-
+import Moment from 'react-moment';
 import { setRoom } from '../../actions/Chat_action';
 
 const ChatFriendsItem = (props) => {
@@ -10,7 +9,7 @@ const ChatFriendsItem = (props) => {
 
   let { user } = profile
 
-  let  { _id, name } = user
+  let  { _id, name, avatar } = user
 
   const handleChangeRoom = (e) => {
     e.preventDefault();
@@ -18,29 +17,52 @@ const ChatFriendsItem = (props) => {
       console.log('changeRoom')
   }
   
+    let lastChat = props.chats.filter(chat => chat.sender._id === _id)
+    
+    let mostRecentChat = lastChat.pop()
+    if(mostRecentChat === undefined){
+      mostRecentChat = {message: "No Recent Messages", createdAt:""}
+    }
+    console.log(mostRecentChat)
   
   return (
+    <Fragment>
 
+    {(props.user._id === _id)?
+    null
+    :
     <li className="active lighten-3 p-2" id={_id}>
       <div className="d-flex justify-content-between" onClick={handleChangeRoom}>
-        <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-8.jpg" alt="avatar" className="avatar rounded-circle d-flex align-self-center mr-2 z-depth-1" />
+      {(!avatar)?
+        <img src={"/uploads/default.png"} alt="avatar" className="avatar rounded-circle d-flex align-self-center mr-2 z-depth-1" />
+        :
+        <img src={"/uploads/"+avatar} alt="avatar" className="avatar rounded-circle d-flex align-self-center mr-2 z-depth-1" />
+
+      }
         <div className="text-small">
           <strong>{name}</strong>
-          <p className="last-message text-muted">Hello, Are you there?</p>
+          <p className="last-message text-muted">{mostRecentChat.message}</p>
         </div>
         <div className="chat-footer">
-          <p className="text-smaller text-muted mb-0">Just now</p>
-          {/* <span className="badge badge-danger float-right">1</span> */}
+          {(!mostRecentChat.createdAt)
+          ?
+          <p className="text-smaller text-muted mb-0">N/A</p>
+          :
+          <p className="text-smaller text-muted mb-0"><Moment fromNow>{mostRecentChat.createdAt}</Moment></p>
+          }
         </div>
       </div>
     </li>
+    }
     
+    </Fragment>
   );
 };
 
-ChatFriendsItem.propTypes = {};
+// ChatFriendsItem.propTypes = {};
 
 const mapStateToProps = state => ({
+  chats: state.chats.chats,
   user: state.auth.user
 });
 
