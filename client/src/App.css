@@ -57,3 +57,7 @@ li {
     overflow: auto;
     overflow-y: auto;
  } */
+
+.roundedz {
+    border-radius: 10px;
+}
