@@ -10,14 +10,14 @@ const PostItem = ({
   removeLike,
   deletePost,
   auth,
-  post: { _id, text, name, user, likes, comments, date },
+  post: { _id, text, name, avatar, user, likes, comments, date },
   showActions
 }) => (
   <div className='card light-blue lighten-4 my-3 p-3'>
     <div className='d-flex justify-content-start'>
       <img
         className='avatar rounded-circle'
-        src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png'
+        src={`/uploads/${avatar}`}
         alt='stock-pic'
       />
       <Link to={`/profile/${user}`}>
@@ -25,7 +25,7 @@ const PostItem = ({
       </Link>
     </div>
     <div>
-      <p className='mb-1 mt-2 p-2 border border-info'>{text}</p>
+      <p className='mb-1 mt-2 p-2 border border-info roundedz'>{text}</p>
       <p className='font-weight-bold'>
         Posted on <Moment format='MM/DD/YYYY'>{date}</Moment>
       </p>
