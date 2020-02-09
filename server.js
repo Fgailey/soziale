@@ -48,7 +48,7 @@ app.post('/upload', async (req, res) => {
 
   console.log(photo);
 
-  file.mv(`${__dirname}/client/public/uploads/${fileNamez}`, err => {
+  file.mv(`https://testingreach.herokuapp.com/uploads/${fileNamez}`, err => {
     if (err) {
       console.error(err);
       return res.status(500).send(err);
