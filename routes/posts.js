@@ -49,7 +49,8 @@ router.post(
 // @access   Private
 router.get('/', auth, async (req, res) => {
   try {
-    const posts = await db.Post.find().sort({ date: -1 });
+    const posts = await db.Post.find().populate(
+      'user', ['avatar']).sort({ date: -1 });
     res.json(posts);
   } catch (err) {
     console.error(err.message);
@@ -63,13 +64,13 @@ router.get('/', auth, async (req, res) => {
 router.get('/:id', auth, async (req, res) => {
   try {
     const post = await db.Post.findById(req.params.id);
-    // const user = await db.Post.find().populate('user', ['name', 'avatar']);
+    const user = await db.Post.find().populate('user', ['name', 'avatar']);
 
     // Check for ObjectId format and post
     if (!req.params.id.match(/^[0-9a-fA-F]{24}$/) || !post) {
       return res.status(404).json({ msg: 'Post not found' });
     }
-    // console.log(user[0].user)
+    console.log(user[0].user)
     res.json(post)
   } catch (err) {
     console.error(err.message);
