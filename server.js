@@ -37,22 +37,23 @@ app.post('/upload', async (req, res) => {
   }
 
   const file = req.files.file;
-  const avatar = file.name;
   const name = req.body.userID;
+  const fileNamez = name + '.png';
 
   let photo = await db.User.findByIdAndUpdate(
     { _id: name },
-    { avatar: avatar },
+    { avatar: fileNamez },
     { new: true }
   );
+
   console.log(photo);
 
-  file.mv(`${__dirname}/client/public/uploads/${file.name}`, err => {
+  file.mv(`${__dirname}/client/public/uploads/${fileNamez}`, err => {
     if (err) {
       console.error(err);
       return res.status(500).send(err);
     }
-    res.json({ fileName: file.name, filePath: `/uploads/${file.name}` });
+    res.json({ fileName: file.name, filePath: `/uploads/${fileNamez}` });
   });
 });
 
