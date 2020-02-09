@@ -23,7 +23,7 @@ const ChatFriendsItem = (props) => {
     if(mostRecentChat === undefined){
       mostRecentChat = {message: "No Recent Messages", createdAt:""}
     }
-    console.log(mostRecentChat)
+    // console.log(mostRecentChat)
   
   return (
     <Fragment>
