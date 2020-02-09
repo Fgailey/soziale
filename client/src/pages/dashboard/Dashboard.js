@@ -22,41 +22,39 @@ const Dashboard = ({
   ) : (
     <Fragment>
       <div className='text-center white-text' id='profilesHeader'>
-        <h1 className='prim'>Welcome, {user && user.name}</h1>
+        <h1 className='prim mt-2'>Welcome, {user && user.name}</h1>
 
         <h4 className='sec'>It's all about you here</h4>
       </div>
       <div className='aqua-gradient' id='borderBottom'></div>
 
       <Alert />
-      <div className='container mt-5 p-5' id='profileContainer'>
+      <div className='container py-5 px-5' id='profileContainer'>
         {profile !== null ? (
           <Fragment>
             {/* Card */}
             <div className='row'>
-              <div className='card col-5'>
+              <div className='card dashboardCards col-md-5'>
                 <div className='row'>
-                  <div className='row'>
-                    <div className='col-6 '>
-                      <img
-                        src={`/uploads/${user.avatar}`}
-                        alt=''
-                        className='img-thumbnail ml-2 my-2 aqua-gradient rounded-circle'
-                      />
+                  <div className='col-6 '>
+                    <img
+                      src={`/uploads/${user.avatar}`}
+                      alt=''
+                      className='img-thumbnail ml-2 my-2 aqua-gradient rounded-circle'
+                    />
+                  </div>
+                  <div className='col-6 pt-5 pl-5 align-bottom'>
+                    <div className='row details'>
+                      <h2 className='prim'>Age: </h2>
+                      <h3 className='mt-1'>{profile.age}</h3>
                     </div>
-                    <div className='col-6 pt-5 pl-5 align-bottom'>
-                      <div className='row details'>
-                        <h2 className='prim'>Age: </h2>
-                        <h3 className='mt-1'>{profile.age}</h3>
-                      </div>
-                      <div className='row details'>
-                        <h2 className='prim'>Location: </h2>
-                        <h3 className='mt-1'>{profile.current_city}</h3>
-                      </div>
-                      <div className='row details'>
-                        <h2 className='prim'>Gender: </h2>
-                        <h3 className='mt-1'>{profile.gender}</h3>
-                      </div>
+                    <div className='row details'>
+                      <h2 className='prim'>Location: </h2>
+                      <h3 className='mt-1'>{profile.current_city}</h3>
+                    </div>
+                    <div className='row details'>
+                      <h2 className='prim'>Gender: </h2>
+                      <h3 className='mt-1'>{profile.gender}</h3>
                     </div>
                   </div>
                 </div>
@@ -70,8 +68,8 @@ const Dashboard = ({
                   <div className='card col-12'>following/followers</div>
                 </div>
               </div>
-              <div className='col-7 pr-0'>
-                <div className='card col-12'>
+              <div className='col-md-7'>
+                <div className='card dashboardCards col-12'>
                   <PostsDashboard />
                 </div>
               </div>
