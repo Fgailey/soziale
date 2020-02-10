@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import PostsDashboard from '../../components/posts/PostsDashboard';
+import PostsProfile from '../../components/posts/PostsProfile';
 // import './profileUser.css';
 
 const ProfileUser = ({
@@ -50,7 +50,7 @@ const ProfileUser = ({
       </div>
       <div className='col-md-7'>
         <div className='card dashboardCards col-12'>
-          <PostsDashboard />
+          <PostsProfile />
         </div>
       </div>
     </div>
