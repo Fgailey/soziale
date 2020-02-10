@@ -2,7 +2,6 @@ import React, { Fragment} from 'react';
 import { connect } from 'react-redux';
 import Moment from 'react-moment';
 import { setRoom } from '../../actions/Chat_action';
-import './chatFriends.css'
 const ChatFriendsItem = (props) => {
 
   let { profile } = props
