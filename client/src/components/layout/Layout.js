@@ -1,9 +1,9 @@
-import React from "react";
+import React, {Fragment} from "react";
 import { connect } from 'react-redux';
 import Moment from 'react-moment';
 function Layout (props) {
         return(
-            <div>
+            <Fragment>
             { (props.room === props.type) ?
                 (props.user._id !== props.sender._id ?
               <li className="d-flex mb-4 pb-3">
@@ -45,7 +45,7 @@ function Layout (props) {
             null
             }
 
-            </div>
+            </Fragment>
         )
 }
 const mapStateToProps = state => {
