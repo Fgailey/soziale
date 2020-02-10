@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { login } from '../actions/Auth';
 import Alert from './Alert';
+import Footer from '../components/footer/Footer'
 
 const Login = ({ login, isAuthenticated }) => {
   const [formData, setFormData] = useState({
@@ -72,6 +73,7 @@ const Login = ({ login, isAuthenticated }) => {
           {/* Default form login */}
         </div>
       </div>
+      <Footer/>
     </Fragment>
   );
 };
