@@ -5,7 +5,7 @@ import Register from '../pages/Register';
 import Dashboard from '../pages/dashboard/Dashboard';
 import CreateProfile from '../components/profile-forms/CreateProfile';
 import EditProfile from '../components/profile-forms/EditProfile';
-import Chat from '../pages/Chat';
+import Chat from '../pages/chat/Chat';
 import VideoChat from '../pages/vidyo';
 import Profile from '../pages/profile/Profile';
 import Profiles from '../pages/profiles/Profiles';
