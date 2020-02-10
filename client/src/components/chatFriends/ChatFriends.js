@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { getProfiles } from '../../actions/Profile';
 import ChatFriendsItem from "./ChatFriendsItem";
 
-const ChatFriends = ({ getProfiles, profile: { profiles } }) => {
+const ChatFriends = ({ getProfiles, profile: { profiles }, chats }) => {
   useEffect(() => {
     getProfiles();
   }, [getProfiles]);
@@ -15,7 +15,7 @@ const ChatFriends = ({ getProfiles, profile: { profiles } }) => {
           
             {profiles.length > 0 ? (
               profiles.map(profile => (
-                <ChatFriendsItem key={profile._id} profile={profile}/>
+                <ChatFriendsItem key={profile._id} profile={profile} chats={chats}/>
               ))
             ) : (
               <h4>No profiles found...</h4>
@@ -30,6 +30,7 @@ ChatFriends.propTypes = {
 };
 
 const mapStateToProps = state => ({
+  chats: state.chats,
   profile: state.profile
 });
 
