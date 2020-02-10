@@ -5,6 +5,7 @@ import { setAlert } from '../actions/Alert';
 import { register } from '../actions/Auth';
 import PropTypes from 'prop-types';
 import Alert from './Alert';
+import Footer from '../components/footer/Footer'
 
 const Register = ({ setAlert, register, isAuthenticated }) => {
   const [formData, setFormData] = useState({
@@ -110,6 +111,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
           {/* Default form register */}
         </div>
       </div>
+      <Footer/>
     </Fragment>
   );
 };
