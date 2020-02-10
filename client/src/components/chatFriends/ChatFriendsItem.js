@@ -2,7 +2,7 @@ import React, { Fragment} from 'react';
 import { connect } from 'react-redux';
 import Moment from 'react-moment';
 import { setRoom } from '../../actions/Chat_action';
-
+import './chatFriends.css'
 const ChatFriendsItem = (props) => {
 
   let { profile } = props
@@ -31,7 +31,7 @@ const ChatFriendsItem = (props) => {
     {(props.user._id === _id)?
     null
     :
-    <li className="active lighten-3 p-2" id={_id}>
+    <li className="active lighten-3 p-2 chatFriendHover" id={_id}>
       <div className="d-flex justify-content-between" onClick={handleChangeRoom}>
       {(!avatar)?
         <img src={"/uploads/default.png"} alt="avatar" className="avatar rounded-circle d-flex align-self-center mr-2 z-depth-1" />
@@ -59,10 +59,8 @@ const ChatFriendsItem = (props) => {
   );
 };
 
-// ChatFriendsItem.propTypes = {};
-
 const mapStateToProps = state => ({
-  chats: state.chats,
+  // chats: state.chats,
   user: state.auth.user
 });
 
