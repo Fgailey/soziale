@@ -26,7 +26,7 @@ export const Landing = ({ isAuthenticated }) => {
                 <i className='fas fa-share' />Reach
               </h1>
               <h2 className='card-title h2 my-4 py-2'>
-                Where people like Foster come to connect to other weebs...
+                Where people like Foster come to connect with other weebs...
               </h2>
               <p className='mb-4 pb-2 px-md-5 mx-md-5'>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
