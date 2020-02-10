@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import Loader from '../loadingGif/Loader';
 import { getProfilesById } from '../../actions/Profile';
 import { Link } from 'react-router-dom';
-import ProfileUser from './ProfileUser';
+import PostsProfile from '../../components/posts/PostsProfile';
 import Alert from '../Alert';
 import Footer from '../../components/footer/Footer';
 
@@ -46,7 +46,47 @@ const Profile = ({
 
           <Alert />
           <div className='container py-5 px-5' id='profileContainer'>
-            <ProfileUser profile={profile} />
+            <div className='row'>
+              <div className='card dashboardCards col-md-5'>
+                <div className='row'>
+                  <div className='col-6 '>
+                    <img
+                      src={`/uploads/${profile.user.avatar}`}
+                      alt=''
+                      className='img-thumbnail ml-2 my-2 aqua-gradient rounded-circle'
+                    />
+                  </div>
+                  <div className='col-6 pt-5 pl-5 align-bottom'>
+                    <div className='row details'>
+                      <h2 className='prim'>Age: </h2>
+                      <h3 className='mt-1'>{profile.user.age}</h3>
+                    </div>
+                    <div className='row details'>
+                      <h2 className='prim'>Location: </h2>
+                      <h3 className='mt-1'>{profile.current_city}</h3>
+                    </div>
+                    <div className='row details'>
+                      <h2 className='prim'>Gender: </h2>
+                      <h3 className='mt-1'>{profile.gender}</h3>
+                    </div>
+                  </div>
+                </div>
+                <div className='row'>
+                  <div className='col-12'>
+                    <h2 className='prim'>About: </h2>
+                    <h3 className='mt-1'>{profile.about_me}</h3>
+                  </div>
+                </div>
+                <div className='row'>
+                  <div className='card col-12'>following/followers</div>
+                </div>
+              </div>
+              <div className='col-md-7'>
+                <div className='card dashboardCards col-12'>
+                  <PostsProfile />
+                </div>
+              </div>
+            </div>
           </div>
         </Fragment>
       )}
