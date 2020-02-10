@@ -13,32 +13,28 @@ const ProfileUser = ({
   }
 }) => {
   return (
-    // maybe move this layout to dashboard route?
     <div className='row'>
-      <div className='card col-5 blue'>
+      <div className='card dashboardCards col-md-5'>
         <div className='row'>
-          <div className='card'></div>
-          <div className='row'>
-            <div className='col-6 '>
-              <img
-                src={`/uploads/${avatar}`}
-                alt=''
-                className='img-thumbnail ml-2 my-2 aqua-gradient rounded-circle'
-              />
+          <div className='col-6 '>
+            <img
+              src={`/uploads/${avatar}`}
+              alt=''
+              className='img-thumbnail ml-2 my-2 aqua-gradient rounded-circle'
+            />
+          </div>
+          <div className='col-6 pt-5 pl-5 align-bottom'>
+            <div className='row details'>
+              <h2 className='prim'>Age: </h2>
+              <h3 className='mt-1'>{age}</h3>
             </div>
-            <div className='col-6 pt-5 pl-5 align-bottom'>
-              <div className='row details'>
-                <h2 className='prim'>Age: </h2>
-                <h3 className='mt-1'>{age}</h3>
-              </div>
-              <div className='row details'>
-                <h2 className='prim'>Location: </h2>
-                <h3 className='mt-1'>{current_city}</h3>
-              </div>
-              <div className='row details'>
-                <h2 className='prim'>Gender: </h2>
-                <h3 className='mt-1'>{gender}</h3>
-              </div>
+            <div className='row details'>
+              <h2 className='prim'>Location: </h2>
+              <h3 className='mt-1'>{current_city}</h3>
+            </div>
+            <div className='row details'>
+              <h2 className='prim'>Gender: </h2>
+              <h3 className='mt-1'>{gender}</h3>
             </div>
           </div>
         </div>
@@ -48,12 +44,12 @@ const ProfileUser = ({
             <h3 className='mt-1'>{about_me}</h3>
           </div>
         </div>
-        <div className='row p-2 green'>
+        <div className='row'>
           <div className='card col-12'>following/followers</div>
         </div>
       </div>
-      <div className='col-7'>
-        <div className='card col-12 h-100'>
+      <div className='col-md-7'>
+        <div className='card dashboardCards col-12'>
           <PostsDashboard />
         </div>
       </div>
