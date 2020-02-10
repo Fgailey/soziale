@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import Spinner from '../../pages/loadingGif/Loader';
+import Loader from '../../pages/loadingGif/Loader';
 import PostItem from './PostItem';
 import PostForm from './PostForm';
 import { getPostsByUser } from '../../actions/Post';
@@ -12,7 +12,7 @@ const PostsDashboard = ({ getPostsByUser, post: { posts, loading } }) => {
   }, [getPostsByUser]);
 
   return loading ? (
-    <Spinner />
+    <Loader />
   ) : (
     <Fragment>
       <div className='d-flex justify-content-center mb-0 pt-2'>
