@@ -21,7 +21,7 @@ const Dashboard = ({
     <Loader />
   ) : (
     <Fragment>
-      <div className='text-center white-text' id='profilesHeader'>
+      <div className='text-center' id='profilesHeader'>
         <h1 className='prim mt-2'>Welcome, {user && user.name}</h1>
 
         <h4 className='sec'>It's all about you here</h4>
