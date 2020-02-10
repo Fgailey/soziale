@@ -16,9 +16,9 @@ const ChatFriendsItem = (props) => {
       console.log('changeRoom')
   }
   
-    let lastChat = props.chats.chats.filter(chat => chat.sender._id === _id && props.chats.room === chat.type)
-    
-    let mostRecentChat = lastChat.pop()
+    // let lastChat = props.chats.chats.filter(chat => chat.sender._id === _id && props.chats.room === chat.type)
+        let mostRecentChat
+    // let mostRecentChat = lastChat.pop()
     if(mostRecentChat === undefined){
       mostRecentChat = {message: "No Recent Messages", createdAt:""}
     }
