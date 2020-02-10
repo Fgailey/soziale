@@ -1,0 +1,10 @@
+
+.chatBoxContainer {    
+  border-left: #1f9cfa 3px solid;
+  border-right: palegreen 3px solid;
+}
+.chatFriendHover:hover {
+    background-color: grey;
+
+}
+

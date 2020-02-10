@@ -1,13 +1,13 @@
 import React, { Component, Fragment} from 'react';
 import io from 'socket.io-client';
 import moment from 'moment';
-import Layout from '../components/layout/Layout';
-import { getChats, afterPostMessage, setRoomDefault } from '../actions/Chat_action';
+import Layout from '../../components/layout/Layout';
+import { getChats, afterPostMessage, setRoomDefault } from '../../actions/Chat_action';
 import { connect } from 'react-redux';
-import ChatFriends from '../components/chatFriends/ChatFriends';
-import Emoji from '../components/emoji/emojiPicker'
+import ChatFriends from '../../components/chatFriends/ChatFriends';
+import Emoji from '../../components/emoji/emojiPicker'
 import { MDBContainer, MDBModal, MDBModalBody } from 'mdbreact';
-import SmilePic from '../components/emoji/smily.png'
+import SmilePic from '../../components/emoji/smily.png'
 
 class Chat extends Component {
   state = {
@@ -87,14 +87,18 @@ class Chat extends Component {
   render() {
     return (
       <Fragment>
+            <div className='text-center white-text' id='profilesHeader'>
+              <h1 className='prim'>Chat page</h1>
+
+              <h4 className='sec'>It's all about you here</h4>
+            </div>
+            <div className='aqua-gradient' id='borderBottom'></div>
+
         <div className='container my-5'>
-          <div className='card'>
-            <span className='text-center blue lighten-3'>
-              <h2>Chat Page</h2>
-            </span>
+          <div className='card chatBoxContainer'>
+          <div className='aqua-gradient' id='borderBottom'></div>
             <div className='row px-lg-2 px-2 mx-0'>
               <div className="col-md-6 col-xl-4 px-0">
-                <h6 className="font-weight-bold mb-3 text-center text-lg-left">Member</h6>
                 <div className="white z-depth-1 px-3 pt-3 pb-0">
                   <ul className="list-unstyled friend-list">
                   <li className="active grey lighten-3 p-2" id='community'>
@@ -143,12 +147,13 @@ class Chat extends Component {
                 <input
                   id='message'
                   placeholder='Type here to message'
-                  className='w-100'
+                  className='w-100 chatBoxContainer'
                   type='text'
                   value={this.state.chatMessage}
                   onChange={this.handleSearchChange}
                   style={{fontSize: 20, height: '100px', wordBreak: 'break-word' }}
                 />
+          <div className='aqua-gradient' id='borderBottom'></div>
                 <button
                   type='submit'
                   onClick={this.submitChatMessage}
@@ -158,7 +163,7 @@ class Chat extends Component {
                   Submit
                 </button>
                 <div onClick={this.toggle}><img className='smilyPic' src={SmilePic} alt="Smiley face" /></div>
-              </form>
+              </form>              
         </div>
 
         <MDBContainer>
