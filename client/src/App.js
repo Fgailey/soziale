@@ -5,6 +5,7 @@ import Nav from './components/navbar/Nav';
 import Routes from './routing/Routes';
 import Wrapper from './components/wrapper';
 import './App.css';
+import './pages/chat/chat.css'
 
 // Redux
 import { Provider } from 'react-redux';
