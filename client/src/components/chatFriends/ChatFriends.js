@@ -11,15 +11,13 @@ const ChatFriends = ({ getProfiles, profile: { profiles }, chats }) => {
 
   return (
     <div>
-
-          
-            {profiles.length > 0 ? (
-              profiles.map(profile => (
-                <ChatFriendsItem key={profile._id} profile={profile} chats={chats}/>
-              ))
-            ) : (
-              <h4>No profiles found...</h4>
-            )}
+        {profiles.length > 0 ? (
+          profiles.map(profile => (
+            <ChatFriendsItem key={profile._id} profile={profile} chats={chats}/>
+          ))
+        ) : (
+          <h4>No profiles found...</h4>
+        )}
     </div>
   );
 }
