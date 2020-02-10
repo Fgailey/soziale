@@ -1,9 +1,9 @@
 const express = require('express');
 const path = require('path');
-var axios = require('axios');
 const connectDB = require('./config/db');
-var cors = require('cors');
+const cors = require('cors');
 const fileUpload = require('express-fileupload');
+const nodemailer = require('nodemailer');
 const db = require('./models/index');
 
 const app = express();
@@ -28,7 +28,54 @@ app.use('/profile', require('./routes/profile'));
 app.use('/posts', require('./routes/posts'));
 app.use('/chat', require('./routes/chat'));
 app.use('/vidyoToken', require('./routes/vidyoToken'));
-// app.use('/uploads', require('./routes/uploads'));
+// app.use('/send', require('./routes/contact'));
+
+// Contact form route
+let transporter = nodemailer.createTransport({
+  host: 'smtp.zoho.com',
+  port: 465,
+  secure: true,
+  auth: {
+    user: 'reach2020@zoho.com',
+    pass: 'Github2020*'
+  }
+})
+
+transporter.verify((error, success) => {
+  if (error) {
+    console.log(error);
+  } else {
+    console.log('Server is ready to take messages');
+  }
+});
+
+app.post('/send', (req, res, next) => {
+  const name = JSON.stringify(req.body.name)
+  const email = req.body.email
+  const message = req.body.message
+  const content = `name: ${name} \n email: ${email} \n message: ${message} `
+  console.log(name, email, message)
+  const eContent = JSON.stringify(content)
+  console.log(eContent)
+  const mail = {
+    from: name,
+    to: 'scottjr101@gmail.com',  //Change to email address that you want to receive messages on
+    subject: 'New Message from Contact Form - @Reach',
+    text: eContent
+  }
+
+  transporter.sendMail(mail, (err, data) => {
+    if (err) {
+      res.json({
+        msg: 'fail'
+      })
+    } else {
+      res.json({
+        msg: 'success'
+      })
+    }
+  })
+})
 
 // Upload Endpoint
 app.post('/upload', async (req, res) => {
