@@ -2,12 +2,15 @@ import React, { Component, Fragment} from 'react';
 import io from 'socket.io-client';
 import moment from 'moment';
 import Layout from '../../components/layout/Layout';
+import Loader from '../loadingGif/Loader';
 import { getChats, afterPostMessage, setRoomDefault } from '../../actions/Chat_action';
+import { getProfiles } from '../../actions/Profile';
 import { connect } from 'react-redux';
 import ChatFriends from '../../components/chatFriends/ChatFriends';
 import Emoji from '../../components/emoji/emojiPicker'
 import { MDBContainer, MDBModal, MDBModalBody } from 'mdbreact';
 import SmilePic from '../../components/emoji/smily.png'
+import './chat.css'
 
 class Chat extends Component {
   state = {
@@ -30,7 +33,8 @@ class Chat extends Component {
     let server =
       'https://project3-reach.herokuapp.com/' || 'http://localhost:5000/';
       // sets the chat to default page
-      this.props.dispatch(setRoomDefault())
+    this.props.dispatch(setRoomDefault())
+    this.props.dispatch(getProfiles())
 
     //this call old chat messages from the mongo server
     this.props.dispatch(getChats());
@@ -87,6 +91,10 @@ class Chat extends Component {
   render() {
     return (
       <Fragment>
+      {this.props.profile.loading ? (
+        <Loader />
+      ) : (
+        <Fragment>
             <div className='text-center white-text' id='profilesHeader'>
               <h1 className='prim'>Chat page</h1>
 
@@ -98,18 +106,15 @@ class Chat extends Component {
           <div className='card chatBoxContainer'>
           <div className='aqua-gradient' id='borderBottom'></div>
             <div className='row px-lg-2 px-2 mx-0'>
-              <div className="col-md-6 col-xl-4 px-0">
+              <div className="col-md-6 col-xl-4 px-0 borderSeperator scrollbar scrollbar-near-moon thin chat-overflow">
                 <div className="white z-depth-1 px-3 pt-3 pb-0">
                   <ul className="list-unstyled friend-list">
                   <li className="active grey lighten-3 p-2" id='community'>
                     <div className="d-flex justify-content-between" onClick={this.handleRoomChange}>
                       <div className="text-small">
-                        <strong>Community Chat</strong>
-                        {/* <p className="last-message text-muted">Hello, Are you there?</p> */}
+                        <strong title='Click here to return to community chat'>Community Chat</strong>
                       </div>
                       <div className="chat-footer">
-                        {/* <p className="text-smaller text-muted mb-0">Just now</p> */}
-                        {/* <span className="badge badge-danger float-right">1</span> */}
                       </div>
                     </div>
                   </li>
@@ -118,14 +123,8 @@ class Chat extends Component {
                   </ul>
                 </div>
               </div>
-
-            
               <div
-                className='col-md-6 col-xl-8 pl-md-3 px-lg-auto px-0'
-                style={{ height: '500px', overflowY: 'scroll' }}
-              >
-              {/* <div className="col-md-6 col-xl-8 pl-md-3 px-lg-auto px-0"> */}
-
+                className='col-md-6 col-xl-8 pl-md-3 px-lg-auto px-0 scrollbar scrollbar-near-moon thin chat-overflow'>
                 <div className="chat-message">
 
                   <ul className="list-unstyled chat">
@@ -173,8 +172,8 @@ class Chat extends Component {
           </MDBModalBody>
         </MDBModal>
       </MDBContainer>
-
-
+      </Fragment>
+      )}
       </Fragment>
     );
   }
@@ -183,7 +182,8 @@ class Chat extends Component {
 const mapStateToProps = state => {
   return {
     user: state.auth.user,
-    chats: state.chats
+    chats: state.chats,
+    profile: state.profile
   };
 };
 
