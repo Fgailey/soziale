@@ -66,7 +66,7 @@ const EditProfile = ({
             </h1>
             <Alert />
             <small className='prim'>* = required field</small>
-            <form className='form pb-5' onSubmit={e => onSubmit(e)}>
+            <form className='form-group pb-5' onSubmit={e => onSubmit(e)}>
               <small className='form-text prim'>Select Age*</small>
               <input
                 name='age'
@@ -78,20 +78,19 @@ const EditProfile = ({
                 onChange={e => onChange(e)}
               />
               <div className='form-group'>
-                <small className='form-text prim'>Select Gender</small>
-                <select
-                  name='gender'
-                  value={gender}
-                  onChange={e => onChange(e)}
-                >
-                  <option value={0}>* Select Gender</option>
-                  <option value='Male'>Male</option>
-                  <option value='Female'>Female</option>
-                  <option value='Dragon'>Dragon</option>
-                </select>
+                <div className='form-group'>
+                  <small className='form-text prim'>Gender?</small>
+                  <input
+                    type='text'
+                    placeholder='Gender'
+                    name='gender'
+                    value={gender}
+                    onChange={e => onChange(e)}
+                  />
+                </div>
               </div>
               <div className='form-group'>
-                <small className='form-text prim'>Where you at, dog?</small>
+                <small className='form-text prim'>Current Location?</small>
                 <input
                   type='text'
                   placeholder='Current City'
@@ -101,9 +100,7 @@ const EditProfile = ({
                 />
               </div>
               <div className='form-group'>
-                <small className='form-text prim'>
-                  Where did you come from, Cotton-Eyed Joe?
-                </small>
+                <small className='form-text prim'>Hometown?</small>
                 <input
                   type='text'
                   placeholder='Hometown'
@@ -114,22 +111,9 @@ const EditProfile = ({
               </div>
 
               <div className='form-group'>
-                <small className='form-text prim'>
-                  Tell us a little about yourself
-                </small>
+                <small className='form-text prim'>Interests?</small>
                 <textarea
-                  placeholder='A short bio of yourself'
-                  name='about_me'
-                  value={about_me}
-                  onChange={e => onChange(e)}
-                />
-              </div>
-
-              <div className='form-group'>
-                <small className='form-text prim'>
-                  Tell us a little about yourself
-                </small>
-                <textarea
+                  className='w-50'
                   placeholder='Hobbies or Interests?'
                   name='interests'
                   value={interests}
@@ -137,8 +121,27 @@ const EditProfile = ({
                 />
               </div>
 
-              <input type='submit' className='btn btn-primary my-1' />
-              <Link className='btn btn-light my-1' to='/dashboard'>
+              <div className='form-group'>
+                <small className='form-text prim'>
+                  Tell us a little about yourself...
+                </small>
+                <textarea
+                  className='w-50'
+                  placeholder='A short bio of yourself'
+                  name='about_me'
+                  value={about_me}
+                  onChange={e => onChange(e)}
+                />
+              </div>
+
+              <input
+                type='submit'
+                className='btn btn-primary my-1 aqua-gradient'
+              />
+              <Link
+                className='btn btn-light my-1 purple-gradient'
+                to='/dashboard'
+              >
                 Go Back
               </Link>
             </form>
