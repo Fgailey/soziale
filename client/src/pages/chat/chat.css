@@ -7,7 +7,9 @@
     background-color: grey;
 
 }
-
+.chatFriendTest {    
+    background:linear-gradient(40deg, #2096ff, #05ffa3) !important
+}
 .lightGrey {
     background-color: #393e46;
 }

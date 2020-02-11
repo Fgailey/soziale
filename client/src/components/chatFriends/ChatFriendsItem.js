@@ -10,6 +10,8 @@ const ChatFriendsItem = (props) => {
 
   let  { _id, name, avatar } = user
 
+  
+
   const handleChangeRoom = (e) => {
     e.preventDefault();
     props.dispatch(setRoom(props.user._id, _id))
@@ -39,7 +41,7 @@ const ChatFriendsItem = (props) => {
 
       }
         <div className="text-small">
-          <strong>{name}</strong>
+          <strong class='prim'>{name}</strong>
           <p className="last-message text-muted">{mostRecentChat.message}</p>
         </div>
         {/* <div className="chat-footer">

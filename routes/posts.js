@@ -83,8 +83,6 @@ router.get('/:id', auth, async (req, res) => {
 // @desc     Get all posts by current user_id
 // @access   Private
 router.get('/user/:id', auth, async (req, res) => {
-  console.log(req);
-  let userIDDD = "5e2fd7b3125f99907449d3a2"
   console.log('Log Origin: routes/posts /user/:id = ' + req.user.id);
   try {
     const postss = await db.Post.find({ user: `${req.params.id}` }).sort({

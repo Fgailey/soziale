@@ -15,8 +15,11 @@ import './chat.css'
 class Chat extends Component {
   state = {
     chatMessage: '',
-    modal: false
+    modal: false,
+    active: false
   };
+
+
   toggle = () => {
     this.setState({
       modal: !this.state.modal
@@ -111,7 +114,7 @@ class Chat extends Component {
               >
                 <div className="white z-depth-1 px-3 pt-3 pb-0">
                   <ul className="list-unstyled friend-list">
-                  <li className="active grey lighten-3 p-2" id='community'>
+                  <li className="active grey lighten-3 p-2 chatFriendHover" id='community'>
                     <div className="d-flex justify-content-between" onClick={this.handleRoomChange}>
                       <div className="text-small">
                         <strong title='Click here to return to community chat'>Community Chat</strong>
