@@ -90,7 +90,7 @@ const Profile = ({
               <div className='col-md-7'>
                 <div className='card mediumBGcolor col-12'>
                   <div className='d-flex justify-content-center mb-0 pt-2'>
-                    <h2 className='prim'>Your Posts</h2>
+                    <h2 className='prim'>{profile.user.name}'s Posts</h2>
                     <i className='fas fa-user-circle prim'></i>
                   </div>
                   <PostForm />
