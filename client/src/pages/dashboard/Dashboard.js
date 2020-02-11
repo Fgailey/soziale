@@ -21,10 +21,11 @@ const Dashboard = ({
     <Loader />
   ) : (
     <Fragment>
-      <div className='text-center' id='profilesHeader'>
-        <h1 className='prim mt-2'>Welcome, {user && user.name}</h1>
-
-        <h4 className='sec'>It's all about you here</h4>
+      <div className='row text-center' id='profilesHeader'>
+        <div className='col'>
+          <h1 className='prim mt-2'>Welcome, {user && user.name}</h1>
+          <h4 className='sec'>It's all about you here</h4>
+        </div>
       </div>
       <div className='aqua-gradient' id='borderBottom'></div>
 
@@ -46,26 +47,32 @@ const Dashboard = ({
                   <div className='col-6 pt-5 pl-5 align-bottom'>
                     <div className='row details'>
                       <h2 className='prim'>Age: </h2>
-                      <h3 className='mt-1'>{profile.age}</h3>
+                      <h3 className='sec mt-1'>{profile.age}</h3>
                     </div>
                     <div className='row details'>
                       <h2 className='prim'>Location: </h2>
-                      <h3 className='mt-1'>{profile.current_city}</h3>
+                      <h3 className='sec mt-1'>{profile.current_city}</h3>
                     </div>
                     <div className='row details'>
                       <h2 className='prim'>Gender: </h2>
-                      <h3 className='mt-1'>{profile.gender}</h3>
+                      <h3 className='sec mt-1'>{profile.gender}</h3>
                     </div>
                   </div>
                 </div>
                 <div className='row'>
                   <div className='col-12'>
                     <h2 className='prim'>About: </h2>
-                    <h3 className='mt-1'>{profile.about_me}</h3>
+                    <h3 className='sec mt-1'>{profile.about_me}</h3>
                   </div>
                 </div>
                 <div className='row'>
                   <div className='card col-12'>following/followers</div>
+                  <Link
+                    to='/edit-profile'
+                    className='btn rounded dusty-grass-gradient mx-4 float-right mt-lg-3 mt-md-4'
+                  >
+                    <i class='black-text fa-3x fas fa-user-edit'></i>
+                  </Link>
                 </div>
               </div>
               <div className='col-md-7'>
