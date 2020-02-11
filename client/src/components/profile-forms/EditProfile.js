@@ -57,81 +57,93 @@ const EditProfile = ({
 
   return (
     <Fragment>
-      <div className='text-center'>
-        <h1 className='large text-primary'>Edit Your Profile</h1>
-        <p className='lead'>
-          <i className='fas fa-user' /> Tell us how it be like...
-        </p>
-        <Alert />
-        <small>* = required field</small>
-        <form className='form' onSubmit={e => onSubmit(e)}>
-          <small className='form-text'>Select Age*</small>
-          <input
-            name='age'
-            type='number'
-            min={1}
-            max={100}
-            placeholder={18}
-            value={age}
-            onChange={e => onChange(e)}
-          />
-          <div className='form-group'>
-            <small className='form-text'>Select Gender</small>
-            <select name='gender' value={gender} onChange={e => onChange(e)}>
-              <option value={0}>* Select Gender</option>
-              <option value='Male'>Male</option>
-              <option value='Female'>Female</option>
-              <option value='Dragon'>Dragon</option>
-            </select>
-          </div>
-          <div className='form-group'>
-            <small className='form-text'>Where you at, dog?</small>
-            <input
-              type='text'
-              placeholder='Current City'
-              name='current_city'
-              value={current_city}
-              onChange={e => onChange(e)}
-            />
-          </div>
-          <div className='form-group'>
-            <small className='form-text'>
-              Where did you come from, Cotton-Eyed Joe?
-            </small>
-            <input
-              type='text'
-              placeholder='Hometown'
-              name='from_city'
-              value={from_city}
-              onChange={e => onChange(e)}
-            />
-          </div>
+      <div className='container my-5 p-5'>
+        <div className='card darkBGcolor border-0'>
+          <div className='text-center'>
+            <h1 className='large prim p-4'>
+              Edit Your Profile
+              <i className='ml-2 fas fa-user-edit'></i>
+            </h1>
+            <Alert />
+            <small className='prim'>* = required field</small>
+            <form className='form pb-5' onSubmit={e => onSubmit(e)}>
+              <small className='form-text prim'>Select Age*</small>
+              <input
+                name='age'
+                type='number'
+                min={1}
+                max={100}
+                placeholder={18}
+                value={age}
+                onChange={e => onChange(e)}
+              />
+              <div className='form-group'>
+                <small className='form-text prim'>Select Gender</small>
+                <select
+                  name='gender'
+                  value={gender}
+                  onChange={e => onChange(e)}
+                >
+                  <option value={0}>* Select Gender</option>
+                  <option value='Male'>Male</option>
+                  <option value='Female'>Female</option>
+                  <option value='Dragon'>Dragon</option>
+                </select>
+              </div>
+              <div className='form-group'>
+                <small className='form-text prim'>Where you at, dog?</small>
+                <input
+                  type='text'
+                  placeholder='Current City'
+                  name='current_city'
+                  value={current_city}
+                  onChange={e => onChange(e)}
+                />
+              </div>
+              <div className='form-group'>
+                <small className='form-text prim'>
+                  Where did you come from, Cotton-Eyed Joe?
+                </small>
+                <input
+                  type='text'
+                  placeholder='Hometown'
+                  name='from_city'
+                  value={from_city}
+                  onChange={e => onChange(e)}
+                />
+              </div>
 
-          <div className='form-group'>
-            <small className='form-text'>Tell us a little about yourself</small>
-            <textarea
-              placeholder='A short bio of yourself'
-              name='about_me'
-              value={about_me}
-              onChange={e => onChange(e)}
-            />
-          </div>
+              <div className='form-group'>
+                <small className='form-text prim'>
+                  Tell us a little about yourself
+                </small>
+                <textarea
+                  placeholder='A short bio of yourself'
+                  name='about_me'
+                  value={about_me}
+                  onChange={e => onChange(e)}
+                />
+              </div>
 
-          <div className='form-group'>
-            <small className='form-text'>Tell us a little about yourself</small>
-            <textarea
-              placeholder='A short bio of yourself'
-              name='interests'
-              value={interests}
-              onChange={e => onChange(e)}
-            />
-          </div>
+              <div className='form-group'>
+                <small className='form-text prim'>
+                  Tell us a little about yourself
+                </small>
+                <textarea
+                  placeholder='Hobbies or Interests?'
+                  name='interests'
+                  value={interests}
+                  onChange={e => onChange(e)}
+                />
+              </div>
 
-          <input type='submit' className='btn btn-primary my-1' />
-          <Link className='btn btn-light my-1' to='/dashboard'>
-            Go Back
-          </Link>
-        </form>
+              <input type='submit' className='btn btn-primary my-1' />
+              <Link className='btn btn-light my-1' to='/dashboard'>
+                Go Back
+              </Link>
+            </form>
+          </div>
+        </div>
       </div>
     </Fragment>
   );
