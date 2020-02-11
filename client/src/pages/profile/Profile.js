@@ -9,11 +9,11 @@ import PostItem from '../../components/posts/PostItem';
 import PostForm from '../../components/posts/PostForm';
 import Alert from '../Alert';
 import Footer from '../../components/footer/Footer';
-import { getPostsByUser } from '../../actions/Post';
+import { getPostsByProfile } from '../../actions/Post';
 
 const Profile = ({
   getProfilesById,
-  getPostsByUser,
+  getPostsByProfile,
   profile: { profile, loading },
   auth,
   match,
@@ -21,8 +21,8 @@ const Profile = ({
 }) => {
   useEffect(() => {
     getProfilesById(match.params.id);
-    getPostsByUser();
-  }, [getProfilesById, getPostsByUser, match.params.id]);
+    getPostsByProfile(match.params.id, match.params.id );
+  }, [getProfilesById, getPostsByProfile, match.params.id]);
 
   return (
     <Fragment>
@@ -111,7 +111,7 @@ const Profile = ({
 };
 
 Profile.propTypes = {
-  getPostsByUser: PropTypes.func.isRequired,
+  getPostsByProfile: PropTypes.func.isRequired,
   getProfilesById: PropTypes.func.isRequired,
   post: PropTypes.object.isRequired,
   profile: PropTypes.object.isRequired,
@@ -124,6 +124,6 @@ const mapStateToProps = state => ({
   post: state.post
 });
 
-export default connect(mapStateToProps, { getProfilesById, getPostsByUser })(
+export default connect(mapStateToProps, { getProfilesById, getPostsByProfile })(
   Profile
 );
