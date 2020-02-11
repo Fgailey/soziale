@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { login } from '../actions/Auth';
 import Alert from './Alert';
-import Footer from '../components/footer/Footer'
+import Footer from '../components/footer/Footer';
 
 const Login = ({ login, isAuthenticated }) => {
   const [formData, setFormData] = useState({
@@ -29,20 +29,20 @@ const Login = ({ login, isAuthenticated }) => {
   return (
     <Fragment>
       <div className='container my-5'>
-        <div className='card'>
+        <div className='card darkBGcolor border-0'>
           {/* Default form login */}
           <form
-            className='text-center border border-light p-5'
+            className='text-center p-5'
             action='#!'
             onSubmit={e => onSubmit(e)}
           >
             <Alert />
-            <p className='h4 mb-4'>Sign in</p>
+            <p className='text-white h4 mb-4'>Sign in</p>
             {/* Email */}
             <input
               type='email'
               id='defaultLoginFormEmail'
-              className='form-control mb-4'
+              className='lightBGcolor border-0 form-control mb-4'
               placeholder='E-mail'
               name='email'
               value={email}
@@ -53,7 +53,7 @@ const Login = ({ login, isAuthenticated }) => {
             <input
               type='password'
               id='defaultLoginFormPassword'
-              className='form-control mb-4'
+              className='lightBGcolor border-0 form-control mb-4'
               placeholder='Password'
               name='password'
               value={password}
@@ -61,19 +61,22 @@ const Login = ({ login, isAuthenticated }) => {
               // minLength='6'
             />
             {/* Sign in button */}
-            <button className='btn btn-info btn-block my-4' type='submit'>
+            <button className='btn aqua-gradient btn-block my-4' type='submit'>
               Sign in
             </button>
             {/* Register */}
-            <p>
+            <p className='text-white'>
               Not a member?
-              <Link to='/register'> Register</Link>
+              <Link to='/register' className='text-warning'>
+                {' '}
+                Register
+              </Link>
             </p>
           </form>
           {/* Default form login */}
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </Fragment>
   );
 };

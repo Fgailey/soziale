@@ -5,7 +5,7 @@ import { setAlert } from '../actions/Alert';
 import { register } from '../actions/Auth';
 import PropTypes from 'prop-types';
 import Alert from './Alert';
-import Footer from '../components/footer/Footer'
+import Footer from '../components/footer/Footer';
 
 const Register = ({ setAlert, register, isAuthenticated }) => {
   const [formData, setFormData] = useState({
@@ -36,20 +36,20 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
   return (
     <Fragment>
       <div className='container my-5'>
-        <div className='card'>
+        <div className='card darkBGcolor border-0'>
           {/* Default form register */}
           <form
-            className='text-center border border-light p-5'
+            className='text-center p-5'
             action='#!'
             onSubmit={e => onSubmit(e)}
           >
             <Alert />
-            <p className='h4 mb-4'>New User</p>
+            <p className='text-white h4 mb-4'>New User</p>
             {/* Name */}
             <input
               type='text'
               id='defaultRegisterFormFirstName'
-              className='form-control mb-4'
+              className='lightBGcolor border-0 form-control mb-4'
               placeholder='Name'
               name='name'
               value={name}
@@ -60,7 +60,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
             <input
               type='email'
               id='defaultRegisterFormEmail'
-              className='form-control mb-4'
+              className='lightBGcolor border-0 form-control mb-4'
               placeholder='E-mail'
               name='email'
               value={email}
@@ -71,7 +71,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
             <input
               type='password'
               id='defaultRegisterFormPassword'
-              className='form-control'
+              className='lightBGcolor border-0 form-control'
               placeholder='Password'
               name='password'
               value={password}
@@ -81,7 +81,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
             />
             <small
               id='defaultRegisterFormPasswordHelpBlock'
-              className='form-text text-muted mb-4'
+              className='form-text text-white mb-4'
             >
               At least 6 characters
             </small>
@@ -89,7 +89,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
             <input
               type='password'
               id='defaultRegisterFormPassword'
-              className='form-control'
+              className='lightBGcolor border-0 form-control'
               placeholder='Confirm Password'
               name='password2'
               value={password2}
@@ -99,19 +99,19 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
             />
             <small
               id='defaultRegisterFormPhoneHelpBlock'
-              className='form-text text-muted mb-4'
+              className='form-text text-white mb-4'
             >
               For your health
             </small>
             {/* Sign up button */}
-            <button className='btn btn-info my-4 btn-block' type='submit'>
+            <button className='btn aqua-gradient my-4 btn-block' type='submit'>
               Register
             </button>
           </form>
           {/* Default form register */}
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </Fragment>
   );
 };

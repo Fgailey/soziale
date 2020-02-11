@@ -37,7 +37,7 @@ class CommentForm extends React.Component {
 
   return (
     <div className='post-form'>
-      <div className='text-center'>
+      <div className='text-center prim'>
         <h4>Respond to this post below</h4>
       </div>
       <form
@@ -59,7 +59,7 @@ class CommentForm extends React.Component {
         />
         <input
           type='submit'
-          className='btn btn-deep-purple darken-4 btn-sm my-1'
+          className='btn peach-gradient btn-sm my-1'
           value='Submit'
         />
       </form>

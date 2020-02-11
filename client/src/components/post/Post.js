@@ -19,9 +19,9 @@ const Post = ({ getPost, post: { post, loading }, match }) => {
   ) : (
     <Fragment>
       <div className='container my-5'>
-        <div className='card p-5'>
+        <div className='card darkBGcolor p-5'>
           <Link to='/posts'>
-            <button type='button' class='btn btn-orange'>
+            <button type='button' className='btn btn-orange'>
               Back To Posts
             </button>
           </Link>
