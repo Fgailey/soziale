@@ -106,7 +106,9 @@ class Chat extends Component {
           <div className='card chatBoxContainer'>
           <div className='aqua-gradient' id='borderBottom'></div>
             <div className='row px-lg-2 px-2 mx-0'>
-              <div className="col-md-6 col-xl-4 px-0 borderSeperator scrollbar scrollbar-near-moon thin chat-overflow">
+              <div className="col-md-6 col-xl-4 px-0 borderSeperator scrollbar scrollbar-near-moon thin"
+              style={{ height: '500px', overflowY: 'scroll' }}
+              >
                 <div className="white z-depth-1 px-3 pt-3 pb-0">
                   <ul className="list-unstyled friend-list">
                   <li className="active grey lighten-3 p-2" id='community'>
@@ -118,13 +120,15 @@ class Chat extends Component {
                       </div>
                     </div>
                   </li>
-                    <ChatFriends/>
+                    <ChatFriends user={this.props.user}/>
                     
                   </ul>
                 </div>
               </div>
               <div
-                className='col-md-6 col-xl-8 pl-md-3 px-lg-auto px-0 scrollbar scrollbar-near-moon thin chat-overflow'>
+                className='col-md-6 col-xl-8 pl-md-3 px-lg-auto px-0 scrollbar scrollbar-near-moon thin'
+                style={{ height: '500px', overflowY: 'scroll' }}
+              >
                 <div className="chat-message">
 
                   <ul className="list-unstyled chat">
