@@ -17,7 +17,6 @@ const PostsDashboard = ({ getPostsByUser, post: { posts, loading }, user }) => {
     <Fragment>
       <div className='d-flex justify-content-center mb-0 pt-2'>
         <h2 className='prim'>Your Posts</h2>
-        <i className='fas fa-user-circle prim'></i>
       </div>
       <PostForm />
       <div className='posts'>
