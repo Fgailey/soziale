@@ -4,11 +4,19 @@
   border-right: palegreen 3px solid;
 }
 .chatFriendHover:hover {
-    background-color: grey;
+    background:linear-gradient(40deg, #2096ff, #05ffa3) !important;
+
+}
+.chatFriendHover {
+    background-color: #222831;
+    box-shadow:
+        0 0 1px -1px #05ffa3,  /* inner white */
+        0 0 3px -2px #2096ff, /* middle magenta */
+        0 0 5px -3px #393e46; /* outer cyan */;
 
 }
 .chatFriendTest {    
-    background:linear-gradient(40deg, #2096ff, #05ffa3) !important
+    background:linear-gradient(40deg, #2096ff, #05ffa3) !important;
 }
 .lightGrey {
     background-color: #393e46;
@@ -22,21 +30,33 @@
     border-right: black 2px solid;
 }
 
+.height-scroll {
+    height: 60vh !important;
+    overflow-y: scroll;
+    background-color: #222831;
+}
+
+.card-background {
+    background-image: url("/uploads/chat-bg.jpg") !important;
+    background-repeat: repeat;
+    background-size: contain;
+}
+
 .scrollbar-near-moon::-webkit-scrollbar-track {
-    /* -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1); */
-    background-color: #F5F5F5;
-    border-radius: 10px; }
-    
-    .scrollbar-near-moon::-webkit-scrollbar {
-    width: 12px;
-    background-color: #F5F5F5; }
-    
-    .scrollbar-near-moon::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
-    /* background-image: -webkit-gradient(linear, left bottom, left top, from(#5ee7df), to(#b490ca)); */
-    background-image: -webkit-linear-gradient(bottom, palegreen 0%, #1f9cfa 100%);
-    background-image: linear-gradient(to top, palegreen 0%, #1f9cfa 100%); 
+/* -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1); */
+background-color: #222831;
+border-radius: 10px; }
+
+.scrollbar-near-moon::-webkit-scrollbar {
+width: 12px;
+background-color: #222831; }
+
+.scrollbar-near-moon::-webkit-scrollbar-thumb {
+border-radius: 10px;
+box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+/* background-image: -webkit-gradient(linear, left bottom, left top, from(#5ee7df), to(#b490ca)); */
+background-image: -webkit-linear-gradient(bottom, palegreen 0%, #1f9cfa 100%);
+background-image: linear-gradient(to top, palegreen 0%, #1f9cfa 100%); 
 }
     
 

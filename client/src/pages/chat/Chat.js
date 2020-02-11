@@ -99,7 +99,6 @@ class Chat extends Component {
         <Fragment>
             <div className='text-center white-text' id='profilesHeader'>
               <h1 className='prim'>Chat page</h1>
-
               <h4 className='sec'>It's all about you here</h4>
             </div>
             <div className='aqua-gradient' id='borderBottom'></div>
@@ -107,11 +106,9 @@ class Chat extends Component {
         <div className='container my-5'>
           <div className='card chatBoxContainer'>
           <div className='aqua-gradient' id='borderBottom'></div>
-            <div className='row px-lg-2 px-2 mx-0'>
-              <div className="col-md-6 col-xl-4 px-0 borderSeperator scrollbar scrollbar-near-moon thin"
-              style={{ height: '500px', overflowY: 'scroll' }}
-              >
-                <div className="white z-depth-1 px-3 pt-3 pb-0">
+            <div className='row px-lg-0 px-0 mx-0'>
+              <div className="col-md-5 col-xl-4 px-0 height-scroll borderSeperator scrollbar scrollbar-near-moon thin">
+                <div className="z-depth-1 px-3 pt-3 pb-0">
                   <ul className="list-unstyled friend-list">
                   <li className="active grey lighten-3 p-2 chatFriendHover" id='community'>
                     <div className="d-flex justify-content-between" onClick={this.handleRoomChange}>
@@ -119,6 +116,7 @@ class Chat extends Component {
                         <strong title='Click here to return to community chat'>Community Chat</strong>
                       </div>
                       <div className="chat-footer">
+                      <i class="fas fa-comments"></i>
                       </div>
                     </div>
                   </li>
@@ -127,14 +125,9 @@ class Chat extends Component {
                   </ul>
                 </div>
               </div>
-              <div
-                className='col-md-6 col-xl-8 pl-md-3 px-lg-auto px-0 scrollbar scrollbar-near-moon thin'
-                style={{ height: '500px', overflowY: 'scroll' }}
-              >
-                <div className="chat-message">
-
+              <div className='col-md-7 col-xl-8 pl-md-0 height-scroll px-lg-auto px-0 scrollbar scrollbar-near-moon thin'>
+                <div className="chat-message card-background">
                   <ul className="list-unstyled chat">
-
                   { this.props.chats && this.renderCards()}
                   <div
                     ref={el => {
@@ -151,7 +144,7 @@ class Chat extends Component {
                 <input
                   id='message'
                   placeholder='Type here to message'
-                  className='w-100 chatBoxContainer'
+                  className='w-100 chatBoxContainer mediumBGcolor sec pb-0 px-2'
                   type='text'
                   value={this.state.chatMessage}
                   onChange={this.handleSearchChange}

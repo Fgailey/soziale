@@ -36,21 +36,22 @@ const ChatFriendsItem = (props) => {
       {(!avatar)?
         <img src={"/uploads/default.png"} alt="avatar" className="avatar rounded-circle d-flex align-self-center mr-2 z-depth-1" />
         :
-        <img src={"/uploads/"+avatar} alt="avatar" className="avatar rounded-circle d-flex align-self-center mr-2 z-depth-1" />
+        <img src={"/uploads/"+avatar} alt="avatar" className="avatar aqua-gradient img-thumbnail rounded-circle d-flex align-self-center mr-2 z-depth-1" />
 
       }
         <div className="text-small">
           <strong className='prim'>{name}</strong>
           <p className="last-message text-muted">{mostRecentChat.message}</p>
         </div>
-        {/* <div className="chat-footer">
-          {(!mostRecentChat.createdAt)
+        <div className="chat-footer">
+        <i class="far fa-comment"></i>
+          {/* {(!mostRecentChat.createdAt)
           ?
           <p className="text-smaller text-muted mb-0">N/A</p>
           :
           <p className="text-smaller text-muted mb-0"><Moment fromNow>{mostRecentChat.createdAt}</Moment></p>
-          }
-        </div> */}
+          } */}
+        </div>
       </div>
     </li>
     {/* } */}
