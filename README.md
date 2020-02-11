@@ -15,7 +15,7 @@ Reach is a social media site with a variaty of ways to communicate with friends 
 
 This App is deployed on *Heroku* [click Here](https://project3-reach.herokuapp.com/) to view it.
 
-![Reach Social Media](./client/public/reach-display.jpg)
+![Reach Social Media](./client/public/reach-display.png)
 
 - - -
 
