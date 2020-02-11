@@ -4,19 +4,25 @@ import { connect } from 'react-redux';
 import Loader from '../loadingGif/Loader';
 import { getProfilesById } from '../../actions/Profile';
 import { Link } from 'react-router-dom';
-import PostsProfile from '../../components/posts/PostsProfile';
+// import PostsProfile from '../../components/posts/PostsProfile';
+import PostItem from '../../components/posts/PostItem';
+import PostForm from '../../components/posts/PostForm';
 import Alert from '../Alert';
 import Footer from '../../components/footer/Footer';
+import { getPostsByUser } from '../../actions/Post';
 
 const Profile = ({
   getProfilesById,
+  getPostsByUser,
   profile: { profile, loading },
   auth,
-  match
+  match,
+  post: { posts }
 }) => {
   useEffect(() => {
     getProfilesById(match.params.id);
-  }, [getProfilesById, match.params.id]);
+    getPostsByUser();
+  }, [getProfilesById, getPostsByUser, match.params.id]);
 
   return (
     <Fragment>
@@ -59,7 +65,7 @@ const Profile = ({
                   <div className='col-6 pt-5 pl-5 align-bottom'>
                     <div className='row details'>
                       <h2 className='prim'>Age: </h2>
-                      <h3 className='mt-1'>{profile.user.age}</h3>
+                      <h3 className='mt-1'>{profile.age}</h3>
                     </div>
                     <div className='row details'>
                       <h2 className='prim'>Location: </h2>
@@ -83,7 +89,16 @@ const Profile = ({
               </div>
               <div className='col-md-7'>
                 <div className='card dashboardCards col-12'>
-                  <PostsProfile />
+                  <div className='d-flex justify-content-center mb-0 pt-2'>
+                    <h2 className='prim'>Your Posts</h2>
+                    <i className='fas fa-user-circle prim'></i>
+                  </div>
+                  <PostForm />
+                  <div className='posts'>
+                    {posts.map(post => (
+                      <PostItem key={post._id} post={post} />
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
@@ -96,14 +111,19 @@ const Profile = ({
 };
 
 Profile.propTypes = {
+  getPostsByUser: PropTypes.func.isRequired,
   getProfilesById: PropTypes.func.isRequired,
+  post: PropTypes.object.isRequired,
   profile: PropTypes.object.isRequired,
   auth: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
   profile: state.profile,
-  auth: state.auth
+  auth: state.auth,
+  post: state.post
 });
 
-export default connect(mapStateToProps, { getProfilesById })(Profile);
+export default connect(mapStateToProps, { getProfilesById, getPostsByUser })(
+  Profile
+);
