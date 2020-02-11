@@ -5,17 +5,17 @@ import {
     GET_DEFAULT_ROOM
 } from '../actions/Types';
  
-export default function(state={},action){
+export default function(state={loading: true},action){
     
     switch(action.type){
         case GET_CHATS:
-            return {...state, chats: action.payload }
+            return {...state, loading: false, chats: action.payload }
         case AFTER_POST_MESSAGE:
-            return {...state, chats: state.chats.concat(action.payload)}
+            return {...state, loading: false, chats: state.chats.concat(action.payload)}
         case GET_NEW_ROOM:
-            return {...state, room: action.payload }
+            return {...state, loading: false, room: action.payload }
         case GET_DEFAULT_ROOM:
-            return {...state, room: action.payload }
+            return {...state, loading: false, room: action.payload }
         default:
             return state;
     }
