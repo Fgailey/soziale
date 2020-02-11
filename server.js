@@ -3,7 +3,6 @@ const path = require('path');
 const connectDB = require('./config/db');
 const cors = require('cors');
 const fileUpload = require('express-fileupload');
-const nodemailer = require('nodemailer');
 const db = require('./models/index');
 
 const app = express();
@@ -47,7 +46,7 @@ app.post('/upload', async (req, res) => {
 
   console.log(photo);
 
-  file.mv(`https://testingreach.herokuapp.com/uploads/${fileNamez}`, err => {
+  file.mv(`https://project3-reach.herokuapp.com/uploads/${fileNamez}`, err => {
     if (err) {
       console.error(err);
       return res.status(500).send(err);
