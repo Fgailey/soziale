@@ -21,7 +21,7 @@ const Profile = ({
 }) => {
   useEffect(() => {
     getProfilesById(match.params.id);
-    getPostsByProfile(match.params.id, match.params.id );
+    getPostsByProfile(match.params.id, match.params.id);
   }, [getProfilesById, getPostsByProfile, match.params.id]);
 
   return (
@@ -31,20 +31,21 @@ const Profile = ({
       ) : (
         <Fragment>
           <div className='row' id='profilesHeader'>
-            <Link to='/profiles' className='btn aqua-gradient float-left'>
+            <Link
+              to='/profiles'
+              className='btn rounded-pill aqua-gradient mx-4'
+            >
               <i className='black-text fas fa-arrow-left fa-3x'></i>
             </Link>
-
-            <h1 className='prim mt-3 center'>{profile.user.name}</h1>
-
+            <h1 className='prim mt-3'>{profile.user.name}</h1>
             {auth.isAuthenticated &&
               auth.loading === false &&
               auth.user._id === profile.user._id && (
                 <Link
                   to='/edit-profile'
-                  className='btn dusty-grass-gradient float-right'
+                  className='btn rounded-pill dusty-grass-gradient'
                 >
-                  <h5 className='black-text'>Edit Your Profile</h5>
+                  <i class='black-text fa-3x fas fa-user-edit'></i>
                 </Link>
               )}
           </div>
@@ -65,22 +66,22 @@ const Profile = ({
                   <div className='col-6 pt-5 pl-5 align-bottom'>
                     <div className='row details'>
                       <h2 className='prim'>Age: </h2>
-                      <h3 className='mt-1'>{profile.age}</h3>
+                      <h3 className='sec mt-1'>{profile.age}</h3>
                     </div>
                     <div className='row details'>
                       <h2 className='prim'>Location: </h2>
-                      <h3 className='mt-1'>{profile.current_city}</h3>
+                      <h3 className='sec mt-1'>{profile.current_city}</h3>
                     </div>
                     <div className='row details'>
                       <h2 className='prim'>Gender: </h2>
-                      <h3 className='mt-1'>{profile.gender}</h3>
+                      <h3 className='sec mt-1'>{profile.gender}</h3>
                     </div>
                   </div>
                 </div>
                 <div className='row'>
                   <div className='col-12'>
                     <h2 className='prim'>About: </h2>
-                    <h3 className='mt-1'>{profile.about_me}</h3>
+                    <h3 className='sec mt-1'>{profile.about_me}</h3>
                   </div>
                 </div>
                 <div className='row'>
