@@ -52,9 +52,9 @@ const CreateProfile = ({
           <i className='fas fa-user' /> Tell us how it be like...
         </p>
         <Alert />
-        <small>* = required field</small>
-        <form className='form' onSubmit={e => onSubmit(e)}>
-          <small className='form-text'>Select Age*</small>
+        <small className='prim'>* = required field</small>
+        <form className='form-group pb-5' onSubmit={e => onSubmit(e)}>
+          <small className='form-text prim'>Select Age*</small>
           <input
             name='age'
             type='number'
@@ -65,16 +65,19 @@ const CreateProfile = ({
             onChange={e => onChange(e)}
           />
           <div className='form-group'>
-            <small className='form-text'>Select Gender</small>
-            <select name='gender' value={gender} onChange={e => onChange(e)}>
-              <option value={0}>* Select Gender</option>
-              <option value='Male'>Male</option>
-              <option value='Female'>Female</option>
-              <option value='Dragon'>Dragon</option>
-            </select>
+            <div className='form-group'>
+              <small className='form-text prim'>Gender?</small>
+              <input
+                type='text'
+                placeholder='Gender'
+                name='gender'
+                value={gender}
+                onChange={e => onChange(e)}
+              />
+            </div>
           </div>
           <div className='form-group'>
-            <small className='form-text'>Where you at, dog?</small>
+            <small className='form-text prim'>Current Location?</small>
             <input
               type='text'
               placeholder='Current City'
@@ -84,9 +87,7 @@ const CreateProfile = ({
             />
           </div>
           <div className='form-group'>
-            <small className='form-text'>
-              Where did you come from, Cotton-Eyed Joe?
-            </small>
+            <small className='form-text prim'>Hometown?</small>
             <input
               type='text'
               placeholder='Hometown'
@@ -97,8 +98,22 @@ const CreateProfile = ({
           </div>
 
           <div className='form-group'>
-            <small className='form-text'>Tell us a little about yourself</small>
+            <small className='form-text prim'>Interests?</small>
             <textarea
+              className='w-50'
+              placeholder='Hobbies or Interests?'
+              name='interests'
+              value={interests}
+              onChange={e => onChange(e)}
+            />
+          </div>
+
+          <div className='form-group'>
+            <small className='form-text prim'>
+              Tell us a little about yourself...
+            </small>
+            <textarea
+              className='w-50'
               placeholder='A short bio of yourself'
               name='about_me'
               value={about_me}
@@ -106,17 +121,7 @@ const CreateProfile = ({
             />
           </div>
 
-          <div className='form-group'>
-            <small className='form-text'>Tell us a little about yourself</small>
-            <textarea
-              placeholder='A short bio of yourself'
-              name='interests'
-              value={interests}
-              onChange={e => onChange(e)}
-            />
-          </div>
-
-          <input type='submit' className='btn btn-primary my-1' />
+          <input type='submit' className='btn btn-primary my-1 aqua-gradient' />
           <Link className='btn btn-light my-1' to='/dashboard'>
             Go Back
           </Link>
