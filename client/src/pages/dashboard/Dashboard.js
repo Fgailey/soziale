@@ -65,12 +65,7 @@ const Dashboard = ({
                     <h3 className='sec mt-1'>{profile.about_me}</h3>
                   </div>
                 </div>
-                <div className='row'>
-                  <div className='col-12'>
-                    <h2 className='prim'>About: </h2>
-                    <h3 className='sec mt-1'>{profile.about_me}</h3>
-                  </div>
-                </div>
+
                 <div className='row'>
                   <div className='card col-12 lightBGcolor'>
                     <div className='card mt-2 aqua-gradient'>
