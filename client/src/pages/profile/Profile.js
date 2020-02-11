@@ -43,7 +43,7 @@ const Profile = ({
               auth.user._id === profile.user._id && (
                 <Link
                   to='/edit-profile'
-                  className='btn rounded-pill dusty-grass-gradient'
+                  className='btn rounded-pill dusty-grass-gradient mx-4'
                 >
                   <i class='black-text fa-3x fas fa-user-edit'></i>
                 </Link>
