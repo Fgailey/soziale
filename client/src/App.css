@@ -59,3 +59,18 @@ body {
 .sec {
   color: #29a19c;
 }
+.lightBGcolor {
+  background-color: #4b515d;
+}
+.mediumBGcolor {
+  background-color: #393e46;
+}
+.darkBGcolor {
+  background-color: #222831;
+}
+.prim {
+  color: orange;
+}
+.sec {
+  color: #29a19c;
+}
