@@ -61,6 +61,7 @@ class CommentForm extends React.Component {
           type='submit'
           className='btn peach-gradient btn-sm my-1'
           value='Submit'
+          id='postSubmit'
         />
       </form>
 
