@@ -6,7 +6,8 @@ import {
     ADD_POST,
     GET_POST,
     ADD_COMMENT,
-    REMOVE_COMMENT
+    REMOVE_COMMENT,
+    GET_PROFILE_POST
   } from '../actions/Types';
   
   const initialState = {
@@ -30,6 +31,12 @@ import {
         return {
           ...state,
           post: payload,
+          loading: false
+        };
+      case GET_PROFILE_POST:
+        return {
+          ...state,
+          posts: payload,
           loading: false
         };
       case ADD_POST:
