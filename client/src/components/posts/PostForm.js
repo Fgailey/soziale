@@ -1,17 +1,17 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { addPost } from "../../actions/Post";
-import { MDBContainer, MDBModal, MDBModalBody } from "mdbreact";
-import Emoji from "../emoji/emojiPicker";
-import SmilePic from "../emoji/smily.png";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { addPost } from '../../actions/Post';
+import { MDBContainer, MDBModal, MDBModalBody } from 'mdbreact';
+import Emoji from '../emoji/emojiPicker';
+import SmilePic from '../emoji/smily.png';
 
 class PostForm extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      text: "",
+      text: '',
       toggle: false
     };
 
@@ -35,42 +35,39 @@ class PostForm extends React.Component {
     const { text, toggle } = this.state;
 
     return (
-      <div className="post-form">
-        <div className="bg-primary p">
-          <h3>Say Something...</h3>
-        </div>
+      <div className='post-form'>
         <form
-          className="form my-1"
+          className='form my-1'
           onSubmit={e => {
             e.preventDefault();
             this.props.addPost({ text });
-            this.setText("");
+            this.setText('');
           }}
         >
           <textarea
-            name="text"
-            cols="30"
-            rows="5"
-            placeholder="Create a post"
+            className='form-control z-depth-1'
+            name='text'
+            rows='5'
+            placeholder='Write something here...'
             value={text}
             onChange={e => this.setText(e.target.value)}
             required
           />
           <input
-            type="submit"
-            className="btn btn-deep-purple darken-4 btn-sm my-1"
-            value="Submit"
+            type='submit'
+            className='btn peach-gradient btn-sm my-1'
+            value='Submit'
           />
         </form>
 
         <div onClick={() => this.setToggle(true)}>
-          <img className="smilyPic" src={SmilePic} alt="Smiley face" />
+          <img className='smilyPic' src={SmilePic} alt='Smiley face' />
         </div>
         <MDBContainer>
           <MDBModal
-            size="sm"
+            size='sm'
             side
-            position="bottom-right"
+            position='bottom-right'
             toggle={() => this.setToggle(false)}
             isOpen={toggle}
           >
@@ -88,7 +85,4 @@ PostForm.propTypes = {
   addPost: PropTypes.func.isRequired
 };
 
-export default connect(
-  null,
-  { addPost }
-)(PostForm);
+export default connect(null, { addPost })(PostForm);
