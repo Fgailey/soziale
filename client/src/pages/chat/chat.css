@@ -8,3 +8,33 @@
 
 }
 
+.lightGrey {
+    background-color: #393e46;
+}
+
+.darkGrey {
+    background-color: #222831;
+}
+
+.borderSeperator {
+    border-right: black 2px solid;
+}
+
+.scrollbar-near-moon::-webkit-scrollbar-track {
+    /* -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1); */
+    background-color: #F5F5F5;
+    border-radius: 10px; }
+    
+    .scrollbar-near-moon::-webkit-scrollbar {
+    width: 12px;
+    background-color: #F5F5F5; }
+    
+    .scrollbar-near-moon::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    /* background-image: -webkit-gradient(linear, left bottom, left top, from(#5ee7df), to(#b490ca)); */
+    background-image: -webkit-linear-gradient(bottom, palegreen 0%, #1f9cfa 100%);
+    background-image: linear-gradient(to top, palegreen 0%, #1f9cfa 100%); 
+}
+    
+
