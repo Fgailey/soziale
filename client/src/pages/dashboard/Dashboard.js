@@ -34,7 +34,7 @@ const Dashboard = ({
           <Fragment>
             {/* Card */}
             <div className='row'>
-              <div className='card dashboardCards col-md-5'>
+              <div className='card mediumBGcolor col-md-5'>
                 <div className='row'>
                   <div className='col-6 '>
                     <img
@@ -69,7 +69,7 @@ const Dashboard = ({
                 </div>
               </div>
               <div className='col-md-7'>
-                <div className='card dashboardCards col-12'>
+                <div className='card mediumBGcolor col-12'>
                   <PostsDashboard />
                 </div>
               </div>
