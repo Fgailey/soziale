@@ -61,7 +61,7 @@ export const Landing = ({ isAuthenticated }) => {
                 <i className='fas fa-comments pink-text fa-3x mb-4' />
                 <h4 className='sec font-weight-bold mb-4'>1 on 1 Chat</h4>
                 <p className='text-muted px-2 mb-lg-0'>
-                  Text messaging, private one on one chat rooms. Foster fill in the rest.
+                  Instant Messaging for the the whole reach community or keep it private with a one on one chat.
                 </p>
               </div>
               <div className='col-lg-4 col-md-6 mb-5'>
