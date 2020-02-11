@@ -1,19 +1,17 @@
 import React, { Fragment, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import Loader from '../../pages/loadingGif/Loader';
+// import PropTypes from 'prop-types';
+// import { connect } from 'react-redux';
+// import Loader from '../../pages/loadingGif/Loader';
 import PostItem from './PostItem';
 import PostForm from './PostForm';
-import { getPostsByUser } from '../../actions/Post';
+// import { getPostsByUser } from '../../actions/Post';
 
-const PostsProfile = ({ getPostsByUser, post: { posts, loading } }) => {
-  useEffect(() => {
-    getPostsByUser();
-  }, [getPostsByUser]);
+const PostsProfile = () => {
+  // useEffect(() => {
+  //   getPostsByUser();
+  // }, [getPostsByUser]);
 
-  return loading ? (
-    <Loader />
-  ) : (
+  return (
     <Fragment>
       <div className='d-flex justify-content-center mb-0 pt-2'>
         <h2 className='prim'>Your Posts</h2>
@@ -29,13 +27,13 @@ const PostsProfile = ({ getPostsByUser, post: { posts, loading } }) => {
   );
 };
 
-PostsProfile.propTypes = {
-  getPostsByUser: PropTypes.func.isRequired,
-  post: PropTypes.object.isRequired
-};
+// PostsProfile.propTypes = {
+//   getPostsByUser: PropTypes.func.isRequired,
+//   post: PropTypes.object.isRequired
+// };
 
-const mapStateToProps = state => ({
-  post: state.post
-});
+// const mapStateToProps = state => ({
+//   post: state.post
+// });
 
-export default connect(mapStateToProps, { getPostsByUser })(PostsProfile);
+export default PostsProfile;
