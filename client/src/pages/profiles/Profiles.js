@@ -5,7 +5,7 @@ import Loader from '../loadingGif/Loader';
 import ProfileItem from './ProfileItem';
 import { getProfiles } from '../../actions/Profile';
 import './profiles.css';
-import Footer from '../../components/footer/Footer'
+import Footer from '../../components/footer/Footer';
 
 const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
   useEffect(() => {
@@ -25,7 +25,7 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
           </div>
           <div className='aqua-gradient' id='borderBottom'></div>
 
-          <div className='container' id='profilesContainer'>
+          <div className='container my-5' id='profilesContainer'>
             {profiles.length > 0 ? (
               profiles.map(profile => (
                 <ProfileItem key={profile._id} profile={profile} />
@@ -36,7 +36,7 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
           </div>
         </Fragment>
       )}
-      <Footer/>
+      <Footer />
     </Fragment>
   );
 };
