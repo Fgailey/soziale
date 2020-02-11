@@ -1,17 +1,15 @@
-import React, {useEffect} from "react";
+import React from "react";
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getProfiles } from '../../actions/Profile';
+// import { getProfiles } from '../../actions/Profile';
 import ChatFriendsItem from "./ChatFriendsItem";
 
-const ChatFriends = ({ getProfiles, profile: { profiles }, chats }) => {
-  useEffect(() => {
-    getProfiles();
-  }, [getProfiles]);
+const ChatFriends = ({ profile: { profiles }, chats }) => {
+ 
 
   return (
     <div>
-        {profiles.length > 0 ? (
+        {profiles.length > 0 && profiles? (
           profiles.map(profile => (
             <ChatFriendsItem key={profile._id} profile={profile} chats={chats}/>
           ))
@@ -23,7 +21,6 @@ const ChatFriends = ({ getProfiles, profile: { profiles }, chats }) => {
 }
 
 ChatFriends.propTypes = {
-  getProfiles: PropTypes.func.isRequired,
   profile: PropTypes.object.isRequired
 };
 
@@ -32,4 +29,4 @@ const mapStateToProps = state => ({
   profile: state.profile
 });
 
-export default connect(mapStateToProps, { getProfiles })(ChatFriends);
+export default connect(mapStateToProps)(ChatFriends);
