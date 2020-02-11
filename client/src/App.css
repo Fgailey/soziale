@@ -28,8 +28,10 @@ body {
     width: 50px;
 }
 .smilyPic:hover {
-  transform: scale(1.2);
   cursor: pointer;
+}
+.smilyPic:active {
+  transform: scale(.9);
 }
 
 .emoji-picker-react,.emoji-group::before{
@@ -67,5 +69,8 @@ aside{
 }
 .sec {
   color: #29a19c;
+}
+.peach-gradient{
+  float: right;
 }
 

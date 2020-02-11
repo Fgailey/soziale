@@ -9,6 +9,9 @@
     cursor: pointer;
 
 }
+.chatFriendHover:active {
+    transform: scale(.9);
+  }
 .chatFriendHover {
     background-color: #222831;
     box-shadow:
