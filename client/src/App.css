@@ -2,10 +2,8 @@
   background: url('https://images.pexels.com/photos/196655/pexels-photo-196655.jpeg')
     no-repeat center center/cover;
   position: relative;
-  height: calc(100vh - 100px);
 }
 body {
-  /* background: url('https://www.toptal.com/designers/subtlepatterns/patterns/dot-grid.png'); */
   background: #4b515d;
 }
 .reachLogo {
@@ -22,29 +20,9 @@ body {
   margin: auto !important;
   padding: 0px;
 }
-
-/* Google fonts test */
-@import url('https://fonts.googleapis.com/css?family=Baloo+Bhai|Bebas+Neue|Oswald|Press+Start+2P&display=swap');
-h1,
-h2,
-h3,
-h4,
-h5,
-p,
-li {
-  /* font-family: 'DM Serif Display', serif; */
-  /* font-family: 'Press Start 2P', cursive; */
-  /* font-family: 'Oswald', sans-serif; */
-  font-family: 'Bebas Neue', cursive;
-  /* font-family: 'Baloo Bhai', cursive; */
-}
-.smilyPic {
-  height: 40px;
-  width: 40px;
-}
-.smilyPic:hover {
-  transform: scale(1.1);
-  cursor: pointer;
+.smilyPic{
+    height: 40px;
+    width: 40px;
 }
 /* 
   .modal {
@@ -61,7 +39,9 @@ li {
 .roundedz {
   border-radius: 10px;
 }
-
-.dashboardCards {
+.lightBGcolor {
+  background-color: #4b515d;
+}
+.mediumBGcolor {
   background-color: #393e46;
 }
