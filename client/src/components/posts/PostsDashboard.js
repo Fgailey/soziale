@@ -6,9 +6,9 @@ import PostItem from './PostItem';
 import PostForm from './PostForm';
 import { getPostsByUser } from '../../actions/Post';
 
-const PostsDashboard = ({ getPostsByUser, post: { posts, loading } }) => {
+const PostsDashboard = ({ getPostsByUser, post: { posts, loading }, user }) => {
   useEffect(() => {
-    getPostsByUser();
+    getPostsByUser(user._id);
   }, [getPostsByUser]);
 
   return loading ? (
@@ -35,7 +35,8 @@ PostsDashboard.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  post: state.post
+  post: state.post,
+  user: state.auth.user
 });
 
 export default connect(mapStateToProps, { getPostsByUser })(PostsDashboard);
