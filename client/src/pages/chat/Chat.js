@@ -105,7 +105,7 @@ class Chat extends Component {
 
         <div className='container my-5'>
           <div className='card chatBoxContainer'>
-          <div className='aqua-gradient' id='borderBottom'></div>
+          <div className='darkBGcolor' id='borderBottom'></div>
             <div className='row px-lg-0 px-0 mx-0'>
               <div className="col-md-5 col-xl-4 px-0 height-scroll borderSeperator scrollbar scrollbar-near-moon thin">
                 <div className="z-depth-1 px-3 pt-3 pb-0">
@@ -150,7 +150,7 @@ class Chat extends Component {
                   onChange={this.handleSearchChange}
                   style={{fontSize: 20, height: '100px', wordBreak: 'break-word' }}
                 />
-          <div className='aqua-gradient' id='borderBottom'></div>
+          <div className='darkBGcolor' id='borderBottom'></div>
                 <button
                   type='submit'
                   onClick={this.submitChatMessage}

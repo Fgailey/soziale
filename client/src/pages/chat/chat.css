@@ -2,6 +2,7 @@
 .chatBoxContainer {    
   border-left: #1f9cfa 3px solid;
   border-right: palegreen 3px solid;
+  border-bottom: none;
 }
 .chatFriendHover:hover {
     background:linear-gradient(40deg, #2096ff, #05ffa3) !important;
@@ -37,7 +38,7 @@
 }
 
 .card-background {
-    background-image: url("/uploads/chat-bg.jpg") !important;
+    /* background-image: url("/uploads/chat-bg.jpg") !important; */
     background-repeat: repeat;
     background-size: contain;
 }
@@ -48,7 +49,7 @@ background-color: #222831;
 border-radius: 10px; }
 
 .scrollbar-near-moon::-webkit-scrollbar {
-width: 12px;
+width: 7px;
 background-color: #222831; }
 
 .scrollbar-near-moon::-webkit-scrollbar-thumb {

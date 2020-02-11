@@ -8,9 +8,9 @@ function Layout (props) {
                 (props.user._id !== props.sender._id ?
               <li className="d-flex mb-4 pb-3">
                     {(!props.sender.avatar)?
-                    <img src={"/uploads/default.png"} alt="avatar" className="avatar rounded-circle aqua-gradient img-thumbnail mr-2 ml-lg-3 ml-0 z-depth-1" />
+                    <img src={"/uploads/default.png"} alt="avatar" className="avatar rounded-circle  mr-2 ml-lg-3 ml-0 z-depth-1" />
                     :
-                    <img src={"/uploads/"+props.sender.avatar} alt="avatar" className="avatar rounded-circle aqua-gradient img-thumbnail mr-2 ml-lg-3 ml-0 z-depth-1" />
+                    <img src={"/uploads/"+props.sender.avatar} alt="avatar" className="avatar rounded-circle  mr-2 ml-lg-3 ml-0 z-depth-1" />
                     }
                     <div className="chat-body pull-left lightBGcolor p-2 ml-2 w-75 z-depth-1">
                         <div className="header d-flex justify-content-between">
@@ -36,9 +36,9 @@ function Layout (props) {
                         </p>
                     </div>
                     {(!props.sender.avatar)?
-                    <img src={"/uploads/default.png"} alt="avatar" className="avatar rounded-circle aqua-gradient img-thumbnail mr-2 ml-lg-3 ml-0 z-depth-1" />
+                    <img src={"/uploads/default.png"} alt="avatar" className="avatar rounded-circle  mr-2 ml-lg-3 ml-0 z-depth-1" />
                     :
-                    <img src={"/uploads/"+props.sender.avatar} alt="avatar" className="avatar rounded-circle aqua-gradient img-thumbnail mr-2 ml-lg-3 ml-0 z-depth-1" />
+                    <img src={"/uploads/"+props.sender.avatar} alt="avatar" className="avatar rounded-circle  mr-2 ml-lg-3 ml-0 z-depth-1" />
                     }
                 </li>)
             :
