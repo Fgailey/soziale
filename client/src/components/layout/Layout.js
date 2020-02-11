@@ -14,11 +14,11 @@ function Layout (props) {
                     }
                     <div className="chat-body pull-left white p-3 ml-2 z-depth-1">
                         <div className="header">
-                        <strong className="primary-font">{props.sender.name}</strong>
+                        <strong className="primary-font prim">{props.sender.name}</strong>
                         <small className="pull-right text-muted"><i className="far fa-clock" /><Moment fromNow>{props.createdAt}</Moment></small>
                         </div>
                         <hr className="w-100" />
-                        <p className="mb-0">
+                        <p className="mb-0 sec">
                         {props.message}
                         </p>
                     </div>
@@ -27,11 +27,11 @@ function Layout (props) {
                 <li className="d-flex justify-content-end mb-4 pb-3">
                     <div className="chat-body pull-left white p-3 ml-2 z-depth-1">
                         <div className="header">
-                        <strong className="primary-font">{props.sender.name}</strong>
+                        <strong className="primary-font prim">{props.sender.name}</strong>
                         <small className="pull-right text-muted"><i className="far fa-clock" /><Moment fromNow>{props.createdAt}</Moment></small>
                         </div>
                         <hr className="w-100" />
-                        <p className="mb-0">
+                        <p className="mb-0 sec">
                         {props.message}
                         </p>
                     </div>
