@@ -24,7 +24,6 @@ const ChatFriendsItem = (props) => {
     if(mostRecentChat === undefined){
       mostRecentChat = {message: "No Recent Messages", createdAt:""}
     }
-    // console.log(mostRecentChat)
   
   return (
     <Fragment>
@@ -41,7 +40,7 @@ const ChatFriendsItem = (props) => {
 
       }
         <div className="text-small">
-          <strong class='prim'>{name}</strong>
+          <strong className='prim'>{name}</strong>
           <p className="last-message text-muted">{mostRecentChat.message}</p>
         </div>
         {/* <div className="chat-footer">
@@ -61,7 +60,6 @@ const ChatFriendsItem = (props) => {
 };
 
 const mapStateToProps = state => ({
-  // chats: state.chats,
   user: state.auth.user
 });
 

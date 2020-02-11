@@ -68,7 +68,6 @@ class Chat extends Component {
   }
 
   renderCards = () =>
-    this.props.user &&
     this.props.chats.chats &&
     this.props.chats.chats.map(chat => <Layout key={chat._id} {...chat}/>);
 
@@ -149,7 +148,6 @@ class Chat extends Component {
             </div>
           </div> {/* End ROW */}
               <form>
-                {/* <form onSubmit={this.submitChatMessage}> */}
                 <input
                   id='message'
                   placeholder='Type here to message'

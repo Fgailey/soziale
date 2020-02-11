@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import Loader from '../loadingGif/Loader';
 import { getProfilesById } from '../../actions/Profile';
 import { Link } from 'react-router-dom';
-// import PostsProfile from '../../components/posts/PostsProfile';
 import PostItem from '../../components/posts/PostItem';
 import PostForm from '../../components/posts/PostForm';
 import Alert from '../Alert';
