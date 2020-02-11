@@ -1,7 +1,7 @@
 
 .chatBoxContainer {    
-  border-left: #1f9cfa 3px solid;
-  border-right: palegreen 3px solid;
+  border-left: #222831 3px solid;
+  border-right: #222831 3px solid;
   border-bottom: none;
 }
 .chatFriendHover:hover {

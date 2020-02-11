@@ -104,15 +104,15 @@ class Chat extends Component {
             <div className='aqua-gradient' id='borderBottom'></div>
 
         <div className='container my-5'>
-          <div className='card chatBoxContainer'>
+          <div className='card darkBGcolor chatBoxContainer'>
           <div className='darkBGcolor' id='borderBottom'></div>
             <div className='row px-lg-0 px-0 mx-0'>
               <div className="col-md-5 col-xl-4 px-0 height-scroll borderSeperator scrollbar scrollbar-near-moon thin">
                 <div className="z-depth-1 px-3 pt-3 pb-0">
                   <ul className="list-unstyled friend-list">
-                  <li className="active grey lighten-3 p-2 chatFriendHover" id='community'>
+                  <li className="active darkBGcolor lighten-3 p-2 chatFriendHover" id='community'>
                     <div className="d-flex justify-content-between" onClick={this.handleRoomChange}>
-                      <div className="text-small">
+                      <div className="text-small prim">
                         <strong title='Click here to return to community chat'>Community Chat</strong>
                       </div>
                       <div className="chat-footer">
