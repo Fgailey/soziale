@@ -1,6 +1,6 @@
 import React, { Fragment} from 'react';
 import { connect } from 'react-redux';
-import Moment from 'react-moment';
+// import Moment from 'react-moment';
 import { setRoom } from '../../actions/Chat_action';
 const ChatFriendsItem = (props) => {
 
@@ -17,7 +17,7 @@ const ChatFriendsItem = (props) => {
   }
   
     // let lastChat = props.chats.chats.filter(chat => chat.sender._id === _id && props.chats.room === chat.type)
-        let mostRecentChat
+    let mostRecentChat
     // let mostRecentChat = lastChat.pop()
     if(mostRecentChat === undefined){
       mostRecentChat = {message: "No Recent Messages", createdAt:""}
@@ -27,9 +27,9 @@ const ChatFriendsItem = (props) => {
   return (
     <Fragment>
 
-    {(props.user._id === _id)?
-    null
-    :
+    {/* {(props.user._id === _id)? */}
+    {/* <div></div> */}
+    {/* : */}
     <li className="active lighten-3 p-2 chatFriendHover" id={_id}>
       <div className="d-flex justify-content-between" onClick={handleChangeRoom}>
       {(!avatar)?
@@ -42,17 +42,17 @@ const ChatFriendsItem = (props) => {
           <strong>{name}</strong>
           <p className="last-message text-muted">{mostRecentChat.message}</p>
         </div>
-        <div className="chat-footer">
+        {/* <div className="chat-footer">
           {(!mostRecentChat.createdAt)
           ?
           <p className="text-smaller text-muted mb-0">N/A</p>
           :
           <p className="text-smaller text-muted mb-0"><Moment fromNow>{mostRecentChat.createdAt}</Moment></p>
           }
-        </div>
+        </div> */}
       </div>
     </li>
-    }
+    {/* } */}
     
     </Fragment>
   );
