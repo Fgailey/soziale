@@ -9,7 +9,7 @@ import { getPostsByUser } from '../../actions/Post';
 const PostsDashboard = ({ getPostsByUser, post: { posts, loading }, user }) => {
   useEffect(() => {
     getPostsByUser(user._id);
-  }, [getPostsByUser]);
+  }, [getPostsByUser, user]);
 
   return loading ? (
     <Loader />
