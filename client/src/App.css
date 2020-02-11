@@ -1,6 +1,7 @@
 .landing {
-  background: url('https://images.pexels.com/photos/196655/pexels-photo-196655.jpeg')
-    no-repeat center center/cover;
+  background-image: url('https://images.pexels.com/photos/196655/pexels-photo-196655.jpeg');
+  background-size: cover;
+  background-position: center;
   position: relative;
 }
 body {
@@ -24,6 +25,10 @@ body {
     height: 40px;
     width: 40px;
 }
+.smilyPic:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
 /* 
   .modal {
     position: absolute;
@@ -44,4 +49,13 @@ body {
 }
 .mediumBGcolor {
   background-color: #393e46;
+}
+.darkBGcolor {
+  background-color: #222831;
+}
+.prim {
+  color: orange;
+}
+.sec {
+  color: #29a19c;
 }
