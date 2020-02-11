@@ -26,13 +26,10 @@ export const Landing = ({ isAuthenticated }) => {
                 <i className='fas fa-share' />Reach
               </h1>
               <h2 className='card-title h2 my-4 py-2'>
-                Where people like Foster come to connect with other weebs...
+                The next big social networking site.
               </h2>
               <p className='mb-4 pb-2 px-md-5 mx-md-5'>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Pariatur obcaecati vero aliquid libero doloribus ad, unde
-                tempora maiores, ullam, modi qui quidem minima debitis
-                perferendis vitae cumque et quo impedit.
+                Scroll down to find out what makes Reach so special. 
               </p>
               <Link to='/login' className='btn peach-gradient'>
                 <i className='fas fa-sign-in-alt mr-1' />
@@ -47,7 +44,7 @@ export const Landing = ({ isAuthenticated }) => {
         </div>
         {/* Jumbotron */}
         {/* Features */}
-        <div className='container pt-5 my-5 z-depth-1 darkBGcolor'>
+        <div className='container pt-5 mt-5 z-depth-1 darkBGcolor'>
           <section className='p-md-3 mx-md-5 text-lg-left'>
             <div className='row d-flex justify-content-center'>
               <h2 className='prim font-weight-bold pb-4'>Features</h2>
@@ -57,24 +54,21 @@ export const Landing = ({ isAuthenticated }) => {
                 <i className='fas fa-video indigo-text fa-3x mb-4' />
                 <h4 className='sec font-weight-bold mb-4'>Video Chat</h4>
                 <p className='text-muted px-2 mb-lg-0'>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Live video messaging, mulitple user chat rooms, screen sharing. Ali fill in the rest.
                 </p>
               </div>
               <div className='col-lg-4 col-md-6 mb-5'>
                 <i className='fas fa-comments pink-text fa-3x mb-4' />
                 <h4 className='sec font-weight-bold mb-4'>1 on 1 Chat</h4>
                 <p className='text-muted px-2 mb-lg-0'>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Text messaging, private one on one chat rooms. Foster fill in the rest.
                 </p>
               </div>
               <div className='col-lg-4 col-md-6 mb-5'>
-                <i className='fas fa-users blue-text fa-3x mb-4' />
+                <i className='fas fa-users deep-orange-text fa-3x mb-4' />
                 <h4 className='sec font-weight-bold mb-4'>Social Networking</h4>
                 <p className='text-muted px-2 mb-md-0'>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Make a profile, and make posts. View and comment on other users post. Bijan help a brother out.
                 </p>
               </div>
             </div>
