@@ -21,25 +21,34 @@ body {
   margin: auto !important;
   padding: 0px;
 }
+
+/* emoji stuff */
 .smilyPic{
-  height: 50px;
-  width: 50px;
+    height: 50px;
+    width: 50px;
 }
 .smilyPic:hover {
-transform: scale(1.2);
-cursor: pointer;
+  transform: scale(1.2);
+  cursor: pointer;
 }
-/* 
-  .modal {
-    position: absolute;
-    top: 270px;
-    right: 100px;
-    bottom: 0;
-    left: 0;
-    z-index: 10040;
-    overflow: auto;
-    overflow-y: auto;
- } */
+
+.emoji-picker-react,.emoji-group::before{
+  background:linear-gradient(40deg, #393E46, #222831) !important;
+  color: coral!important;
+}
+.emoji-search{
+  background: #4b515d!important;
+  color: coral!important;
+}
+.modal-body{
+  background: black;
+  padding: 0 ;
+  border-radius: 20px!important;
+}
+aside{
+  width: auto!important;
+}
+/* end emoji stuff */
 
 .roundedz {
   border-radius: 10px;
@@ -59,3 +68,4 @@ cursor: pointer;
 .sec {
   color: #29a19c;
 }
+
