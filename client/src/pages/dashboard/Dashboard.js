@@ -71,7 +71,7 @@ const Dashboard = ({
                     to='/edit-profile'
                     className='btn rounded dusty-grass-gradient mx-4 float-right mt-lg-3 mt-md-4'
                   >
-                    <i class='black-text fa-3x fas fa-user-edit'></i>
+                    <i className='black-text fa-3x fas fa-user-edit'></i>
                   </Link>
                 </div>
               </div>
