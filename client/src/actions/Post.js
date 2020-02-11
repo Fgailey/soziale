@@ -8,7 +8,8 @@ import {
   ADD_POST,
   GET_POST,
   ADD_COMMENT,
-  REMOVE_COMMENT
+  REMOVE_COMMENT,
+  GET_PROFILE_POST
 } from './Types';
 
 // Get posts
@@ -34,7 +35,26 @@ export const getPostsByUser = id => async dispatch => {
     const res = await axios.get(`/posts/user/${id}`);
 
     dispatch({
-      type: GET_POSTS,
+      type: GET_PROFILE_POST,
+      payload: res.data
+    });
+  } catch (err) {
+    dispatch({
+      type: POST_ERROR,
+      payload: { msg: err.response.statusText, status: err.response.status }
+    });
+  }
+};
+export const getPostsByProfile = (id, profileID) => async dispatch => {
+  try {
+    const res = await axios.get(`/posts/user/${id}`, {
+      params: {
+        profile: profileID
+      }
+    });
+
+    dispatch({
+      type: GET_PROFILE_POST,
       payload: res.data
     });
   } catch (err) {
