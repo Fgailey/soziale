@@ -3,10 +3,8 @@
   background-size: cover;
   background-position: center;
   position: relative;
-  /* height: calc(100vh); */
 }
 body {
-  /* background: url("https://www.toptal.com/designers/subtlepatterns/patterns/rip_jobs.png"); */
   background: #4b515d;
 }
 .reachLogo {
@@ -23,21 +21,6 @@ body {
   margin: auto !important;
   padding: 0px;
 }
-/* @import url('https://fonts.googleapis.com/css?family=Baloo+Bhai|Bebas+Neue|Ubuntu|Oswald|Press+Start+2P&display=swap');
-h1,
-h2,
-h3,
-h4,
-h5,
-p,
-li { 
-  font-family: 'DM Serif Display', serif;
-  font-family: 'Press Start 2P', cursive;
-  font-family: 'Oswald', sans-serif;
-  font-family: 'Bebas Neue', cursive;
-  font-family: 'Baloo Bhai', cursive;
-  font-family: 'Ubuntu', sans-serif;
-} */
 .smilyPic{
     height: 40px;
     width: 40px;
@@ -61,7 +44,10 @@ li {
 .roundedz {
     border-radius: 10px;
 }
-.cardBGcolor {
+.lightBGcolor {
+  background-color: #4b515d;
+}
+.mediumBGcolor {
   background-color: #393e46;
 }
 .darkBGcolor {
